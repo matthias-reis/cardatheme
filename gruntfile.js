@@ -23,7 +23,8 @@ module.exports = function (grunt) {
                 includePaths: ['./bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap', './bower_components/compass/lib']
             },
             conf: {
-                'cardatheme.css': 'scss/cardatheme.scss'
+                'css/bootstrap.css': 'bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/bootstrap.scss',
+                'css/cardatheme.css': 'scss/cardatheme.scss'
             },
             prod: {
                 options: {
@@ -46,7 +47,7 @@ module.exports = function (grunt) {
                 files: ['Gruntfile.js']
             },
             sass: {
-                files: 'web/styx/scss/**/*.scss',
+                files: 'scss/**/*.scss',
                 tasks: ['sass:dev']
             }
         },
@@ -93,7 +94,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-compress');
 
 
-    grunt.registerTask('watch', ['bower:install', 'copy:libs', 'sass', 'bower:cleanup']);
+    grunt.registerTask('listen', ['bower:install', 'copy:libs', 'sass', 'watch:sass']);
     grunt.registerTask('dev', ['bower:cleanup', 'bower:install', 'copy:libs', 'sass:dev']);
     grunt.registerTask('prod', ['bower:cleanup', 'bower:install', 'copy:libs', 'sass:prod']);
     grunt.registerTask('default', ['prod']);

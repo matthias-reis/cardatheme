@@ -1,19 +1,15 @@
-<?php get_header(); ?>
+<!doctype html>
+<html <?php language_attributes(); ?> class="no-js">
+    <?php get_template_part('app/head') ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+    <body <?php body_class(); ?>>
+        <?php get_template_part('app/header') ?>
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+        <div class="wrapper">
+            <?php get_template_part('app/content') ?>
+        </div>
 
-			<?php get_template_part('loop'); ?>
-
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
-
-<?php get_footer(); ?>
+        <?php get_template_part('app/footer') ?>
+        <?php get_template_part('app/scripts.php') ?>
+    </body>
+</html>
