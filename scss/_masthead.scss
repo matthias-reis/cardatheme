@@ -1,0 +1,18 @@
+.container > header{
+  hgroup {
+    width: 600px;
+    height: 100px;
+    margin: 0 auto;
+    background: transparent url(../img/masthead-l.png) 0 0 no-repeat;
+
+    @media (max-width: $screen-xs-max) {
+      width: 300px;
+      height: 70px;
+      background: transparent url(../img/masthead-s.png) 0 0 no-repeat;
+    }
+
+    & > * {
+      display: none;
+    }
+  }
+}

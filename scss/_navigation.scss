@@ -1,0 +1,50 @@
+.container > header {
+
+  .nav-main {
+    ul {
+      @include horizontalNav($fontSize: 1.2em);
+    }
+  }
+
+  .nav-meta {
+    height: 100px;
+    ul {
+      @include horizontalNav($fontSize: 0.8em);
+    }
+  }
+
+  .search {
+    text-align: center;
+    label {
+      display: none;
+    }
+
+    #s {
+      border: 0;
+      background: transparent;
+      border-bottom: 2px dotted $c-color-lines;
+      width: 65%;
+      font-style: italic;
+      &:focus{
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    #searchsubmit {
+      @include replaceByIcon("\e003");
+      color: $c-color-lines;
+      background: transparent;
+      border: 0;
+      font-size: 0.9em;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      top: 1px;
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+
+}

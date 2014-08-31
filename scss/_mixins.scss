@@ -1,0 +1,49 @@
+@mixin horizontalNav($fontSize: 1em, $mainColor: #fff, $hoverBackground: $c-color-background-footer) {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: $fontSize;
+
+  & > li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    border-right: 1px dotted $mainColor;
+
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    a {
+      display: block;
+      color: $mainColor;
+      margin: 0 ($fontSize * 0.2);
+      padding: ($fontSize * 0.2) ($fontSize * 0.6);
+      text-decoration: none;
+      border-radius: $c-borderradius;
+
+      &:hover {
+        background:$hoverBackground;
+        text-decoration: none;
+      }
+    }
+
+    ul {
+      display: none;
+    }
+  }
+}
+
+
+@mixin replaceByIcon($icon) {
+  &:before {
+    content: $icon;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+  }
+}

@@ -8,7 +8,11 @@ $c-font-weight-bold: 700;
 $c-font-weight-headline: 700;
 
 $c-color-background: #e2b49d;
+$c-color-lines: desaturate(darken(#e2b49d, 30%), 20%);
+$c-color-background-footer: rgba(0,0,0,0.4);
+$c-color-splitter: $c-color-lines;
 
+$c-borderradius: 4px;
 
 
 $font-family-base: $c-font-base;
