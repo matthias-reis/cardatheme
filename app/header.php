@@ -1,12 +1,10 @@
 <header role="banner">
 
-    <!-- logo -->
-    <div class="logo">
-        <a href="<?php echo home_url(); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-        </a>
-    </div>
-    <!-- /logo -->
+    <hgroup>
+        <h3>Anne bloggt</h3>
+        <h1><?php bloginfo('name') ?></h1>
+        <h2><?php bloginfo('description') ?></h2>
+    </hgroup>
 
     <!-- nav -->
     <nav class="nav" role="navigation">

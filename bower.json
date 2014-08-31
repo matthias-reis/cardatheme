@@ -9,8 +9,6 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "compass": "Igosuki/compass-mixins",
-        "bootstrap-sass-official": "*",
         "styx": "https://bitbucket.org/weltbild/styx.js.git#master"
     },
     "ignore": [

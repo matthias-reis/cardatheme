@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         },
         sass: {
             options: {
-                includePaths: ['./bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap', './bower_components/compass/lib']
+                includePaths: ['./bower_components/bootstrap-sass-official/assets/stylesheets', './bower_components/compass/lib']
             },
             conf: {
                 'css/bootstrap.css': 'bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/bootstrap.scss',
@@ -94,7 +94,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-compress');
 
 
-    grunt.registerTask('listen', ['bower:install', 'copy:libs', 'sass', 'watch:sass']);
+    grunt.registerTask('listen', ['bower:install', 'copy:libs', 'sass:dev', 'watch:sass']);
     grunt.registerTask('dev', ['bower:cleanup', 'bower:install', 'copy:libs', 'sass:dev']);
     grunt.registerTask('prod', ['bower:cleanup', 'bower:install', 'copy:libs', 'sass:prod']);
     grunt.registerTask('default', ['prod']);

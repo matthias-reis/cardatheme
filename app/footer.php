@@ -10,4 +10,7 @@
     </p>
     <!-- /copyright -->
 
+    <?php get_template_part('app/js') ?>
+
+
 </footer>
