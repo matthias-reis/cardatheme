@@ -10,17 +10,13 @@
         </hgroup>
 
         <nav class="nav-main" role="navigation">
-            <?php html5blank_nav(); ?>
+            <?php c_create_navigation('header-menu'); ?>
         </nav>
     </div>
 
     <div class="col-xs-12 col-md-4 col-lg-3">
         <nav class="nav-meta hidden-xs hidden-sm">
-            <ul>
-                <li><a href="">cardabout</a></li>
-                <li><a href="">cardacontact</a></li>
-                <li><a href="">impressum</a></li>
-            </ul>
+            <?php c_create_navigation('meta-menu'); ?>
         </nav>
         <div class="search">
             <?php get_search_form( true );?>

@@ -1,22 +1,23 @@
-<!doctype html>
-<html <?php language_attributes(); ?> class="no-js">
-<?php get_template_part('app/head') ?>
+<?php get_header(); ?>
 
-<body <?php body_class(); ?>>
+<main role="main">
+    <?php if (is_single()): ?>
+        <?php get_template_part('app/single'); ?>
+    <?php else: ?>
+        <section class="<?php if (is_home()): ?>home<?php endif;?> col-xs-12 col-md-8 col-lg-9">
+            <?php get_template_part('app/loop'); ?>
+        </section>
+        <aside class="col-xs-12 col-md-4 col-lg-3">
+            <?php if (is_page()): ?>
+                <?php get_template_part('app/area', 'page'); ?>
+            <?php elseif (is_single()): ?>
+                <?php get_template_part('app/area', 'single'); ?>
+            <?php else: ?>
+                <?php get_template_part('app/area', 'aside'); ?>
+            <?php endif; ?>
+        </aside>
 
-<div class="container">
-    <?php get_template_part('app/header') ?>
-    <?php get_template_part('app/content') ?>
-</div>
+    <?php endif; ?>
+</main>
 
-<div class="footer-wrapper">
-    <div class="container">
-        <?php get_template_part('app/footer') ?>
-
-    </div>
-</div>
-
-<?php get_template_part('app/scripts') ?>
-
-</body>
-</html>
+<?php get_footer(); ?>

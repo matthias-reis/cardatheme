@@ -1,0 +1,1 @@
+<p style="height: 300px">Area: Single Article</p>
