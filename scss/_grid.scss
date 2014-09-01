@@ -1,0 +1,19 @@
+@import "compass/css3/columns";
+
+.article-list {
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+    @include column-count(2);
+    @include column-gap(10px);
+  }
+
+  @media (min-width: $screen-lg-min) {
+    @include column-count(3);
+    @include column-gap(10px);
+  }
+
+  .article-item {
+    display: block;
+    @include column-break-inside(avoid);
+  }
+}

@@ -1,3 +1,9 @@
+<div class="bg" style="display: none" typeof="sx:sx.Background">
+    <img property="imageEl" src="<?php header_image(); ?>"
+         height="<?php echo get_custom_header()->height; ?>"
+         width="<?php echo get_custom_header()->width; ?>" alt="" />
+</div>
+
 <header class="row" role="banner">
 
     <div class="col-xs-12 col-md-8 col-lg-9">

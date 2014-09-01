@@ -1,0 +1,32 @@
+.article-item {
+  background: lighten($c-color-background, 30%);
+  color: $text-color;
+
+  &:hover {
+    background: lighten($c-color-background, 15%);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    text-decoration: none;
+    color: $text-color;
+  }
+
+  .image img{
+    width: 100%;
+  }
+
+  .text {
+    padding: 15px;
+    & > h2 {
+      height: 0.5 * $line-height-base;
+      border-bottom: 1px dotted $c-color-background;
+      text-align: center;
+      font-size: 0.8em;
+
+      em {
+        color: $text-color;
+        font-style: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+    }
+  }
+}
