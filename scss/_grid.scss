@@ -4,16 +4,19 @@
 
   @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
     @include column-count(2);
-    @include column-gap(10px);
+    @include column-gap(20px);
   }
 
   @media (min-width: $screen-lg-min) {
     @include column-count(3);
-    @include column-gap(10px);
+    @include column-gap(20px);
   }
 
   .article-item {
     display: block;
     @include column-break-inside(avoid);
+    -moz-column-break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 20px;
   }
 }

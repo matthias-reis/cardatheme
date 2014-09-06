@@ -1,0 +1,39 @@
+@mixin borderGradient($color, $stop) {
+  $startColor: rgba($color, 0);
+  -webkit-border-image: -webkit-linear-gradient($startColor, $color) 1 $stop;
+  -moz-border-image: -moz-linear-gradient($startColor, $color) 1 $stop;
+  -o-border-image: -o-linear-gradient($startColor, $color) 1 $stop;
+  border-image: linear-gradient(to bottom, $startColor, $color) 1 $stop;
+  border-top: 0 none;
+  border-bottom: 0 none;
+}
+
+@mixin backgroundGradient($color, $stop) {
+  $startColor: rgba($color, 0);
+
+  background: -moz-linear-gradient(top, $startColor 0%, $color $stop); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $startColor), color-stop($stop, $color)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $startColor 0%, $color $stop); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $startColor 0%, $color $stop); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $startColor 0%, $color $stop); /* IE10+ */
+  background: linear-gradient(to bottom, $startColor 0%, $color $stop); /* W3C */
+}
+
+main {
+  margin: 30px 0;
+
+  & > section > * {
+    border-width: 3px;
+    border-style: solid;
+    @include borderGradient(#fff, 30%);
+    @include backgroundGradient(rgba(#fff, 0.5), 50%);
+    padding: 0 20px;
+  }
+
+  & > aside {
+    border-width: 2px;
+    border-style: solid;
+    @include borderGradient(#fff, 50%);
+    @include backgroundGradient(rgba(#fff, 0.6), 100%);
+  }
+}

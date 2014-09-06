@@ -9,7 +9,6 @@ if (function_exists('add_theme_support')) {
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
-
     add_theme_support(
         'custom-header',
         array(
@@ -91,4 +90,69 @@ function c_is_type($type)
         }
     }
     return false;
+}
+
+function c_get_type($type)
+{
+    global $post;
+    // get post by post id
+    $post = & get_post($post->ID);
+    $terms = get_the_terms($post->ID, 'type');
+    $term = $terms[0];
+    return $term->slug;
+}
+
+function c_print_random_color()
+{
+    $colors = array('cc8888', '88ccaa', 'cccc88', 'aacc88', 'cc88cc', '88aacc', '88cc88', 'cc88aa');
+    $index = intval(floor(rand(0, count($colors) - 0.1)));
+    echo $colors[$index];
+}
+
+//Verarbeitung des Excerpts
+//Zunächst Standard entfernen
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+//Anschließend selbst implementieren
+add_filter('get_the_excerpt', 'c_excerpt');
+function c_excerpt($manualExcerpt)
+{
+    $excerpt = '';
+    $rawContent = get_the_content('');
+
+    $matches = array();
+    $hasMatch = preg_match('/^<h2[^>]*>(.+)<\/h2>/',$rawContent, $matches) === 1;
+
+    if($hasMatch) {
+        $excerpt .= '<h2>' . $matches[1] . '</h2>';
+    }
+    if($manualExcerpt !== '') {
+        $excerpt .= '<div>' . $manualExcerpt . '</div>';
+    } else {
+        $rawContent = preg_replace('/^<h2.+<\/h2>/', '', $rawContent);
+        $rawContent = strip_shortcodes($rawContent);
+        $rawContent = apply_filters('the_content', $rawContent);
+        $rawContent = str_replace(']]>', ']]&gt;', $rawContent);
+        $rawContent = strip_tags($rawContent, array('<p>'));
+
+        $wordCount = 15;
+        $tokens = array();
+        $output = '';
+        $i = 0;
+
+        //tokenize
+        preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $rawContent, $tokens);
+        foreach ($tokens[0] as $token) {
+            if ($i >= $wordCount && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) {
+                // Limit reached, continue until , ; ? . or ! occur at the end
+                $output .= trim($token);
+                break;
+            }
+            $i++;
+            $output .= $token;
+        }
+        $excerpt .= '<div>' . $output . '&nbsp;&nbsp;&nbsp;&nbsp;[&hellip;]</div>';
+    }
+
+return $excerpt;
+
 }

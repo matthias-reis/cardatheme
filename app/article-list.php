@@ -1,5 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <a class="article-item" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+    <a class="article-item" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"
+       style="border-top-color: #<?php c_print_random_color(); ?>">
 
         <?php if (has_post_thumbnail()) : ?>
             <div class="image">
@@ -16,10 +17,9 @@
             </h1>
 
             <div class="excerpt">
-                <h2>Headline and so on</h2>
-
-                <p><?php the_excerpt() ?></p>
+                <?php the_excerpt() ?>
             </div>
+
             <p class="more">mehr ...</p>
         </div>
     </a>

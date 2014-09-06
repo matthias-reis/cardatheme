@@ -1,13 +1,10 @@
 .article-item {
-  background: lighten($c-color-background, 30%);
+  background: lighten($c-color-background, 20%);
   color: $text-color;
-
-  &:hover {
-    background: lighten($c-color-background, 15%);
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    text-decoration: none;
-    color: $text-color;
-  }
+  border-top-width: 8px;
+  border-top-style: solid;
+  border-radius: 3px;
+  box-shadow: 0 7px 20px -3px rgba(0, 0, 0, 0.2);
 
   .image img{
     width: 100%;
@@ -16,17 +13,49 @@
   .text {
     padding: 15px;
     & > h2 {
-      height: 0.5 * $line-height-base;
+      height: 0.5em * $line-height-base;
       border-bottom: 1px dotted $c-color-background;
       text-align: center;
       font-size: 0.8em;
 
       em {
+        display: inline-block;
+        padding: 0 12px;
         color: $text-color;
+        background: lighten($c-color-background, 20%);
         font-style: normal;
         text-transform: uppercase;
         letter-spacing: 0.2em;
       }
+    }
+    & > h1 {
+      text-align: center;
+      font-family: $c-font-nav;
+      font-size: 1.75em;
+      color: $c-color-alt;
+      font-weight: normal;
+    }
+  }
+
+  .excerpt {
+    h2 {
+      font-size: 1.25em;
+      color: $c-color-alt;
+      text-align: center;
+      font-family: $c-font-headline;
+      font-weight: 300;
+      margin: -5px 0 20px 0;
+    }
+  }
+
+  &:hover {
+    background: lighten($c-color-background, 12%);
+    box-shadow: 0 7px 20px -3px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: $text-color;
+
+    .text > h2 em {
+      background: lighten($c-color-background, 12%) !important;
     }
   }
 }

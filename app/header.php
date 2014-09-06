@@ -5,7 +5,6 @@
 </div>
 
 <header class="row" role="banner">
-
     <div class="col-xs-12 col-md-8 col-lg-9">
         <hgroup>
             <h3>Anne bloggt</h3>
@@ -28,6 +27,5 @@
             <?php get_search_form( true );?>
         </div>
     </div>
-
 
 </header>
