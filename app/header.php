@@ -6,13 +6,15 @@
 
 <header class="row" role="banner">
     <div class="col-xs-12 col-md-8 col-lg-9">
-        <hgroup>
-            <h3>Anne bloggt</h3>
+        <a href="/" title="Anne bloggt Cardamonchai ... Homepage">
+            <hgroup>
+                <h3>Anne bloggt</h3>
 
-            <h1><?php bloginfo('name') ?></h1>
+                <h1><?php bloginfo('name') ?></h1>
 
-            <h2><?php bloginfo('description') ?></h2>
-        </hgroup>
+                <h2><?php bloginfo('description') ?></h2>
+            </hgroup>
+        </a>
 
         <nav class="nav-main" role="navigation">
             <?php c_create_navigation('header-menu'); ?>

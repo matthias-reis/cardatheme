@@ -1,1 +1,5 @@
-<p style="height: 300px">Area: Page</p>
+<?php get_template_part('app/logo'); ?>
+
+<?php if (is_active_sidebar('aside_page_widgets')) : ?>
+    <?php dynamic_sidebar('aside_page_widgets'); ?>
+<?php endif;

@@ -1,0 +1,38 @@
+main > aside {
+  & > a {
+    display: block;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  & > blockquote {
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+    p {
+      font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.8em;
+      margin: 0;
+    }
+
+    cite {
+      display: block;
+      text-align: right;
+      font-family: $c-font-base;
+      font-style: italic;
+      font-size: 0.8em;
+    }
+
+  }
+
+  & > section {
+    h2 {
+      font-family: $c-font-nav;
+      color: #fff;
+      text-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+  }
+}

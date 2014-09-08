@@ -50,6 +50,55 @@ function c_setup()
     );
 }
 
+add_action('widgets_init', 'c_create_sidebars');
+function c_create_sidebars()
+{
+    register_sidebar(
+        array(
+            'name' => 'Widgets in der Sidebar auf Listen',
+            'id' => 'aside_list_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => 'Widgets im Footer',
+            'id' => 'footer_widgets',
+            'before_widget' => '<section class="col-xs-12 col-md-4 col-lg-3">',
+            'after_widget' => '</section>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => 'Widgets in der Sidebar eines Posts',
+            'id' => 'aside_post_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => 'Widgets in der Sidebar auf statischen Seiten',
+            'id' => 'aside_page_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+}
+
+
 function c_create_navigation($location)
 {
     wp_nav_menu(
