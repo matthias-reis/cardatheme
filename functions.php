@@ -63,7 +63,6 @@ function c_create_sidebars()
             'after_title' => '</h2>',
         )
     );
-
     register_sidebar(
         array(
             'name' => 'Widgets im Footer',
@@ -74,7 +73,6 @@ function c_create_sidebars()
             'after_title' => '</h2>',
         )
     );
-
     register_sidebar(
         array(
             'name' => 'Widgets in der Sidebar eines Posts',
@@ -85,7 +83,6 @@ function c_create_sidebars()
             'after_title' => '</h2>',
         )
     );
-
     register_sidebar(
         array(
             'name' => 'Widgets in der Sidebar auf statischen Seiten',
@@ -97,7 +94,6 @@ function c_create_sidebars()
         )
     );
 }
-
 
 function c_create_navigation($location)
 {
@@ -141,14 +137,19 @@ function c_is_type($type)
     return false;
 }
 
-function c_get_type($type)
+function c_get_type()
 {
     global $post;
     // get post by post id
     $post = & get_post($post->ID);
     $terms = get_the_terms($post->ID, 'type');
-    $term = $terms[0];
-    return $term->slug;
+    if ($terms) {
+        $term = $terms[0];
+        return $term->slug;
+    } else {
+        return 'Beitrag';
+    }
+
 }
 
 function c_print_random_color()
@@ -167,14 +168,12 @@ function c_excerpt($manualExcerpt)
 {
     $excerpt = '';
     $rawContent = get_the_content('');
-
     $matches = array();
-    $hasMatch = preg_match('/^<h2[^>]*>(.+)<\/h2>/',$rawContent, $matches) === 1;
-
-    if($hasMatch) {
+    $hasMatch = preg_match('/^<h2[^>]*>(.+)<\/h2>/', $rawContent, $matches) === 1;
+    if ($hasMatch) {
         $excerpt .= '<h2>' . $matches[1] . '</h2>';
     }
-    if($manualExcerpt !== '') {
+    if ($manualExcerpt !== '') {
         $excerpt .= '<div>' . $manualExcerpt . '</div>';
     } else {
         $rawContent = preg_replace('/^<h2.+<\/h2>/', '', $rawContent);
@@ -182,12 +181,10 @@ function c_excerpt($manualExcerpt)
         $rawContent = apply_filters('the_content', $rawContent);
         $rawContent = str_replace(']]>', ']]&gt;', $rawContent);
         $rawContent = strip_tags($rawContent, array('<p>'));
-
         $wordCount = 15;
         $tokens = array();
         $output = '';
         $i = 0;
-
         //tokenize
         preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $rawContent, $tokens);
         foreach ($tokens[0] as $token) {
@@ -201,7 +198,32 @@ function c_excerpt($manualExcerpt)
         }
         $excerpt .= '<div>' . $output . '&nbsp;&nbsp;&nbsp;&nbsp;[&hellip;]</div>';
     }
+    return $excerpt;
+}
 
-return $excerpt;
+function c_get_splitted_content($rawContent = null)
+{
+    if($rawContent === null) {
+        $rawContent = get_the_content('');
+    }
+    $matches = array();
+    $hasMatch = preg_match('/^<h2[^>]*>(.+)<\/h2>/', $rawContent, $matches) === 1;
+    $headline = $hasMatch ? '<h2>' . $matches[1] . '</h2>' : '';
+    $content = preg_replace('/^<h2.+<\/h2>/', '', $rawContent);
 
+    return array(
+        'headline' => $headline,
+        'content' => $content,
+    );
+}
+
+function c_the_subhead(){
+    $content = c_get_splitted_content();
+    echo $content['headline'];
+}
+
+add_filter('the_content', 'c_content_filter');
+function c_content_filter($content) {
+    $content = c_get_splitted_content($content);
+    return $content['content'];
 }

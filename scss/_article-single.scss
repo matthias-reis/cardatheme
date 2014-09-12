@@ -1,0 +1,97 @@
+.c-single-article {
+  background: lighten($c-color-background, 20%);
+  border-top: 15px solid #999;
+  border-radius: 5px;
+
+  header {
+    height: 0;
+    padding-bottom: 31.25%;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto !important;
+    }
+
+    hgroup {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 10px 0 0 0;
+      background: rgba(255, 255, 255, 0.7);
+      text-align: center;
+
+      & > h2 {
+        font-size: 1.5em;
+        color: $c-color-alt;
+        text-align: center;
+        font-family: $c-font-headline;
+        font-weight: 300;
+        margin: -5px 0 20px 0;
+      }
+
+      & > h1 {
+        text-align: center;
+        font-family: $c-font-nav;
+        font-size: 2em;
+        color: $c-color-alt;
+        font-weight: normal;
+        margin: 0;
+        a {
+          color: $c-color-alt;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.article-content {
+  padding: 25px;
+
+  .meta {
+    text-align: right;
+    font-family: $c-font-headline;
+    color: $text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  p > strong:only-child{
+    font-size: 1.2em;
+    color: lighten($text-color, 15%);
+  }
+
+  .wp-caption {
+    border: 1px solid #bbb;
+    background: #fff;
+    padding: 10px;
+    a {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .wp-caption-text {
+      font-size: 0.8em;
+      text-align: right;
+      margin: 10px 0 0 0;
+      font-style: italic;
+    }
+  }
+
+  .alignright {
+    float: right;
+    margin: 0 0 15px 15px;
+  }
+
+  .alignleft {
+    float: left;
+    margin: 0 15px 15px 0;
+  }
+}
