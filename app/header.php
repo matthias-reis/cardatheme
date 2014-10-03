@@ -5,7 +5,7 @@
 </div>
 
 <header class="row" role="banner">
-    <div class="col-xs-12 col-md-8 col-lg-9">
+    <div class="small-12 large-8 xlarge-9 columns">
         <a href="/" title="Anne bloggt Cardamonchai ... Homepage">
             <hgroup>
                 <h3>Anne bloggt</h3>
@@ -21,8 +21,8 @@
         </nav>
     </div>
 
-    <div class="col-xs-12 col-md-4 col-lg-3">
-        <nav class="nav-meta hidden-xs hidden-sm">
+    <div class="small-12 large-4 xlarge-3 columns">
+        <nav class="nav-meta hide-for-medium-down">
             <?php c_create_navigation('meta-menu'); ?>
         </nav>
         <div class="search">

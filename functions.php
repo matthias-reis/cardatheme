@@ -55,6 +55,16 @@ function c_create_sidebars()
 {
     register_sidebar(
         array(
+            'name' => 'Widgets im unteren Teil der Sidebar',
+            'id' => 'aside_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
             'name' => 'Widgets in der Sidebar auf Listen',
             'id' => 'aside_list_widgets',
             'before_widget' => '<section>',
@@ -67,7 +77,7 @@ function c_create_sidebars()
         array(
             'name' => 'Widgets im Footer',
             'id' => 'footer_widgets',
-            'before_widget' => '<section class="col-xs-12 col-md-4 col-lg-3">',
+            'before_widget' => '<section class="small-6 medium-4 columns">',
             'after_widget' => '</section>',
             'before_title' => '<h2>',
             'after_title' => '</h2>',

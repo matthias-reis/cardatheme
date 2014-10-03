@@ -1,5 +1,6 @@
 # Require any additional compass plugins here.
-require "bootstrap-sass"
+add_import_path "cardatheme/bower_components/foundation/scss"
+
 Sass::Script::Number.precision = 10
 
 # Set this to the root of your project when deployed:

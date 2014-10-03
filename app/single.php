@@ -7,10 +7,10 @@
             </section>
         </section>
     <?php else: ?>
-        <section class="col-xs-12 col-md-8 col-lg-9 row">
+        <section class="small-12 large-8 xlarge-9 columns">
             <?php get_template_part('app/article', 'single'); ?>
         </section>
-        <aside class="col-xs-12 col-md-4 col-lg-3">
+        <aside class="small-12 large-4 xlarge-3 columns">
             <?php get_template_part('app/area', 'single'); ?>
         </aside>
     <?php endif; ?>

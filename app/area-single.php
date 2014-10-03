@@ -1,5 +1,13 @@
 <?php get_template_part('app/logo'); ?>
 
-<?php if (is_active_sidebar('aside_post_widgets')) : ?>
-    <?php dynamic_sidebar('aside_post_widgets'); ?>
-<?php endif;
+<section class="sidebars">
+    <?php if (is_active_sidebar('aside_single_widgets')) : ?>
+        <?php dynamic_sidebar('aside_single_widgets'); ?>
+    <?php endif; ?>
+</section>
+
+<section class="sidebars secondary">
+    <?php if (is_active_sidebar('aside_widgets')) : ?>
+        <?php dynamic_sidebar('aside_widgets'); ?>
+    <?php endif; ?>
+</section>

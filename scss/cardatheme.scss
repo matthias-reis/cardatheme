@@ -1,12 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great|Roboto:300,700|Roboto+Condensed:700,300);
 
 @import 'settings';
-
-@import 'bootstrap-compass';
-@import 'bootstrap';
-
+@import 'settings-foundation';
 @import 'mixins';
 @import 'basics';
+
 @import 'masthead';
 @import 'logo';
 @import 'navigation';

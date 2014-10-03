@@ -1,6 +1,6 @@
 .article-item {
   background: lighten($c-color-background, 20%);
-  color: $text-color;
+  color: $c-color-text;
   border-top-width: 8px;
   border-top-style: solid;
   border-radius: 3px;
@@ -21,7 +21,7 @@
       em {
         display: inline-block;
         padding: 0 12px;
-        color: $text-color;
+        color: $c-color-text;
         background: lighten($c-color-background, 20%);
         font-style: normal;
         text-transform: uppercase;
@@ -52,7 +52,7 @@
     background: lighten($c-color-background, 12%);
     box-shadow: 0 7px 20px -3px rgba(0, 0, 0, 0.5);
     text-decoration: none;
-    color: $text-color;
+    color: $c-color-text;
 
     .text > h2 em {
       background: lighten($c-color-background, 12%) !important;

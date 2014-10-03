@@ -3,19 +3,19 @@
 .article-list {
   padding-bottom: 30px;
 
-  @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+  @media #{$medium-up} {
     @include column-count(2);
     @include column-gap(20px);
   }
 
-  @media (min-width: $screen-lg-min) {
+  @media #{$xlarge-only} {
     @include column-count(3);
     @include column-gap(20px);
   }
 
   .article-item {
     display: block;
-    @include column-break-inside(avoid);
+    @include break-inside(avoid);
     -moz-column-break-inside: avoid;
     page-break-inside: avoid;
     margin-bottom: 20px;

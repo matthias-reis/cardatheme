@@ -57,14 +57,14 @@
   .meta {
     text-align: right;
     font-family: $c-font-headline;
-    color: $text-color;
+    color: $c-color-text;
     text-transform: uppercase;
     letter-spacing: 0.2em;
   }
 
   p > strong:only-child{
     font-size: 1.2em;
-    color: lighten($text-color, 15%);
+    color: lighten($c-color-text, 15%);
   }
 
   .wp-caption {
