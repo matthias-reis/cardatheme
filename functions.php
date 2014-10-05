@@ -55,8 +55,8 @@ function c_create_sidebars()
 {
     register_sidebar(
         array(
-            'name' => 'Widgets im unteren Teil der Sidebar',
-            'id' => 'aside_widgets',
+            'name' => 'Top-Widgets',
+            'id' => 'top_widgets',
             'before_widget' => '<section>',
             'after_widget' => '</section>',
             'before_title' => '<h2>',
@@ -65,39 +65,60 @@ function c_create_sidebars()
     );
     register_sidebar(
         array(
-            'name' => 'Widgets in der Sidebar auf Listen',
-            'id' => 'aside_list_widgets',
+            'name' => 'Widgets für Übersichtsseiten',
+            'id' => 'list_widgets',
             'before_widget' => '<section>',
             'after_widget' => '</section>',
             'before_title' => '<h2>',
             'after_title' => '</h2>',
         )
     );
+    register_sidebar(
+        array(
+            'name' => 'Widgets für Posts',
+            'id' => 'post_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Widgets für Seiten',
+            'id' => 'page_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Social-Widgets',
+            'id' => 'social_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Link-Widgets',
+            'id' => 'link_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+
     register_sidebar(
         array(
             'name' => 'Widgets im Footer',
             'id' => 'footer_widgets',
             'before_widget' => '<section class="small-6 medium-4 columns">',
-            'after_widget' => '</section>',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
-        )
-    );
-    register_sidebar(
-        array(
-            'name' => 'Widgets in der Sidebar eines Posts',
-            'id' => 'aside_post_widgets',
-            'before_widget' => '<section>',
-            'after_widget' => '</section>',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
-        )
-    );
-    register_sidebar(
-        array(
-            'name' => 'Widgets in der Sidebar auf statischen Seiten',
-            'id' => 'aside_page_widgets',
-            'before_widget' => '<section>',
             'after_widget' => '</section>',
             'before_title' => '<h2>',
             'after_title' => '</h2>',

@@ -1,13 +1,25 @@
 <?php get_template_part('app/logo'); ?>
 
-<section class="sidebars">
-    <?php if (is_active_sidebar('aside_page_widgets')) : ?>
-        <?php dynamic_sidebar('aside_page_widgets'); ?>
+<section class="sidebar top">
+    <?php if (is_active_sidebar('top_widgets')) : ?>
+        <?php dynamic_sidebar('top_widgets'); ?>
     <?php endif; ?>
 </section>
 
-<section class="sidebars secondary">
-    <?php if (is_active_sidebar('aside_widgets')) : ?>
-        <?php dynamic_sidebar('aside_widgets'); ?>
+<section class="sidebar nav">
+    <?php if (is_active_sidebar('page_widgets')) : ?>
+        <?php dynamic_sidebar('page_widgets'); ?>
+    <?php endif; ?>
+</section>
+
+<section class="sidebar social">
+    <?php if (is_active_sidebar('social_widgets')) : ?>
+        <?php dynamic_sidebar('social_widgets'); ?>
+    <?php endif; ?>
+</section>
+
+<section class="sidebar links">
+    <?php if (is_active_sidebar('link_widgets')) : ?>
+        <?php dynamic_sidebar('link_widgets'); ?>
     <?php endif; ?>
 </section>
