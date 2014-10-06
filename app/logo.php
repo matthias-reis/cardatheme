@@ -1,3 +1,3 @@
 <a href="/">
-    <img src="<?php echo get_template_directory_uri() ?>/img/logo.png">
+    <img src="<?php echo get_template_directory_uri() ?>/img/logo.jpg">
 </a>

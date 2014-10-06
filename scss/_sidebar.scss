@@ -1,0 +1,152 @@
+$aside-padding: 18px;
+
+@mixin opac($percent: 50) {
+  background: rgba(255,255,255,$percent / 100);
+}
+
+main > aside {
+  h2 {
+    font-family: $c-font-base;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    font-size: 1.1rem;
+    color: #777;
+
+    b {
+      font-weight: 700;
+    }
+  }
+
+  & > a {
+    display: block;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  & > section {
+    margin-top: 20px;
+  }
+
+  & > .nav {
+    h2 {
+      background: rgba(255, 255, 255, 75) url(../img/arrow-down.png) 95% 50% no-repeat;
+      border-radius: 3px 3px 0 0;
+      padding: $aside-padding/2 $aside-padding;
+      margin-bottom: 0;
+    }
+
+    section > ul {
+      margin: 0;
+
+      & > li {
+        @include opac(60);
+        list-style: none;
+        margin: 0;
+        padding: $aside-padding/4 $aside-padding;
+        color: #777;
+      }
+      li:nth-child(2n+1) {
+        @include opac(70);
+      }
+      li:hover {
+        background: #fff;
+      }
+    }
+  }
+
+  & > .top {
+    margin-top: 0;
+    background: #fff;
+    padding: $aside-padding;
+
+    h2 {
+      display: none;
+    }
+
+    blockquote {
+      border: 0;
+      padding: 0;
+      margin: 0;
+
+      p {
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        font-size: 0.8em;
+        margin: 0;
+      }
+
+      cite {
+        display: block;
+        text-align: right;
+        font-family: $c-font-base;
+        font-style: italic;
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  & > .social, & > .links {
+
+    & > h2 {
+      background: rgba(255, 255, 255, 75);
+      border-radius: 3px 3px 0 0;
+      padding: $aside-padding/2 $aside-padding;
+      margin-bottom: 0;
+    }
+
+    section {
+      @include opac(50);
+      padding: $aside-padding;
+
+      h2 {
+        @include opac(30);
+        font-size: 1.0rem;
+        padding: $aside-padding/2 $aside-padding;
+        margin: (-$aside-padding) (-$aside-padding) $aside-padding (-$aside-padding);
+
+        a, label {
+          font-size: 1.0rem;
+          color: #777;
+        }
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 0.3em;
+      }
+
+      #subscribe-email input {
+        width: 100%;
+        border: 1px solid #aaa;
+        margin: 0 0 0.3em 0;
+        @include opac(40);
+      }
+
+      input[type=submit] {
+        border: 0;
+        border-radius: 3px;
+        background: $c-color-alt;
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        font-size: 0.9rem;
+        color: #fff;
+        width: 100%;
+        padding: 0.3em 0;
+
+        &:hover {
+          background: lighten($c-color-alt, 20%);
+        }
+      }
+
+      iframe {
+        margin: (-$aside-padding) (-$aside-padding) $aside-padding (-$aside-padding);
+        width: 100%;
+        background: transparent !important;
+      }
+
+    }
+  }
+}

@@ -13,12 +13,14 @@
 </section>
 
 <section class="sidebar social">
+    <h2><b>carda</b>social</h2>
     <?php if (is_active_sidebar('social_widgets')) : ?>
         <?php dynamic_sidebar('social_widgets'); ?>
     <?php endif; ?>
 </section>
 
 <section class="sidebar links">
+    <h2><b>carda</b>links</h2>
     <?php if (is_active_sidebar('link_widgets')) : ?>
         <?php dynamic_sidebar('link_widgets'); ?>
     <?php endif;?>
