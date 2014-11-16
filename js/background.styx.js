@@ -1,6 +1,6 @@
 sx.build({
     name: 'Background',
-    nsp: 'sx',
+    nsp: 'carda',
     parent: sx.Plugin,
 
     /** @namespace this.imageEl */
@@ -12,12 +12,11 @@ sx.build({
         },
 
         draw: function () {
-
             var screenW = window.innerWidth,
                 screenH = window.innerHeight,
                 screenR = screenW/screenH,
-                imageW = this.imageEl.width(),
-                imageH = this.imageEl.height(),
+                imageW = this.imageEl.attr('width'),
+                imageH = this.imageEl.attr('height'),
                 imageR = imageW/imageH,
                 w,
                 h,
@@ -37,17 +36,20 @@ sx.build({
                 offsetL = parseInt((w - screenW) / 2);
             }
 
-            this.el.width(screenW).height(screenH).css({
-                'position': 'fixed',
-                'top': 0,
-                'left': 0
-            });
+            this.el.width(screenW).height(screenH);
 
+            console.log(screenW, screenH, screenR);
+            console.log(imageW, imageH, imageR);
+            console.log(w, h);
+            console.log('--------------');
             this.imageEl.width(w).height(h).css({
                 'position': 'relative',
                 'top': '-' + offsetT + 'px',
                 'left': '-' + offsetL + 'px'
             });
+
+            console.log(this.foreground);
+            this.foreground.height(h);
         }
     }
 });

@@ -1,0 +1,93 @@
+.header-menu {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $color-bg-head;
+  height: 45px;
+  text-align: center;
+  width: 100%;
+  ul {
+    margin: 0;
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+    line-height: 45px;
+    text-transform: uppercase;
+
+    a {
+      @include link(#fff, #ccc);
+    }
+
+    ul {
+      display: none;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      border: 1px solid #fff;
+      border-top: 0;
+      background: $color-bg-head;
+      padding: 10px;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+      li {
+        white-space: nowrap;
+        display: block;
+        text-align: left;
+      }
+    }
+
+    &:hover {
+      ul {
+        display: block;
+      }
+    }
+  }
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  height: 1000px;
+  margin: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  a{
+    display: block;
+    height: 1000px;
+    background: transparent url(../img/logo.png) 50% 30% no-repeat;
+    background-size: 50% auto;
+    @media (min-width: $break-s) {
+      background-size: 40% auto;
+    }
+    @media (min-width: $break-m) {
+      background-size: 30% auto;
+    }
+    @media (min-width: $break-l) {
+      background-size: 20% auto;
+    }
+
+    hgroup {
+      display: none;
+    }
+  }
+}
+
+main {
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600|Kaushan+Script);
+
+
+$color-text: #555;
+$color-border: lighten(#555, 50%);
+$color-primary: #5d8cab;
+$color-primary-d: darken(#5d8cab, 20%);
+
+$color-bg-head: rgba(0, 0, 0, 0.4);
+$color-text-head: #fff;
+
+$break-s: 800px;
+$break-m: 1024px;
+$break-l: 1280px;
+$width: 1400px;
+
+$font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+$fontHeadline: 'Kaushan Script', 'Georgia', serif;
+
+@mixin link($c: $color-primary, $ch: $color-primary-d) {
+  color: $c;
+  text-decoration: none;
+
+  &:hover {
+    color: $ch;
+  }
+}
+
+@mixin b {
+  font-weight: 600;
+}
+@mixin n {
+  font-weight: 300;
+}
+
+a {
+  @include link;
+}
+
+body {
+  font-family: $font;
+  @include n;
+}
+
+h1 {
+  font-family: $fontHeadline;
+}

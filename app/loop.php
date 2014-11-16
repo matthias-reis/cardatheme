@@ -1,4 +1,4 @@
-<div class="article-list">
+<div class="article-list" typeof="sx:carda.Masonry">
     <?php if (have_posts()): while (have_posts()) : the_post(); ?>
             <?php get_template_part('app/article', 'list'); ?>
     <?php endwhile; ?>
