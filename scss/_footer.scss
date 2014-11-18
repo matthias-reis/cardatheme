@@ -1,0 +1,77 @@
+.footer-wrapper {
+  z-index:2;
+  position: relative;
+  background: $color-bg-foot;
+  color: $color-text-foot;
+  margin: 0;
+
+  footer {
+    max-width: $width;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  h2 {
+    font-family: $fontHeadline;
+    font-size: 1.2em;
+    color: lighten($color-text-foot, 15%);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  section {
+    width: 100%;
+    h2, ul, p, select {
+      margin: 5px 15px 0 15px;
+    }
+    @media (min-width: $break-s) {
+      width: 40%;
+      float: left;
+
+      &:first-child {
+        width: 20%;
+      }
+    }
+
+    ul {
+      padding:0;
+    }
+    li {
+      list-style: none;
+      margin: 2px 0;
+
+      a {
+        display: block;
+        padding: 3px 3px 3px 6px;
+        &:hover {
+          border-left: 3px solid #fff;
+          padding-left: 3px;
+        }
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    padding: 30px 0 20px;
+    clear: both;
+  }
+
+  a {
+    color: darken($color-text-foot, 20%);
+  }
+
+  table {
+    width: 100%;
+
+    td, th {
+      margin: 2px;
+      border: 1px solid #777;
+      text-align: center;
+      a{
+        display: block;
+        background: $color-primary;
+        color: $color-text;
+      }
+    }
+  }
+}

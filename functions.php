@@ -118,7 +118,7 @@ function c_create_sidebars()
         array(
             'name' => 'Widgets im Footer',
             'id' => 'footer_widgets',
-            'before_widget' => '<section class="small-6 medium-4 columns">',
+            'before_widget' => '<section>',
             'after_widget' => '</section>',
             'before_title' => '<h2>',
             'after_title' => '</h2>',

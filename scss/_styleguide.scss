@@ -1,13 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600|Kaushan+Script);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600|Oswald:700);
 
 
 $color-text: #555;
 $color-border: lighten(#555, 50%);
-$color-primary: #5d8cab;
-$color-primary-d: darken(#5d8cab, 20%);
+$color-primary: #57c59a;
+$color-primary-d: darken($color-primary, 20%);
 
+$color-background: lighten($color-primary, 35%);
 $color-bg-head: rgba(0, 0, 0, 0.4);
 $color-text-head: #fff;
+$color-bg-foot: darken($color-primary, 25%);
+$color-text-foot: #fff;
 
 $break-s: 800px;
 $break-m: 1024px;
@@ -15,7 +18,7 @@ $break-l: 1280px;
 $width: 1400px;
 
 $font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-$fontHeadline: 'Kaushan Script', 'Georgia', serif;
+$fontHeadline: 'Oswald', 'Georgia', serif;
 
 @mixin link($c: $color-primary, $ch: $color-primary-d) {
   color: $c;
@@ -31,6 +34,10 @@ $fontHeadline: 'Kaushan Script', 'Georgia', serif;
 }
 @mixin n {
   font-weight: 300;
+}
+
+@mixin shadow ($depth: 4px, $strength: 1) {
+  box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0,0,0,(0.3 * $strength));
 }
 
 a {

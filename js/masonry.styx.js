@@ -5,10 +5,16 @@ sx.build({
 
     m: {
         init: function () {
+            var self = this;
+
             this.el.isotope({
                 itemSelector: 'article',
                 layoutMode: 'masonry'
-            });
+            }).isotope('layout');
+
+            sx.utils.delay('isotope', function () {
+                self.el.isotope('layout');
+            }, 200);
         }
     }
 });

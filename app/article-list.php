@@ -10,7 +10,7 @@
 
 
         <div class="text">
-            <h2><em>Anne am 21. Juli 2015</em></h2>
+            <h2><em><?php the_author();?> am <?php the_date('d.m.Y'); ?></em></h2>
 
             <h1>
                 <?php the_title(); ?>
