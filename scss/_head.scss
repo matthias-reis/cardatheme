@@ -62,7 +62,7 @@
   }
 }
 
-header {
+body > header {
   position: relative;
   z-index: 2;
   a{
@@ -86,7 +86,7 @@ header {
   }
 }
 
-main {
+body > main {
   background: $color-background;
   position: relative;
   z-index: 2;

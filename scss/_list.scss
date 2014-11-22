@@ -1,24 +1,4 @@
-.logo {
-  width: 18%;
-  float: left;
-
-  img {
-    margin-right: 3%;
-    width: 97%;
-  }
-  @media (max-width: ($break-m - 1px)) {
-    display: none;
-  }
-}
-
 .article-list {
-  width: 82%;
-  margin-left: 18%;
-  @media (max-width: ($break-m - 1px)) {
-    width: 100%;
-    margin-left: 0;
-  }
-
   article {
     width: 100%;
     @media (min-width: $break-s) {

@@ -1,33 +1,34 @@
-<div>
-    <article id="post-<?php the_ID(); ?>"
-             style="border-top-color: #<?php c_print_random_color(); ?>"
-             <?php post_class('c-single-article'); ?>>
+<aside class="logo">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/logo.jpg">
+</aside>
 
-        <header>
+<article id="post-<?php the_ID(); ?>" <?php post_class('c-single-article'); ?>>
 
-            <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('title'); ?>
-            <?php endif; ?>
+    <header>
 
-            <hgroup>
+        <?php if (has_post_thumbnail()) : ?>
+            <?php the_post_thumbnail('title'); ?>
+        <?php endif; ?>
 
-                <h1>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <?php the_title(); ?>
-                    </a>
-                </h1>
-                <h2>
-                    <?php c_the_subhead(); ?>
-                </h2>
-            </hgroup>
+        <hgroup>
 
-        </header>
+            <h1>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <?php the_title(); ?>
+                </a>
+            </h1>
 
-        <div class="article-content">
-            <p class="meta"><?php echo ucfirst(c_get_type()) ?> vom <?php the_date() ?></p>
+            <h2>
+                <?php c_the_subhead(); ?>
+            </h2>
+        </hgroup>
 
-            <?php the_content(); ?>
-        </div>
+    </header>
 
-    </article>
-</div>
+    <div class="article-content">
+        <p class="meta"><?php echo ucfirst(c_get_type()) ?> vom <?php the_date() ?></p>
+
+        <?php the_content(); ?>
+    </div>
+
+</article>

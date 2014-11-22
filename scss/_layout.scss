@@ -2,3 +2,27 @@
   margin: 0 auto;
   max-width: $width;
 }
+
+
+.side-col {
+  width: 18%;
+  float: left;
+
+  img {
+    margin-right: 3%;
+    width: 97%;
+  }
+  @media (max-width: ($break-m - 1px)) {
+    display: none;
+  }
+}
+
+
+.main-col {
+  width: 82%;
+  margin-left: 18%;
+  @media (max-width: ($break-m - 1px)) {
+    width: 100%;
+    margin-left: 0;
+  }
+}

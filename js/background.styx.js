@@ -35,20 +35,15 @@ sx.build({
                 offsetT = 0;
                 offsetL = parseInt((w - screenW) / 2);
             }
+            var elH = $('body').is('home') ? screenH : (screenH / 2);
 
-            this.el.width(screenW).height(screenH);
-
-            console.log(screenW, screenH, screenR);
-            console.log(imageW, imageH, imageR);
-            console.log(w, h);
-            console.log('--------------');
+            this.el.width(screenW).height(elH);
             this.imageEl.width(w).height(h).css({
                 'position': 'relative',
                 'top': '-' + offsetT + 'px',
                 'left': '-' + offsetL + 'px'
             });
 
-            console.log(this.foreground);
             this.foreground.height(h);
         }
     }
