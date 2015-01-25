@@ -12,11 +12,22 @@
       display: inline-block;
       width: 80px;
       height: 100px;
+      line-height: 1;
       margin: 15px 10px;
+      padding-top: 60px;
       background: transparent;
       color:  #fff;
       text-align: center;
-      flex-grow: 1;
+      overflow: hidden;
+      text-indent: -500px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+      &:hover {
+        text-indent: 0;
+      }
+      b {
+        display: block;
+      }
 
 
       &.social-icon {
@@ -28,6 +39,35 @@
       &.links-icon {
         background: transparent url(../img/link-icon.png) 50% 0 no-repeat;
       }
+    }
+  }
+}
+
+.cite {
+  padding: 0 10%;
+  margin-bottom: 0;
+  h3 {
+    font-size: $size-xl;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+    padding-top: 2rem;
+  }
+  h5 {
+    color: rgba(255,255,255,0.35);
+    margin-top: 0;
+  }
+
+  blockquote {
+    font-size: $size-l;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.35);
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+
+    cite {
+      display: block;
+      font-size: $size-m;
+      text-align: right;
     }
   }
 }

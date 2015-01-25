@@ -10,7 +10,7 @@
 
 
         <div class="text">
-            <h2><em><?php the_author();?> am <?php the_date('d.m.Y'); ?></em></h2>
+            <h4 class="super"><?php echo ucfirst(c_get_type()) ?> vom <?php the_date() ?></h4>
 
             <h1>
                 <?php the_title(); ?>

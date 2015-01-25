@@ -30,8 +30,9 @@
 <?php if (is_home()) : ?>
     <?php if (is_active_sidebar('cite_widgets')) : ?>
         <aside class="ribbon ribbon-darker cite">
-            <section>
-                <h2>carda<b>cite</b></h2>
+            <section class="row">
+                <h3>carda<b>cite</b></h3>
+                <h5>Das Zitat der Woche</h5>
                 <?php dynamic_sidebar('cite_widgets'); ?>
             </section>
         </aside>
