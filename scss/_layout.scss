@@ -1,6 +1,19 @@
-.content {
-  margin: 0 auto;
-  max-width: $width;
+.ribbon {
+  position: relative;
+  z-index: 5;
+  background: #fff;
+  padding: 2em 0;
+
+  .row {
+    margin: 0 auto;
+    max-width: $width;
+  }
+}
+
+.initial-hide {
+  display: none;
+  height: 0;
+
 }
 
 
@@ -26,3 +39,5 @@
     margin-left: 0;
   }
 }
+
+

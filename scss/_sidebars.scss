@@ -1,0 +1,33 @@
+.sidebars {
+  padding-top: 0;
+  background: transparent !important;
+
+  ul {
+    height: 80px;
+    text-align: center;
+    margin: -100px 0 20px 0;
+    background: transparent;
+
+    li {
+      display: inline-block;
+      width: 80px;
+      height: 100px;
+      margin: 15px 10px;
+      background: transparent;
+      color:  #fff;
+      text-align: center;
+      flex-grow: 1;
+
+
+      &.social-icon {
+        background: transparent url(../img/social-icon.png) 50% 0 no-repeat;
+      }
+      &.nav-icon {
+        background: transparent url(../img/nav-icon.png) 50% 0 no-repeat;
+      }
+      &.links-icon {
+        background: transparent url(../img/link-icon.png) 50% 0 no-repeat;
+      }
+    }
+  }
+}

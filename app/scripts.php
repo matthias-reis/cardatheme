@@ -3,6 +3,7 @@
 <script src="<?php echo get_template_directory_uri() ?>/libs/styx.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/js/background.styx.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/js/masonry.styx.js"></script>
+<script src="<?php echo get_template_directory_uri() ?>/js/flickr.styx.js"></script>
 
 <script>
     jQuery(function () {

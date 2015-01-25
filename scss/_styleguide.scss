@@ -1,12 +1,15 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600|Oswald:700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,600|Oswald:700);
 
 
 $color-text: #555;
 $color-border: lighten(#555, 50%);
 $color-primary: #57c59a;
+$color-secondary: complement($color-primary);
 $color-primary-d: darken($color-primary, 20%);
+$color-primary-l: lighten($color-primary, 35%);
+$color-darker: darken($color-secondary, 40%);
 
-$color-background: lighten($color-primary, 35%);
+$color-background: $color-primary-l;
 $color-bg-head: rgba(0, 0, 0, 0.4);
 $color-text-head: #fff;
 $color-bg-foot: darken($color-primary, 25%);
@@ -20,6 +23,16 @@ $width: 1400px;
 $font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
 $fontHeadline: 'Oswald', 'Georgia', serif;
 
+$weightLight: 100;
+$weightNormal: 300;
+$weightBold: 600;
+
+$sizeS: 0.8rem;
+$sizeM: 1rem;
+$sizeL: 1.5rem;
+$sizeXL: 2.5rem;
+$sizeXXL: 3.5rem;
+
 @mixin link($c: $color-primary, $ch: $color-primary-d) {
   color: $c;
   text-decoration: none;
@@ -29,26 +42,95 @@ $fontHeadline: 'Oswald', 'Georgia', serif;
   }
 }
 
+
 @mixin b {
   font-weight: 600;
 }
+
+
 @mixin n {
   font-weight: 300;
 }
 
-@mixin shadow ($depth: 4px, $strength: 1) {
-  box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0,0,0,(0.3 * $strength));
+
+@mixin shadow($depth: 4px, $strength: 1) {
+  box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0, (0.3 * $strength));
 }
+
 
 a {
   @include link;
 }
+
 
 body {
   font-family: $font;
   @include n;
 }
 
+
 h1 {
   font-family: $fontHeadline;
+}
+
+
+.ribbon {
+  background: $color-background;
+
+  &.ribbon-bright {
+    background: $color-primary-l;
+  }
+
+  &.ribbon-dark {
+    background: $color-primary-d;
+  }
+  &.ribbon-darker {
+    background: $color-darker;
+  }
+}
+
+
+.image {
+  border: 1px solid #888;
+  background: #fff;
+  padding: 10px;
+}
+
+
+.headline {
+  padding: 0 !important;
+  .inner-headline {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
+    min-height: 16px;
+
+    hgroup {
+      width: 70%;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 22em;
+    }
+  }
+  .meta {
+    color: #fff;
+    font-weight: $weightLight;
+    font-size: $sizeM;
+    margin: 0;
+  }
+
+  h1 {
+    margin: 0;
+    a {
+      color: #fff;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
 }

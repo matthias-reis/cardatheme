@@ -55,62 +55,42 @@ function c_create_sidebars()
 {
     register_sidebar(
         array(
-            'name' => 'Top-Widgets',
-            'id' => 'top_widgets',
+            'name' => 'Inhalts-Slide',
+            'id' => 'content_widgets',
             'before_widget' => '<section>',
             'after_widget' => '</section>',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
         )
     );
     register_sidebar(
         array(
-            'name' => 'Widgets für Übersichtsseiten',
-            'id' => 'list_widgets',
-            'before_widget' => '<section>',
-            'after_widget' => '</section>',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
-        )
-    );
-    register_sidebar(
-        array(
-            'name' => 'Widgets für Posts',
-            'id' => 'post_widgets',
-            'before_widget' => '<section>',
-            'after_widget' => '</section>',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
-        )
-    );
-    register_sidebar(
-        array(
-            'name' => 'Widgets für Seiten',
-            'id' => 'page_widgets',
-            'before_widget' => '<section>',
-            'after_widget' => '</section>',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
-        )
-    );
-    register_sidebar(
-        array(
-            'name' => 'Social-Widgets',
+            'name' => 'Social-Slide',
             'id' => 'social_widgets',
             'before_widget' => '<section>',
             'after_widget' => '</section>',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
         )
     );
     register_sidebar(
         array(
-            'name' => 'Link-Widgets',
+            'name' => 'Link-Slide',
             'id' => 'link_widgets',
             'before_widget' => '<section>',
             'after_widget' => '</section>',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Zitatbereich',
+            'id' => 'cite_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
         )
     );
 
@@ -258,3 +238,10 @@ function c_content_filter($content) {
     $content = c_get_splitted_content($content);
     return $content['content'];
 }
+
+function c_flickr_gallery($atts)
+{
+    return '</div></section><section class="ribbon ribbon-darker"><div class="row"><div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '"></div><div style="clear:both"></div></section><section class="ribbon ribbon-bright"><div class="row">';
+}
+
+add_shortcode('myflickr', 'c_flickr_gallery');

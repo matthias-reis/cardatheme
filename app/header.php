@@ -15,3 +15,5 @@
         </hgroup>
     </a>
 </header>
+
+<?php get_template_part('app/sidebars') ?>

@@ -14,7 +14,8 @@ sx.build({
         draw: function () {
             var screenW = window.innerWidth,
                 screenH = window.innerHeight,
-                screenR = screenW/screenH,
+                elH = $('body').is('.home') ? screenH : (screenH / 2),
+                screenR = screenW/elH,
                 imageW = this.imageEl.attr('width'),
                 imageH = this.imageEl.attr('height'),
                 imageR = imageW/imageH,
@@ -23,19 +24,19 @@ sx.build({
                 offsetT,
                 offsetL;
 
+
             if (screenR > imageR){
                 //Screen breiter als Bild
                 w = screenW;
                 h = screenW / imageR;
                 offsetL = 0;
-                offsetT = parseInt((h - screenH) / 2);
+                offsetT = parseInt((h - elH) / 2);
             } else {
-                h = screenH;
-                w = screenH * imageR;
+                h = elH;
+                w = elH * imageR;
                 offsetT = 0;
                 offsetL = parseInt((w - screenW) / 2);
             }
-            var elH = $('body').is('home') ? screenH : (screenH / 2);
 
             this.el.width(screenW).height(elH);
             this.imageEl.width(w).height(h).css({
@@ -44,7 +45,7 @@ sx.build({
                 'left': '-' + offsetL + 'px'
             });
 
-            this.foreground.height(h);
+            this.foreground.height(elH);
         }
     }
 });
