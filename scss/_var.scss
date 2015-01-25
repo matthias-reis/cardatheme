@@ -1,0 +1,63 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,600|Oswald:700);
+
+
+$color-text: #555;
+$color-text-light: lighten($color-text, 25%);
+$color-border: lighten($color-text, 50%);
+
+$color-primary: #57c59a;
+$color-primary-d: darken($color-primary, 20%);
+$color-primary-l: lighten($color-primary, 35%);
+
+$color-secondary: complement($color-primary);
+$color-darker: darken($color-secondary, 40%);
+
+
+$color-background: $color-primary-l;
+$color-bg-head: rgba(0, 0, 0, 0.4);
+$color-text-head: #fff;
+$color-bg-foot: darken($color-primary, 25%);
+$color-text-foot: #fff;
+
+$break-s: 640px;
+$break-m: 800px;
+$break-l: 1024px;
+$break-xl: 1280px;
+$width: 1400px;
+
+$font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+$fontHeadline: 'Oswald', 'Georgia', serif;
+
+$weightLight: 100;
+$weightNormal: 300;
+$weightBold: 600;
+
+$size-s: 1rem;
+$size-m: 1.25rem;
+$size-l: 1.7rem;
+$size-xl: 2.5rem;
+$size-xxl: 3.5rem;
+
+@mixin link($c: $color-primary, $ch: $color-primary-d) {
+  color: $c;
+  text-decoration: none;
+
+  &:hover {
+    color: $ch;
+  }
+}
+
+
+@mixin b {
+  font-weight: 600;
+}
+
+
+@mixin n {
+  font-weight: 300;
+}
+
+
+@mixin shadow($depth: 4px, $strength: 1) {
+  box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0, (0.3 * $strength));
+}

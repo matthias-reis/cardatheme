@@ -1,63 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,600|Oswald:700);
-
-
-$color-text: #555;
-$color-border: lighten(#555, 50%);
-$color-primary: #57c59a;
-$color-secondary: complement($color-primary);
-$color-primary-d: darken($color-primary, 20%);
-$color-primary-l: lighten($color-primary, 35%);
-$color-darker: darken($color-secondary, 40%);
-
-$color-background: $color-primary-l;
-$color-bg-head: rgba(0, 0, 0, 0.4);
-$color-text-head: #fff;
-$color-bg-foot: darken($color-primary, 25%);
-$color-text-foot: #fff;
-
-$break-s: 800px;
-$break-m: 1024px;
-$break-l: 1280px;
-$width: 1400px;
-
-$font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-$fontHeadline: 'Oswald', 'Georgia', serif;
-
-$weightLight: 100;
-$weightNormal: 300;
-$weightBold: 600;
-
-$sizeS: 0.8rem;
-$sizeM: 1rem;
-$sizeL: 1.5rem;
-$sizeXL: 2.5rem;
-$sizeXXL: 3.5rem;
-
-@mixin link($c: $color-primary, $ch: $color-primary-d) {
-  color: $c;
-  text-decoration: none;
-
-  &:hover {
-    color: $ch;
-  }
-}
-
-
-@mixin b {
-  font-weight: 600;
-}
-
-
-@mixin n {
-  font-weight: 300;
-}
-
-
-@mixin shadow($depth: 4px, $strength: 1) {
-  box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0, (0.3 * $strength));
-}
-
-
 a {
   @include link;
 }
@@ -65,12 +5,96 @@ a {
 
 body {
   font-family: $font;
+  font-size: 16px;
   @include n;
+  line-height: 1.4;
+}
+
+
+@mixin hd() {
+  font-family: $fontHeadline;
+  color: $color-text;
+  line-height: 1.2;
+  a {
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary-d;
+    }
+  }
+}
+
+
+@mixin hdsmall() {
+  font-family: $font;
+  color: $color-text-light;
+  @include n;
+  line-height: 1.2;
+
+  a {
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary-d;
+    }
+  }
 }
 
 
 h1 {
-  font-family: $fontHeadline;
+  @include hd;
+  font-size: $size-xl;
+}
+
+
+h2 {
+  @include hd;
+  font-size: $size-l;
+}
+
+
+h3 {
+  @include hdsmall;
+  font-size: $size-l;
+}
+
+
+h4 {
+  @include hdsmall;
+  font-size: $size-m;
+}
+
+
+h5 {
+  @include hdsmall;
+  font-size: $size-m;
+}
+
+
+h6 {
+  @include hdsmall;
+  font-size: $size-m;
+}
+
+
+.super {
+  @include hdsmall;
+  border-bottom: 1px dotted $color-text;
+  font-size: $size-m;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+
+p {
+  font-size: $size-m;
+  margin: ($size-m / 4) 0;
+  color: $color-text !important;
+}
+
+b, strong {
+  @include b;
 }
 
 
@@ -87,50 +111,149 @@ h1 {
   &.ribbon-darker {
     background: $color-darker;
   }
-}
-
-
-.image {
-  border: 1px solid #888;
-  background: #fff;
-  padding: 10px;
+  &.ribbon-white {
+    background: #fff;
+  }
 }
 
 
 .headline {
   padding: 0 !important;
+
   .inner-headline {
     padding-top: 2em;
     padding-bottom: 2em;
-    position: relative;
-    min-height: 16px;
 
     hgroup {
-      width: 70%;
+      padding: 0 2em
     }
 
-    img {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 22em;
-    }
-  }
-  .meta {
-    color: #fff;
-    font-weight: $weightLight;
-    font-size: $sizeM;
-    margin: 0;
-  }
-
-  h1 {
-    margin: 0;
-    a {
-      color: #fff;
-      &:hover {
-        color: #fff;
+    @media (max-width: $break-s) {
+      hgroup {
+        text-align: center;
       }
     }
   }
 
+  h1 {
+    margin: 0.5em 0 0 0;
+  }
+  h3 {
+    margin: 0.5em 0 0 0;
+  }
 }
+
+
+.headline.with-thumbnail {
+  .inner-headline {
+    hgroup {
+      margin-left: 30%;
+    }
+
+    img {
+      width: 30%;
+      height: auto;
+      float: left;
+    }
+
+    @media (max-width: $break-l) {
+      hgroup {
+        margin-left: 40%;
+      }
+
+      img {
+        width: 40%;
+      }
+    }
+
+    @media (max-width: $break-s) {
+      padding-top: 0;
+
+      hgroup {
+        margin-left: 0;
+      }
+
+      img {
+        width: auto;
+        float: none;
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
+
+
+.wp-caption {
+  clear: both;
+  max-width: 80%;
+  padding: 1em;
+  border: 1px solid $color-border;
+  background: #f4f4f4;
+
+  &.alignright {
+    float: right;
+    margin: 1em -7em 1em 1em;
+  }
+
+  &.alignleft {
+    float: left;
+    margin: 1em 1em  1em -7em;
+  }
+
+  &.alignnone {
+    float: none;
+    margin: 1em auto;
+  }
+
+  @media (max-width: $break-xl) {
+    &.alignright {
+      margin: 1em 0 1em 1em;
+    }
+
+    &.alignleft {
+      margin: 1em 1em  1em 0;
+    }
+  }
+
+  @media (max-width: $break-m) {
+    &.alignright {
+      float: none;
+      margin: 1em auto;
+    }
+
+    &.alignleft {
+      float: none;
+      margin: 1em auto;
+    }
+  }
+  @media (max-width: $break-m) {
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+
+
+  a{
+    display: block;
+
+    img {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  p {
+    font-size: $size-s;
+    font-style: italic;
+  }
+
+}
+
+iframe {
+  margin: 1em auto;
+  @media (max-width: $break-m) {
+    max-width: 100% !important;
+  }
+}
+
