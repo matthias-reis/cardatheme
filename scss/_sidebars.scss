@@ -1,11 +1,18 @@
 .sidebars {
   padding-top: 0;
   background: transparent !important;
+  position: relative;
+  z-index: 3;
+  margin-top: -100px;
+
+  .ribbon {
+    padding: 0;
+  }
 
   ul {
-    height: 80px;
+    height: 100px;
     text-align: center;
-    margin: -100px 0 20px 0;
+    margin: 0 0 20px 0;
     background: transparent;
 
     li {
@@ -16,11 +23,11 @@
       margin: 15px 10px;
       padding-top: 60px;
       background: transparent;
-      color:  #fff;
+      color: #fff;
       text-align: center;
       overflow: hidden;
       text-indent: -500px;
-      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
       &:hover {
         text-indent: 0;
@@ -28,7 +35,6 @@
       b {
         display: block;
       }
-
 
       &.social-icon {
         background: transparent url(../img/social-icon.png) 50% 0 no-repeat;
@@ -43,20 +49,48 @@
   }
 }
 
-.cite {
-  padding: 0 10%;
-  margin-bottom: 0;
+
+.sidebar {
   h3 {
     font-size: $size-xl;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     margin: 0;
     padding-top: 2rem;
   }
+  h4 {
+    color: rgba(255, 255, 255, 0.35);
+    margin: 2em 0 0,5em 0;
+    font-size: $size-l;
+
+    a {
+      color: rgba(255, 255, 255, 0.35);
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
   h5 {
-    color: rgba(255,255,255,0.35);
+    color: rgba(255, 255, 255, 0.35);
     margin-top: 0;
   }
+  & > section {
+    width: 25%;
+    float: left;
 
+    & > * {
+      padding-right: 2em;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .fb-comments, .fb-comments iframe[style], .fb-comments span {
+      width: 100% !important;
+    }
+  }
+}
+
+.cite {
+  padding: 0 10%;
+  margin-bottom: 0;
   blockquote {
     font-size: $size-l;
     font-style: italic;

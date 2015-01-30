@@ -7,7 +7,7 @@ $color-border: lighten($color-text, 50%);
 
 $color-primary: #57c59a;
 $color-primary-d: darken($color-primary, 20%);
-$color-primary-l: lighten($color-primary, 35%);
+$color-primary-l: desaturate(lighten($color-primary, 35%), 35%);
 
 $color-secondary: complement($color-primary);
 $color-darker: darken($color-secondary, 40%);
@@ -58,6 +58,6 @@ $size-xxl: 3.5rem;
 }
 
 
-@mixin shadow($depth: 4px, $strength: 1) {
-  box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0, (0.3 * $strength));
+@mixin shadow($depth: 5px, $strength: 1) {
+  box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0, (0.4 * $strength));
 }

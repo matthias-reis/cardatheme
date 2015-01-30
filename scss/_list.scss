@@ -5,10 +5,10 @@
       width: 33.333333%;
     }
     @media (min-width: $break-l) {
-      width: 25%;
+      width: 20%;
     }
     @media (min-width: $break-xl) {
-      width: 20%;
+      width: 16.6666%;
     }
 
     a {
@@ -24,6 +24,10 @@
       &:hover {
         color: $color-primary;
         @include shadow;
+
+        .more {
+          color: $color-darker;
+        }
       }
 
       .image {
@@ -63,6 +67,9 @@
         }
         .more {
           text-align: right;
+          @include b;
+          text-transform: uppercase;
+          color: $color-primary-d;
           font-size: 0.8em;
           margin: 0;
         }

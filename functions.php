@@ -59,8 +59,8 @@ function c_create_sidebars()
             'id' => 'content_widgets',
             'before_widget' => '<section>',
             'after_widget' => '</section>',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>',
+            'before_title' => '<h4>',
+            'after_title' => '</h4>',
         )
     );
     register_sidebar(
@@ -69,8 +69,8 @@ function c_create_sidebars()
             'id' => 'social_widgets',
             'before_widget' => '<section>',
             'after_widget' => '</section>',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>',
+            'before_title' => '<h4>',
+            'after_title' => '</h4>',
         )
     );
     register_sidebar(
@@ -79,8 +79,8 @@ function c_create_sidebars()
             'id' => 'link_widgets',
             'before_widget' => '<section>',
             'after_widget' => '</section>',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>',
+            'before_title' => '<h4>',
+            'after_title' => '</h4>',
         )
     );
     register_sidebar(
@@ -89,8 +89,8 @@ function c_create_sidebars()
             'id' => 'cite_widgets',
             'before_widget' => '<section>',
             'after_widget' => '</section>',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>',
+            'before_title' => '<h4>',
+            'after_title' => '</h4>',
         )
     );
 
