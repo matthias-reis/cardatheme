@@ -2,14 +2,12 @@ a {
   @include link;
 }
 
-
 body {
   font-family: $font;
   font-size: 16px;
   @include n;
   line-height: 1.4;
 }
-
 
 @mixin hd() {
   font-family: $fontHeadline;
@@ -24,11 +22,10 @@ body {
   }
 }
 
-
 @mixin hdsmall() {
   font-family: $font;
   color: $color-text-light;
-  @include n;
+  @include l;
   line-height: 1.2;
 
   a {
@@ -40,42 +37,35 @@ body {
   }
 }
 
-
 h1 {
   @include hd;
   font-size: $size-xl;
 }
-
 
 h2 {
   @include hd;
   font-size: $size-l;
 }
 
-
 h3 {
   @include hdsmall;
   font-size: $size-l;
 }
-
 
 h4 {
   @include hdsmall;
   font-size: $size-m;
 }
 
-
 h5 {
   @include hdsmall;
   font-size: $size-m;
 }
 
-
 h6 {
   @include hdsmall;
   font-size: $size-m;
 }
-
 
 .super {
   @include hdsmall;
@@ -85,7 +75,6 @@ h6 {
   letter-spacing: 0.1em;
   margin: 0;
 }
-
 
 p {
   font-size: $size-m;
@@ -99,17 +88,22 @@ b, strong {
 
 
 .ribbon {
-  background: $color-background;
-
-  &.ribbon-bright {
-    background: $color-primary-l;
-  }
+  background: $color-bg;
 
   &.ribbon-dark {
     background: $color-primary-d;
   }
-  &.ribbon-darker {
-    background: $color-darker;
+  &.ribbon-secondary {
+    background: $color-secondary-d;
+  }
+  &.ribbon-main {
+    background: $color-primary;
+  }
+  &.ribbon-medium {
+    background: $color-primary-l;
+  }
+  &.ribbon-light {
+    background: $color-primary-ll;
   }
   &.ribbon-white {
     background: #fff;

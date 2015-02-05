@@ -5,6 +5,7 @@
     <?php if (is_single()): ?>
         <?php get_template_part('app/single'); ?>
     <?php else: ?>
+        <?php get_template_part('app/headline'); ?>
         <?php get_template_part('app/loop'); ?>
     <?php endif; ?>
 </main>

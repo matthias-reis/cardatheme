@@ -165,7 +165,7 @@ function c_get_type()
 
 function c_print_random_color()
 {
-    $colors = array('cc8888', '88ccaa', 'cccc88', 'aacc88', 'cc88cc', '88aacc', '88cc88', 'cc88aa');
+    $colors = array('e94e77', 'd68189', '5db593', 'c6a49a', '91cdb6');
     $index = intval(floor(rand(0, count($colors) - 0.1)));
     echo $colors[$index];
 }
@@ -251,3 +251,9 @@ function c_flickr_gallery($atts)
 }
 
 add_shortcode('myflickr', 'c_flickr_gallery');
+
+
+function c_comment($comment, $args, $depth){
+    echo 'Kommentar';
+//    print_r($comment);
+}

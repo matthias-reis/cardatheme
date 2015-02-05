@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: $color-bg-head;
+  background: rgba($color-primary, 0.6);
   height: 45px;
   text-align: center;
   width: 100%;
@@ -16,7 +16,7 @@
     display: inline-block;
     padding: 0 5px;
     line-height: 45px;
-    text-transform: uppercase;
+    text-transform: lowercase;
 
     a {
       @include link(#fff, #ccc);
@@ -29,7 +29,7 @@
       left: 0;
       border: 1px solid #fff;
       border-top: 0;
-      background: $color-bg-head;
+      background: rgba($color-primary, 0.6);
       padding: 10px;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 
@@ -48,28 +48,18 @@
   }
 }
 
-.bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  text-align: center;
-  height: 1000px;
-  margin: 0;
-  overflow: hidden;
 
-  img {
-    width: 100%;
-  }
-}
-
-body > header {
+body > .bg-l {
   position: relative;
   z-index: 2;
   a{
     display: block;
     height: 1000px;
-    background: transparent url(../img/logo.png) 50% 30% no-repeat;
+
+    img {
+      position: fixed;
+    }
+
     background-size: 50% auto;
     @media (min-width: $break-s) {
       background-size: 40% auto;
@@ -87,8 +77,31 @@ body > header {
   }
 }
 
+body > .bg-s {
+  a {
+    display: block;
+
+    img {
+      width: 100%;
+      @media (max-width: $break-m) {
+        width: 120%;
+        margin-left: -10%;
+      }
+      @media (max-width: $break-s) {
+        background-size: 30% auto;
+        width: 160%;
+        margin-left: -30%;
+      }
+    }
+
+    hgroup {
+      display: none;
+    }
+  }
+}
+
 body > main {
-  background: $color-background;
+  background: $color-bg;
   position: relative;
   z-index: 2;
 }

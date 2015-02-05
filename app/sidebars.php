@@ -8,7 +8,7 @@
             carda<b>friends</b></li>
     </ul>
 
-    <div class="ribbon ribbon-dark">
+    <div class="ribbon ribbon-secondary">
         <section class="sidebar social-sidebar initial-hide row">
             <h3>carda<b>social</b></h3>
             <?php if (is_active_sidebar('social_widgets')) : ?>
@@ -37,7 +37,7 @@
 
 <?php if (is_home()) : ?>
     <?php if (is_active_sidebar('cite_widgets')) : ?>
-        <aside class="ribbon sidebar ribbon-darker cite">
+        <aside class="ribbon sidebar ribbon-medium cite">
             <section class="row">
                 <h3>carda<b>cite</b></h3>
                 <h5>Das Zitat der Woche</h5>

@@ -55,11 +55,11 @@
     font-size: $size-xl;
     color: rgba(255, 255, 255, 0.8);
     margin: 0;
-    padding-top: 2rem;
+    padding: 2rem 0 0 1rem;
   }
   h4 {
     color: rgba(255, 255, 255, 0.35);
-    margin: 2em 0 0,5em 0;
+    margin: 2rem 0 0,5rem 0;
     font-size: $size-l;
 
     a {
@@ -76,9 +76,15 @@
   & > section {
     width: 25%;
     float: left;
+    @media (max-width: $break-l - 1) {
+      width: 50%;
+      &:nth-of-type(2n + 1){
+        clear: both;
+      }
+    }
 
     & > * {
-      padding-right: 2em;
+      padding: 0 1em;
       color: rgba(255, 255, 255, 0.35);
     }
 
@@ -89,8 +95,11 @@
 }
 
 .cite {
-  padding: 0 10%;
   margin-bottom: 0;
+  section {
+    width: auto;
+    float: none;
+  }
   blockquote {
     font-size: $size-l;
     font-style: italic;

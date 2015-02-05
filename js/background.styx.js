@@ -6,7 +6,6 @@ sx.build({
     /** @namespace this.imageEl */
     m: {
         init: function () {
-            this.info('Initializing');
             this.el.show();
             this.draw();
         },
@@ -14,7 +13,7 @@ sx.build({
         draw: function () {
             var screenW = window.innerWidth,
                 screenH = window.innerHeight,
-                elH = $('body').is('.home') ? screenH : (screenH / 2),
+                elH = screenH,
                 screenR = screenW/elH,
                 imageW = this.imageEl.attr('width'),
                 imageH = this.imageEl.attr('height'),
@@ -44,8 +43,6 @@ sx.build({
                 'top': '-' + offsetT + 'px',
                 'left': '-' + offsetL + 'px'
             });
-
-            this.foreground.height(elH);
         }
     }
 });

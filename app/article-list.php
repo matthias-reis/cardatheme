@@ -20,7 +20,7 @@
                 <?php the_excerpt() ?>
             </div>
 
-            <p class="more">mehr</p>
+            <div class="more">mehr</div>
         </div>
     </a>
 </article>

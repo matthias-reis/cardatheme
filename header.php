@@ -5,4 +5,10 @@
 
 <body <?php body_class(); ?>>
 
-<?php get_template_part('app/header') ?>
+<?php
+if(is_home()){
+    get_template_part('app/header-l');
+} else {
+    get_template_part('app/header-s');
+}
+?>

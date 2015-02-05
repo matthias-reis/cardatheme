@@ -1,23 +1,21 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,600|Oswald:700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,600|Kaushan+Script);
 
 
 $color-text: #555;
+$color-text-bright: #fff;
 $color-text-light: lighten($color-text, 25%);
 $color-border: lighten($color-text, 50%);
 
-$color-primary: #57c59a;
-$color-primary-d: darken($color-primary, 20%);
-$color-primary-l: desaturate(lighten($color-primary, 35%), 35%);
+$color-bg: #f4ead5;
+$color-primary: #e94e77;
+$color-primary-d: darken($color-primary, 25%);
+$color-primary-l: #d68189;
+$color-primary-ll: #c6a49a;
 
-$color-secondary: complement($color-primary);
-$color-darker: darken($color-secondary, 40%);
+$color-secondary-l: #c6e5d9;
+$color-secondary: darken($color-secondary-l, 15%);
+$color-secondary-d: darken($color-secondary-l, 30%);
 
-
-$color-background: $color-primary-l;
-$color-bg-head: rgba(0, 0, 0, 0.4);
-$color-text-head: #fff;
-$color-bg-foot: darken($color-primary, 25%);
-$color-text-foot: #fff;
 
 $break-s: 640px;
 $break-m: 800px;
@@ -26,7 +24,7 @@ $break-xl: 1280px;
 $width: 1400px;
 
 $font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-$fontHeadline: 'Oswald', 'Georgia', serif;
+$fontHeadline: 'Kaushan Script', 'Georgia', serif;
 
 $weightLight: 100;
 $weightNormal: 300;
@@ -47,16 +45,17 @@ $size-xxl: 3.5rem;
   }
 }
 
-
 @mixin b {
-  font-weight: 600;
+  font-weight: $weightBold;
 }
-
 
 @mixin n {
-  font-weight: 300;
+  font-weight: $weightNormal;
 }
 
+@mixin l {
+  font-weight: $weightLight;
+}
 
 @mixin shadow($depth: 5px, $strength: 1) {
   box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0, (0.4 * $strength));

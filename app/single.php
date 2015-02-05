@@ -15,4 +15,3 @@
         <h2>Nichts gefunden</h2>
     </section>
 <?php endif; ?>
-</article>
