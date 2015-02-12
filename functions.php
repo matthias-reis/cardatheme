@@ -247,7 +247,7 @@ function c_content_filter($content) {
 
 function c_flickr_gallery($atts)
 {
-    return '</div></section><section class="ribbon ribbon-darker"><div class="row"><div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '"></div><div style="clear:both"></div></section><section class="ribbon ribbon-bright"><div class="row">';
+    return '</div></section><section class="ribbon ribbon-grey"><div class="row"><div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '"></div><div style="clear:both"></div></section><section class="ribbon"><div class="row">';
 }
 
 add_shortcode('myflickr', 'c_flickr_gallery');
@@ -257,3 +257,14 @@ function c_comment($comment, $args, $depth){
     echo 'Kommentar';
 //    print_r($comment);
 }
+
+function c_remove_share()
+{
+    remove_filter('the_content', 'sharing_display', 19);
+    remove_filter('the_excerpt', 'sharing_display', 19);
+    if (class_exists('Jetpack_Likes')) {
+        remove_filter('the_content', array(Jetpack_Likes::init(), 'post_likes'), 30, 1);
+    }
+}
+
+add_action('loop_start', 'c_remove_share');

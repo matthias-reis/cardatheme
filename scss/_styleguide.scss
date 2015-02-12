@@ -2,6 +2,7 @@ a {
   @include link;
 }
 
+
 body {
   font-family: $font;
   font-size: 16px;
@@ -9,78 +10,50 @@ body {
   line-height: 1.4;
 }
 
-@mixin hd() {
-  font-family: $fontHeadline;
-  color: $color-text;
-  line-height: 1.2;
-  a {
-    color: $color-text;
 
-    &:hover {
-      color: $color-primary-d;
-    }
-  }
-}
-
-@mixin hdsmall() {
-  font-family: $font;
-  color: $color-text-light;
-  @include l;
-  line-height: 1.2;
-
-  a {
-    color: $color-text;
-
-    &:hover {
-      color: $color-primary-d;
-    }
-  }
-}
 
 h1 {
+  @include hd;
+  font-size: $size-xxl;
+}
+
+
+h2 {
   @include hd;
   font-size: $size-xl;
 }
 
-h2 {
-  @include hd;
-  font-size: $size-l;
-}
 
 h3 {
   @include hdsmall;
   font-size: $size-l;
 }
 
+
 h4 {
   @include hdsmall;
   font-size: $size-m;
 }
+
 
 h5 {
   @include hdsmall;
   font-size: $size-m;
 }
 
+
 h6 {
   @include hdsmall;
   font-size: $size-m;
 }
 
-.super {
-  @include hdsmall;
-  border-bottom: 1px dotted $color-text;
-  font-size: $size-m;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0;
-}
 
 p {
   font-size: $size-m;
   margin: ($size-m / 4) 0;
   color: $color-text !important;
 }
+
 
 b, strong {
   @include b;
@@ -105,14 +78,37 @@ b, strong {
   &.ribbon-light {
     background: $color-primary-ll;
   }
-  &.ribbon-white {
-    background: #fff;
+  &.ribbon-grey {
+    background: $color-grey;
   }
 }
 
 
 .headline {
   padding: 0 !important;
+  text-align: center;
+
+  .super {
+    font-size: $size-m;
+    color: rgba($color-text-bright, 30%);
+    @include b;
+    text-transform: uppercase;
+    margin: 0 0 2em 0;
+  }
+
+  h1 {
+    margin: 0;
+    @include hd($c: $color-text-bright, $ch: rgba($color-text-bright, 0.3));
+
+    strong {
+      @include b;
+    }
+  }
+
+  h3 {
+    @include hdsmall($c: $color-text-bright, $ch: rgba($color-text-bright, 0.3));
+    margin: 0.3em 0 0 0;
+  }
 
   .inner-headline {
     padding-top: 2em;
@@ -128,17 +124,16 @@ b, strong {
       }
     }
   }
+}
 
+.headline.archive-headline {
   h1 {
-    margin: 0.5em 0 0 0;
-  }
-  h3 {
-    margin: 0.5em 0 0 0;
+    padding: 1em 0;
   }
 }
 
-
 .headline.with-thumbnail {
+  text-align: left;
   .inner-headline {
     hgroup {
       margin-left: 30%;
@@ -186,12 +181,12 @@ b, strong {
 
   &.alignright {
     float: right;
-    margin: 1em -7em 1em 1em;
+    margin: 1em 0 1em 1em;
   }
 
   &.alignleft {
     float: left;
-    margin: 1em 1em  1em -7em;
+    margin: 1em 1em 1em 0;
   }
 
   &.alignnone {
@@ -199,16 +194,6 @@ b, strong {
     margin: 1em auto;
   }
 
-  @media (max-width: $break-xl) {
-    &.alignright {
-      margin: 1em 0 1em 1em;
-    }
-
-    &.alignleft {
-      margin: 1em 1em  1em 0;
-    }
-  }
-
   @media (max-width: $break-m) {
     &.alignright {
       float: none;
@@ -220,15 +205,8 @@ b, strong {
       margin: 1em auto;
     }
   }
-  @media (max-width: $break-m) {
-    img {
-      width: 100% !important;
-      height: auto !important;
-    }
-  }
 
-
-  a{
+  a {
     display: block;
 
     img {
@@ -243,6 +221,7 @@ b, strong {
   }
 
 }
+
 
 iframe {
   margin: 1em auto;

@@ -41,22 +41,28 @@
 
       .text {
         margin: 0.5em;
+        text-align: center;
 
         .super {
-          text-align: center;
           font-size: 0.8em;
-          margin-top: 0.5em;
+          margin-bottom: 2em;
+          text-transform: uppercase;
+          font-weight: bold;
         }
 
         h1 {
-          font-size: $size-l;
-          text-align: center;
+          margin: 0;
+          font-size: $size-xl;
+          font-family: $font;
+          line-height: 0.9;
+          @include l;
         }
 
         h2 {
-          @include hdsmall;
+          font-family: $font;
+          @include b;
+          margin: 0.3em 0 1em 0;
           font-size: $size-m;
-          text-align: center;
         }
 
         .excerpt {
@@ -71,7 +77,7 @@
           text-transform: uppercase;
           color: $color-primary;
           font-size: 0.8em;
-          margin: 0;
+          margin: 1em 0 0 0;
         }
       }
     }

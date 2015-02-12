@@ -1,5 +1,107 @@
-.article-content .row {
-  max-width: $width * 0.7;
-  padding: 2em;
+@import "compass/utilities/general/clearfix";
+
+
+.article-content {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  @include clearfix;
+  overflow: hidden;
+
+  .article-text {
+    width: 61%;
+    float: left;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    @media (max-width: $break-l) {
+      width: 100%;
+      float: none;
+    }
+  }
+  .article-comment {
+    width: 39%;
+    float: right;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    color: $color-text-bright;
+
+    .message {
+      font-size: $size-l;
+      @include b;
+      color: rgba($color-text-bright, 0.5) !important;
+    }
+
+    @media (max-width: $break-l) {
+      width: 100%;
+      float: none;
+    }
+
+    h2 {
+      @include hd;
+      margin-bottom: 0.5em;
+      color: $color-text-bright;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      li {
+        .comment-body {
+          margin-bottom: 0.35em;
+          background: rgba(#fff, 0.4);
+          @include l;
+        }
+      }
+      ul {
+        margin-left: 0.5em;
+      }
+    }
+
+    .comment-author {
+      background: $color-secondary-l;
+      & > * {
+        display: inline-block;
+        height: 32px;
+        line-height: 32px;
+        vertical-align: middle;
+        color: $color-text-light;
+      }
+
+      cite a {
+        @include link($color-text-light, $color-text);
+        font-style: normal;
+        @include b;
+      }
+    }
+
+    .comment-meta {
+      padding: 0.5em;
+      font-size: 0.8em;
+      text-align: right;
+
+      a {
+        @include link($color-text, $color-secondary-d);
+      }
+    }
+
+    p {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+
+    .reply {
+      padding: 0.5em;
+      text-align: right;
+      @include b;
+      text-transform: uppercase;
+    }
+
+  }
+
+  .row {
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 2em;
+  }
 }
 

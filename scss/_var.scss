@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,600|Kaushan+Script);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600|Kaushan+Script);
 
 
 $color-text: #555;
@@ -16,6 +16,7 @@ $color-secondary-l: #c6e5d9;
 $color-secondary: darken($color-secondary-l, 15%);
 $color-secondary-d: darken($color-secondary-l, 30%);
 
+$color-grey: #666;
 
 $break-s: 640px;
 $break-m: 800px;
@@ -26,15 +27,15 @@ $width: 1400px;
 $font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
 $fontHeadline: 'Kaushan Script', 'Georgia', serif;
 
-$weightLight: 100;
-$weightNormal: 300;
+$weightLight: 200;
+$weightNormal: 400;
 $weightBold: 600;
 
 $size-s: 1rem;
 $size-m: 1.25rem;
-$size-l: 1.7rem;
-$size-xl: 2.5rem;
-$size-xxl: 3.5rem;
+$size-l: 1.75rem;
+$size-xl: 3rem;
+$size-xxl: 4rem;
 
 @mixin link($c: $color-primary, $ch: $color-primary-d) {
   color: $c;
@@ -59,4 +60,34 @@ $size-xxl: 3.5rem;
 
 @mixin shadow($depth: 5px, $strength: 1) {
   box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0, (0.4 * $strength));
+}
+
+
+@mixin hd($c: $color-text, $ch: $color-primary-d) {
+  font-family: $font;
+  @include l;
+  color: $c;
+  line-height: 1.0;
+  a {
+    color: $c;
+
+    &:hover {
+      color: $ch;
+    }
+  }
+}
+
+
+@mixin hdsmall($c: $color-text, $ch: $color-primary-d) {
+  font-family: $font;
+  @include b;
+  line-height: 1.2;
+  color: $c;
+  a {
+    color: $c;
+
+    &:hover {
+      color: $ch;
+    }
+  }
 }

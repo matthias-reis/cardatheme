@@ -1,10 +1,13 @@
-<div class="comments" id="comments">
-    <p>Kommentare: <?php comments_number()?></p>
+<div class="share">
+
+</div>
+<div class="comments">
+    <h2>Diskutiere doch einfach mit</h2>
+    <p class="message"><?php comments_number('Derzeit ist noch kein Kommentar vorhanden', 'Ein Kommentar ist bereits vorhanden', '% Kommentare zu diesem Thema')?></p>
     <?php if (post_password_required()) : ?>
         <p class="message">Dieser Beitrag ist passwortgeschützt. Geben Sie es bitte ein, wenn Sie Kommentare lesen oder verfassen möchten.</p>
     <?php else: ?>
         <?php if (have_comments()) : ?>
-            <h2><?php comments_number(); ?></h2>
 
             <ul>
                 <?php wp_list_comments(); // Custom callback in functions.php ?>

@@ -12,10 +12,12 @@
   ul {
     height: 100px;
     text-align: center;
-    margin: 0 0 20px 0;
+    margin: 0;
+    padding: 0;
     background: transparent;
 
     li {
+      cursor: pointer;
       display: inline-block;
       width: 80px;
       height: 100px;
@@ -53,8 +55,8 @@
 .sidebar {
   h3 {
     font-size: $size-xl;
-    color: rgba(255, 255, 255, 0.8);
     margin: 0;
+    color: $color-text-bright;
     padding: 2rem 0 0 1rem;
   }
   h4 {
@@ -85,7 +87,6 @@
 
     & > * {
       padding: 0 1em;
-      color: rgba(255, 255, 255, 0.35);
     }
 
     .fb-comments, .fb-comments iframe[style], .fb-comments span {
@@ -95,15 +96,25 @@
 }
 
 .cite {
-  margin-bottom: 0;
+
+  .row {
+    width: 50em;
+    margin: 2em auto;
+
+    & > * {
+      padding: 0;
+    }
+  }
+
   section {
     width: auto;
     float: none;
   }
+
   blockquote {
     font-size: $size-l;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.35);
+    color: $color-text-bright;
     padding-bottom: 2rem;
     margin-bottom: 0;
 
