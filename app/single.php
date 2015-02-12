@@ -1,5 +1,9 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-    <?php if (c_is_type('galerie')): ?>
+    <?php if (is_page()): ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('gallery-article'); ?>>
+            <?php get_template_part('app/article', 'page'); ?>
+        </article>
+    <?php elseif (c_is_type('galerie')): ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('gallery-article'); ?>>
             <?php get_template_part('app/article', 'gallery'); ?>
         </article>

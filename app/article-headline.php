@@ -4,7 +4,13 @@
             <?php the_post_thumbnail('title'); ?>
         <?php endif; ?>
         <hgroup>
-            <h4 class="super"><?php echo ucfirst(c_get_type()) ?> vom <?php the_date() ?></h4>
+            <h4 class="super">
+                <?php
+                    if(!is_page()){
+                        echo ucfirst(c_get_type()) . 'vom' . the_date();
+                    }
+                ?>
+            </h4>
 
             <h1>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
