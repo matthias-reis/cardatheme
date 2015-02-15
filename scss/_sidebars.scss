@@ -9,7 +9,7 @@
     padding: 0;
   }
 
-  ul {
+  & > ul {
     height: 100px;
     text-align: center;
     margin: 0;
@@ -55,24 +55,27 @@
 .sidebar {
   h3 {
     font-size: $size-xl;
+    @include l;
     margin: 0;
     color: $color-text-bright;
     padding: 2rem 0 0 1rem;
   }
   h4 {
-    color: rgba(255, 255, 255, 0.35);
+    @include l;
+    color: rgba(255, 255, 255, 0.5);
     margin: 2rem 0 0,5rem 0;
     font-size: $size-l;
 
     a {
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.5);
       &:hover {
         color: #fff;
       }
     }
   }
   h5 {
-    color: rgba(255, 255, 255, 0.35);
+    @include l;
+    color: rgba(255, 255, 255, 0.5);
     margin-top: 0;
   }
   & > section {
@@ -86,13 +89,83 @@
     }
 
     & > * {
-      padding: 0 1em;
+      padding: 0 1rem;
     }
 
-    .fb-comments, .fb-comments iframe[style], .fb-comments span {
-      width: 100% !important;
+    ul {
+      list-style:none;
+      margin: 0;
+      ul {
+        padding-left: 1rem;
+      }
+    }
+
+    li {
+      color: rgba(255, 255, 255, 0.65);
+
+      a {
+        @include link($color-text-bright, rgba($color-text-bright, 0.65));
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      color: $color-text-bright !important;
+    }
+
+    input[type=text] {
+      box-sizing: border-box;
+      font-size: 1.2rem;
+      background: rgba($color-text-bright, 0.65);
+      border: 1px solid $color-text-bright;
+      padding: 4px !important;
+      border-radius: 5px;
+      color: $color-text;
+      width: 80% !important;
+    }
+
+    input[type=submit] {
+      box-sizing: border-box;
+      padding: 7px;
+      border-radius: 5px;
+      background: $color-primary;
+      border: 0;
+      margin-right: 0;
+      width: 80% !important;
     }
   }
+}
+
+//TWITTER
+.fetched_tweets {
+  .tweets_avatar {
+    width: 80%;
+    background: rgba($color-text-bright, 0.65) !important;
+    .tweet_data {
+      font-family: $font;
+      @include n;
+      color: $color-text;
+      font-size: 1rem;
+    }
+    .times, .tweets-intent-data {
+      font-family: $font;
+      @include l;
+      color: $color-text-light;
+      font-size: 0.8rem;
+      text-align: right;
+      em {
+        font-style: normal;
+      }
+    }
+  }
+}
+
+//FACEBOOK
+.social-sidebar iframe {
+  background: rgba($color-text-bright, 0.65) !important;
+  width: 80% !important;
+  border-radius: 5px;
+  margin: 0 !important
 }
 
 .cite {
