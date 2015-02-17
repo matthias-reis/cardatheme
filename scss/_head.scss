@@ -60,17 +60,6 @@ body > .bg-l {
     display: block;
     position: fixed;
 
-    background-size: 50% auto;
-    @media (min-width: $break-s) {
-      background-size: 40% auto;
-    }
-    @media (min-width: $break-m) {
-      background-size: 30% auto;
-    }
-    @media (min-width: $break-l) {
-      background-size: 20% auto;
-    }
-
     hgroup {
       display: none;
     }
@@ -82,13 +71,13 @@ body > .bg-s {
     display: block;
 
     img {
+      display: block;
       width: 100%;
       @media (max-width: $break-m) {
         width: 120%;
         margin-left: -10%;
       }
       @media (max-width: $break-s) {
-        background-size: 30% auto;
         width: 160%;
         margin-left: -30%;
       }
