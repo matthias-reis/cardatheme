@@ -1,19 +1,15 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php get_template_part('app/article', 'headline'); ?>
 
-    <?php if (has_post_thumbnail()) : ?>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-            <?php the_post_thumbnail(array(700, 100)); ?>
-        </a>
-    <?php endif; ?>
+<section class="article-content gallery-content ribbon">
+    <section class="article-gallery ribbon">
+        <div class="row">
+            <?php the_content(); ?>
+        </div>
+    </section>
+    <section class="article-comment ribbon ribbon-light">
+        <div class="row">
+            <?php comments_template('/app/article-comments.php'); ?>
+        </div>
+    </section>
+</section>
 
-    <h2>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-            <?php the_title(); ?>
-        </a>
-    </h2>
-
-    <div class="article-content">
-        <?php the_content(); ?>
-    </div>
-
-</article>

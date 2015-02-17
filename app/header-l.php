@@ -1,7 +1,7 @@
 <nav class="header-menu">
     <?php c_create_navigation('header-menu'); ?>
 </nav>
-<header class="bg bg-l" typeof="sx:carda.Background" data-size="l">
+<header class="bg bg-l" typeof="sx:carda.Background">
     <a href="/" title="Anne bloggt Cardamonchai ... Homepage">
         <img property="imageEl"
              src="<?php echo get_template_directory_uri();?>/img/bg-l.jpg"

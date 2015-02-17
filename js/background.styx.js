@@ -8,13 +8,13 @@ sx.build({
         init: function () {
             this.el.show();
             this.draw();
+            this.adminBarHeight = $('#wpadminbar').length > 0 ? 32 : 0;
         },
 
         draw: function () {
             var screenW = window.innerWidth,
-                screenH = window.innerHeight,
-                elH = screenH,
-                screenR = screenW/elH,
+                screenH = window.innerHeight - this.adminBarHeight,
+                screenR = screenW/screenH,
                 imageW = this.imageEl.attr('width'),
                 imageH = this.imageEl.attr('height'),
                 imageR = imageW/imageH,
@@ -29,15 +29,15 @@ sx.build({
                 w = screenW;
                 h = screenW / imageR;
                 offsetL = 0;
-                offsetT = parseInt((h - elH) / 2);
+                offsetT = parseInt((h - screenH) / 2);
             } else {
-                h = elH;
-                w = elH * imageR;
+                h = screenH;
+                w = screenH * imageR;
                 offsetT = 0;
                 offsetL = parseInt((w - screenW) / 2);
             }
 
-            this.el.width(screenW).height(elH);
+            this.el.width(screenW).height(screenH);
             this.imageEl.width(w).height(h).css({
                 'position': 'relative',
                 'top': '-' + offsetT + 'px',

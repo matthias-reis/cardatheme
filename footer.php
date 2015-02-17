@@ -1,4 +1,6 @@
-
+<?php
+    wp_footer();
+?>
 <div class="footer-wrapper">
     <?php get_template_part('app/footer') ?>
 </div>

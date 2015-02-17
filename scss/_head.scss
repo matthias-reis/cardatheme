@@ -7,6 +7,11 @@
   height: 45px;
   text-align: center;
   width: 100%;
+
+  .admin-bar & {
+    top: 32px;
+  }
+
   ul {
     margin: 0;
   }
@@ -51,15 +56,9 @@
 
 
 body > .bg-l {
-  position: relative;
-  z-index: 2;
   a{
     display: block;
-    height: 1000px;
-
-    img {
-      position: fixed;
-    }
+    position: fixed;
 
     background-size: 50% auto;
     @media (min-width: $break-s) {

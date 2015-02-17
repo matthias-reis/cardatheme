@@ -155,8 +155,9 @@ function c_get_type()
     $post = & get_post($post->ID);
     $terms = get_the_terms($post->ID, 'type');
     if ($terms) {
-        $term = $terms[0];
-        return $term->slug;
+        foreach($terms as $term) {
+            return $term->slug;
+        }
     } else {
         return 'Beitrag';
     }
@@ -247,7 +248,7 @@ function c_content_filter($content) {
 
 function c_flickr_gallery($atts)
 {
-    return '</div></section><section class="ribbon ribbon-grey"><div class="row"><div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '"></div><div style="clear:both"></div></section><section class="ribbon"><div class="row">';
+    return '</div></section><section class="ribbon ribbon-grey gallery-ribbon"><div class="row"><div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '"></div><div style="clear:both"></div></section><section class="ribbon"><div class="row">';
 }
 
 add_shortcode('myflickr', 'c_flickr_gallery');

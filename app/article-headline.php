@@ -5,11 +5,9 @@
         <?php endif; ?>
         <hgroup>
             <h4 class="super">
-                <?php
-                    if(!is_page()){
-                        echo ucfirst(c_get_type()) . 'vom' . the_date();
-                    }
-                ?>
+                <?php if(!is_page()): ?>
+                    <?php echo ucfirst(c_get_type());?> vom <?php the_date();?>
+                <?php endif; ?>
             </h4>
 
             <h1>

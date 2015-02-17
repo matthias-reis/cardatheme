@@ -9,13 +9,12 @@ sx.build({
 
             $(window).on('incoming-flickr-data', $.proxy(this.onResponse, this));
 
-//            Schlüssel:
-//                09cf08983f8f2c5e24f90d9fd616af24
-//
-//            Geheimer
-//            Schlüssel:
-//                499f4c458bf1fb8e
-            var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=09cf08983f8f2c5e24f90d9fd616af24&user_id=99929697%40N07&tags=' + this.tag + '&format=json';
+            // Schlüssel: 09cf08983f8f2c5e24f90d9fd616af24
+            // Geheimer Schlüssel: 499f4c458bf1fb8e
+
+            var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=09cf08983f8f2c5e24f90d9fd616af24&user_id=99929697%40N07&tags=' +
+                this.tag +
+                '&format=json';
             $.get(url);
         },
 
@@ -25,25 +24,35 @@ sx.build({
             });
             var self = this;
 
+
             for(var i in urls) {
                 if(typeof urls[i] === 'string' && urls.hasOwnProperty(i)) {
                     var url = urls[i];
-                    var imgEl = $('<img src="' + url + '_n.jpg">').data('large', url + '_b.jpg').click(function (ev) {
-                        self.enlarge($(ev.currentTarget).data('large'));
-                    });
-                    var innerEl = $('<div class="inner-image"/>').append(imgEl);
+                    var imgEl = $('<img src="' + url + '_n.jpg">').
+                        load(function () {
+                            if(self.el.isotope) {
+                                self.el.isotope('layout');
+                            }
+                        });
+                    var aEl = $('<a href="' + url + '_b.jpg">').
+                        append(imgEl).
+                        data('fancybox-group', 'gallery').
+                        fancybox({
+                            openEffect: 'elastic',
+                            openSpeed: 250,
+                            openEasing: 'swing',
+                            margin: [50, 50, 50, 50]
+                        });
+                    var innerEl = $('<div class="inner-image"/>').append(aEl);
                     var outerEl = $('<div class="outer-image"/>').append(innerEl);
                     this.el.append(outerEl);
                 }
             }
-        },
-        enlarge: function(url) {
-            console.log(url);
-            var enlargedEl = $('<img src="' + url + '">').css({'position': 'fixed','top': '0','left': '0', 'z-index': 10000});
-            enlargedEl.click(function () {
-               enlargedEl.remove();
-            });
-            $('body').append(enlargedEl);
+
+            this.el.isotope({
+                itemSelector: '.outer-image',
+                layoutMode: 'masonry'
+            }).isotope('layout');
         }
 
     }

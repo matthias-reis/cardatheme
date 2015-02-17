@@ -22,14 +22,20 @@
       width: 80px;
       height: 100px;
       line-height: 1;
-      margin: 15px 10px;
-      padding-top: 60px;
+      margin: 0 10px;
+      padding-top: 50px;
       background: transparent;
       color: #fff;
       text-align: center;
       overflow: hidden;
       text-indent: -500px;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      background-size: 60% !important;
+      @media (max-width: $break-m - 1) {
+        background-size: 45% !important;
+        padding-top: 40px;
+        margin: 0 5px;
+      }
 
       &:hover {
         text-indent: 0;

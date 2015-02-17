@@ -11,7 +11,6 @@ body {
 }
 
 
-
 h1 {
   @include hd;
   font-size: $size-xxl;
@@ -81,6 +80,16 @@ b, strong {
   &.ribbon-grey {
     background: $color-grey;
   }
+}
+
+.gallery-content .ribbon {
+  color: $color-text-bright;
+  background: $color-grey;
+}
+
+
+.gallery-content .ribbon-light {
+  background: $color-primary-ll;
 }
 
 
