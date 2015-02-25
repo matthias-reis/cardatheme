@@ -93,7 +93,6 @@ function c_create_sidebars()
             'after_title' => '</h4>',
         )
     );
-
     register_sidebar(
         array(
             'name' => 'Widgets im Footer',
@@ -155,7 +154,7 @@ function c_get_type()
     $post = & get_post($post->ID);
     $terms = get_the_terms($post->ID, 'type');
     if ($terms) {
-        foreach($terms as $term) {
+        foreach ($terms as $term) {
             return $term->slug;
         }
     } else {
@@ -215,33 +214,34 @@ function c_excerpt($manualExcerpt)
 
 function c_get_splitted_content($rawContent = null)
 {
-    if($rawContent === null) {
+    if ($rawContent === null) {
         $rawContent = get_the_content('');
     }
-
     $matches = array();
     $hasMatch = preg_match('/^\w*<h2[^>]*>(.+)<\/h2>/', $rawContent, $matches) === 1;
     $headline = $hasMatch ? $matches[1] : '';
     $content = preg_replace('/^<h2.+<\/h2>/', '', $rawContent);
-
     return array(
         'headline' => $headline,
         'content' => $content,
     );
 }
 
-function c_has_subhead(){
+function c_has_subhead()
+{
     $content = c_get_splitted_content();
     echo $content['headline'] !== '';
 }
 
-function c_the_subhead(){
+function c_the_subhead()
+{
     $content = c_get_splitted_content();
     echo $content['headline'];
 }
 
 add_filter('the_content', 'c_content_filter');
-function c_content_filter($content) {
+function c_content_filter($content)
+{
     $content = c_get_splitted_content($content);
     return $content['content'];
 }
@@ -252,9 +252,8 @@ function c_flickr_gallery($atts)
 }
 
 add_shortcode('myflickr', 'c_flickr_gallery');
-
-
-function c_comment($comment, $args, $depth){
+function c_comment($comment, $args, $depth)
+{
     echo 'Kommentar';
 //    print_r($comment);
 }
@@ -267,5 +266,27 @@ function c_remove_share()
         remove_filter('the_content', array(Jetpack_Likes::init(), 'post_likes'), 30, 1);
     }
 }
-
 add_action('loop_start', 'c_remove_share');
+
+function c_render_infinite_scroll()
+{
+    while (have_posts()) {
+        the_post();
+        get_template_part('app/article-list');
+    }
+}
+
+//Unendliches Scrollen
+function c_init_infinite_scroll()
+{
+    add_theme_support(
+        'infinite-scroll',
+        array(
+            'container' => 'infinite-scroll-container',
+            'type' => 'click',
+            'wrapper' => false,
+            'render' => 'c_render_infinite_scroll'
+        )
+    );
+}
+add_action('after_setup_theme', 'c_init_infinite_scroll');

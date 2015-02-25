@@ -6,11 +6,12 @@ $color-text-bright: #fff;
 $color-text-light: lighten($color-text, 25%);
 $color-border: lighten($color-text, 50%);
 
-$color-bg: #f4ead5;
+$color-bg: lighten(#f4ead5, 5%);
 $color-primary: #e94e77;
 $color-primary-d: darken($color-primary, 25%);
 $color-primary-l: #d68189;
-$color-primary-ll: #c6a49a;
+//$color-primary-ll: #c6a49a;
+$color-primary-ll: desaturate(lighten(#e94e77, 10%), 70%);
 
 $color-secondary-l: #c6e5d9;
 $color-secondary: darken($color-secondary-l, 15%);

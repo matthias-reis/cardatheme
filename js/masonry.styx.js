@@ -15,6 +15,8 @@ sx.build({
             sx.utils.delay('isotope', function () {
                 self.el.isotope('layout');
             }, 200);
+
+
         }
     }
 });

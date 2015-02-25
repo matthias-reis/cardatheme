@@ -83,3 +83,23 @@
     }
   }
 }
+
+
+#infinite-handle {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+
+  span {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 600px;
+    background: $color-grey;
+    color: $color-text-light;
+    border-radius: 3px;
+  }
+}

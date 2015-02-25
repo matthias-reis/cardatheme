@@ -49,7 +49,7 @@ h6 {
 
 p {
   font-size: $size-m;
-  margin: ($size-m / 4) 0;
+  margin: ($size-m) 0;
   color: $color-text !important;
 }
 
@@ -152,6 +152,8 @@ b, strong {
       width: 30%;
       height: auto;
       float: left;
+      margin-top: -2em;
+      margin-bottom: -2em;
     }
 
     @media (max-width: $break-l) {
@@ -184,36 +186,14 @@ b, strong {
 .wp-caption {
   clear: both;
   max-width: 80%;
-  padding: 1em;
-  border: 1px solid $color-border;
-  background: #f4f4f4;
-
-  &.alignright {
-    float: right;
-    margin: 1em 0 1em 1em;
-  }
-
-  &.alignleft {
-    float: left;
-    margin: 1em 1em 1em 0;
-  }
+  padding: 0;
 
   &.alignnone {
     float: none;
-    margin: 1em auto;
+    margin: 1em 0;
   }
 
-  @media (max-width: $break-m) {
-    &.alignright {
-      float: none;
-      margin: 1em auto;
-    }
 
-    &.alignleft {
-      float: none;
-      margin: 1em auto;
-    }
-  }
 
   a {
     display: block;
@@ -229,6 +209,46 @@ b, strong {
     font-style: italic;
   }
 
+}
+
+
+.alignright {
+  float: right;
+  margin: 1em 0 1em 1em;
+}
+
+.alignleft {
+  float: left;
+  margin: 1em 1em 1em 0;
+}
+
+.aligncenter {
+  float: none;
+  margin: 1em auto;
+}
+
+.aligncenter {
+  float: none;
+  margin: 1em auto;
+}
+
+
+@media (max-width: $break-m) {
+  .alignright {
+    float: none;
+    margin: 1em auto;
+  }
+
+  .alignleft {
+    float: none;
+    margin: 1em auto;
+  }
+}
+
+blockquote {
+  border-left: 8px solid $color-border;
+  padding: 0 0 0 10px;
+  margin-left: 0;
 }
 
 
