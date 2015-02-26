@@ -16,7 +16,9 @@ sx.build({
                 self.el.isotope('layout');
             }, 200);
 
-
+            $('body').on('articles-loaded', function (ev, data) {
+                self.el.isotope('appended', data);
+            });
         }
     }
 });

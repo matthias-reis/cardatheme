@@ -1,4 +1,6 @@
 .article-list {
+  padding-bottom: 80px;
+
   article {
     width: 100%;
     @media (min-width: $break-s) {
@@ -85,21 +87,36 @@
 }
 
 
-#infinite-handle {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
+#article-nav {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
 
-  span {
+  div {
+    text-align: center;
     display: block;
     margin: 0 auto;
-    padding: 10px;
     max-width: 600px;
-    background: $color-grey;
-    color: $color-text-light;
-    border-radius: 3px;
+    background: rgba($color-primary, 0.4);
+    border: 1px solid $color-primary;
+    color: $color-text-bright;
+    border-radius: 6px;
+
+    a, a:hover {
+      padding: 10px;
+      color: $color-text-bright;
+      display: block;
+    }
+
+    &:hover {
+      background: rgba($color-primary, 0.6);
+    }
   }
+}
+
+#infscr-loading {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
