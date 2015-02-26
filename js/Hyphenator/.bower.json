@@ -1,0 +1,20 @@
+{
+  "name": "Hyphenator",
+  "version": "4.3.0",
+  "main": "Hyphenator.js",
+  "ignore": [
+    "testsuite",
+    "favicon.ico",
+    "Hyphenator_observable.js"
+  ],
+  "_release": "4.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "4.3.0",
+    "commit": "1328"
+  },
+  "_source": "http://hyphenator.googlecode.com/svn",
+  "_target": "~4.3.0",
+  "_originalSource": "svn+http://hyphenator.googlecode.com/svn/",
+  "_direct": true
+}
