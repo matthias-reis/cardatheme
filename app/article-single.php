@@ -2,7 +2,7 @@
 
 <section class="article-content ribbon">
     <section class="article-text ribbon">
-        <div class="row">
+        <div class="row hyphenate">
             <?php the_content(); ?>
         </div>
     </section>

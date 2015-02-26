@@ -2,7 +2,7 @@
 
 <section class="article-content gallery-content ribbon">
     <section class="article-gallery ribbon">
-        <div class="row">
+        <div class="row hyphenate">
             <?php the_content(); ?>
         </div>
     </section>

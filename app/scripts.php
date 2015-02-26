@@ -6,7 +6,15 @@
 <script src="<?php echo get_template_directory_uri() ?>/js/masonry.styx.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/js/flickr.styx.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/js/sidebar.styx.js"></script>
-
+<script src="<?php echo get_template_directory_uri() ?>/js/Hyphenator/Hyphenator.js"></script>
+<script type="text/javascript">
+    Hyphenator.config({
+        displaytogglebox: false,
+        intermediatestate: 'visible',
+        useCSS3hyphenation: true
+    });
+    Hyphenator.run();
+</script>
 <script>
     jQuery(function () {
         sx.nsp('cardatheme');
