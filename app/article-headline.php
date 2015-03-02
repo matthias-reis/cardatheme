@@ -15,10 +15,6 @@
                     <?php the_title(); ?>
                 </a>
             </h1>
-
-            <h3>
-                <?php c_the_subhead(); ?>
-            </h3>
         </hgroup>
         <div style="clear:both"></div>
     </div>

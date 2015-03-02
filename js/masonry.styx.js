@@ -13,13 +13,13 @@ sx.build({
                 layoutMode: 'masonry'
             }).isotope('layout');
 
-            this.relayout(3);
+            this.relayout(6);
 
             $('body').on('articles-loaded', function (ev, data) {
                 self.el.isotope('appended', data);
                 Hyphenator.run();
                 self.count = 0;
-                self.relayout(3);
+                self.relayout(6);
             });
         },
 

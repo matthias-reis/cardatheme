@@ -85,6 +85,16 @@ function c_create_sidebars()
     );
     register_sidebar(
         array(
+            'name' => 'Pinwand',
+            'id' => 'pinboard_widgets',
+            'before_widget' => '<section>',
+            'after_widget' => '</section>',
+            'before_title' => '<h5>',
+            'after_title' => '</h5>',
+        )
+    );
+    register_sidebar(
+        array(
             'name' => 'Zitatbereich',
             'id' => 'cite_widgets',
             'before_widget' => '<section>',
@@ -165,7 +175,7 @@ function c_get_type()
 
 function c_print_random_color()
 {
-    $colors = array('e94e77', 'd68189', '5db593', 'c6a49a', '91cdb6');
+    $colors = array('a94f5c', 'd08b95', '7accb8', '8fa39e');
     $index = intval(floor(rand(0, count($colors) - 0.1)));
     echo $colors[$index];
 }
@@ -182,7 +192,7 @@ function c_excerpt($manualExcerpt)
     $matches = array();
     $hasMatch = preg_match('/^<h2[^>]*>(.+)<\/h2>/', $rawContent, $matches) === 1;
     if ($hasMatch) {
-        $excerpt .= '<h2>' . $matches[1] . '</h2>';
+        $excerpt .= '<h2>' . strip_tags($matches[1]) . '</h2>';
     }
     if ($manualExcerpt !== '') {
         $excerpt .= '<div>' . $manualExcerpt . '</div>';
@@ -207,7 +217,7 @@ function c_excerpt($manualExcerpt)
             $i++;
             $output .= $token;
         }
-        $excerpt .= '<div>' . $output . '&nbsp;&nbsp;&nbsp;&nbsp;[&hellip;]</div>';
+        $excerpt .= '<div>' . $output . '&nbsp;&nbsp;&nbsp;&hellip;</div>';
     }
     return $excerpt;
 }

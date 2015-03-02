@@ -3,14 +3,14 @@
   background: transparent !important;
   position: relative;
   z-index: 3;
-  margin-top: -104px;
+  margin-top: -64px;
 
   .ribbon {
     padding: 0;
   }
 
   & > ul {
-    height: 100px;
+    height: 60px;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -19,39 +19,24 @@
     li {
       cursor: pointer;
       display: inline-block;
+      vertical-align: top;
       width: 80px;
-      height: 100px;
-      line-height: 1;
+      padding: 5px;
+      line-height: 17px;
       margin: 0 10px;
-      padding-top: 50px;
-      background: transparent;
-      color: #fff;
+      background: rgba($color-secondary, 0.4);
+      color: $color-text-bright;
       text-align: center;
       overflow: hidden;
-      text-indent: -500px;
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-      background-size: 60% !important;
-      @media (max-width: $break-m - 1) {
-        background-size: 45% !important;
-        padding-top: 40px;
-        margin: 0 5px;
-      }
 
       &:hover {
-        text-indent: 0;
-      }
-      b {
-        display: block;
+        background: rgba($color-secondary, 0.6);
       }
 
-      &.social-icon {
-        background: transparent url(../img/social-icon.png) 50% 0 no-repeat;
-      }
-      &.nav-icon {
-        background: transparent url(../img/nav-icon.png) 50% 0 no-repeat;
-      }
-      &.links-icon {
-        background: transparent url(../img/link-icon.png) 50% 0 no-repeat;
+      &.active {
+        padding-bottom: 25px;
+        background: $color-primary-m;
+        color: #fff;
       }
     }
   }
@@ -82,7 +67,7 @@
   h5 {
     @include l;
     color: rgba(255, 255, 255, 0.5);
-    margin-top: 0;
+    margin: 1em 0 0.2em 0;
   }
   & > section {
     width: 25%;
@@ -134,7 +119,7 @@
       box-sizing: border-box;
       padding: 7px;
       border-radius: 5px;
-      background: $color-primary;
+      background: $color-secondary;
       border: 0;
       margin-right: 0;
       width: 80% !important;
@@ -191,6 +176,7 @@
   }
 
   blockquote {
+    border: 0;
     font-size: $size-l;
     font-style: italic;
     color: $color-text-bright;

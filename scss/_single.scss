@@ -64,11 +64,11 @@
         height: 32px;
         line-height: 32px;
         vertical-align: middle;
-        color: $color-text-light;
+        color: $color-text-bright;
       }
 
       cite a {
-        @include link($color-text-light, $color-text);
+        @include link($color-text-bright, $color-secondary);
         font-style: normal;
         @include b;
       }
@@ -80,7 +80,7 @@
       text-align: right;
 
       a {
-        @include link($color-text, $color-secondary-d);
+        @include link($color-text, $color-secondary);
       }
     }
 

@@ -34,7 +34,6 @@ h4 {
   font-size: $size-m;
 }
 
-
 h5 {
   @include hdsmall;
   font-size: $size-m;
@@ -63,18 +62,21 @@ b, strong {
   background: $color-bg;
 
   &.ribbon-dark {
-    background: $color-primary-d;
+    background: $color-primary;
   }
   &.ribbon-secondary {
-    background: $color-secondary-d;
+    background: $color-secondary;
   }
   &.ribbon-main {
     background: $color-primary;
   }
   &.ribbon-medium {
-    background: $color-primary-l;
+    background: $color-primary-m;
   }
   &.ribbon-light {
+    background: $color-primary-l;
+  }
+  &.ribbon-bright {
     background: $color-primary-ll;
   }
   &.ribbon-grey {
@@ -254,8 +256,6 @@ blockquote {
 
 iframe {
   margin: 1em auto;
-  @media (max-width: $break-m) {
-    max-width: 100% !important;
-  }
+  max-width: 100% !important;
 }
 

@@ -6,18 +6,17 @@ $color-text-bright: #fff;
 $color-text-light: lighten($color-text, 25%);
 $color-border: lighten($color-text, 50%);
 
-$color-bg: lighten(#f4ead5, 5%);
-$color-primary: #e94e77;
-$color-primary-d: darken($color-primary, 25%);
-$color-primary-l: #d68189;
-//$color-primary-ll: #c6a49a;
-$color-primary-ll: desaturate(lighten(#e94e77, 10%), 70%);
+$color-bg: hsl(165, 5, 90);
+$color-primary: hsl(165, 4, 40);
+$color-primary-m: hsl(165, 5, 55);
+$color-primary-l: hsl(165, 7, 70);
+$color-primary-ll: hsl(165, 9, 85);
+$color-primary-h: hsl(165, 40, 80);
 
-$color-secondary-l: #c6e5d9;
-$color-secondary: darken($color-secondary-l, 15%);
-$color-secondary-d: darken($color-secondary-l, 30%);
+$color-secondary: #a94f5c;
+$color-secondary-l: #d08b95;
 
-$color-grey: #666;
+$color-grey: #777;
 
 $break-s: 640px;
 $break-m: 800px;
@@ -38,7 +37,7 @@ $size-l: 1.75rem;
 $size-xl: 2.5rem;
 $size-xxl: 4rem;
 
-@mixin link($c: $color-primary, $ch: $color-primary-d) {
+@mixin link($c: $color-secondary, $ch: $color-primary) {
   color: $c;
   text-decoration: none;
 
@@ -64,31 +63,32 @@ $size-xxl: 4rem;
 }
 
 
-@mixin hd($c: $color-text, $ch: $color-primary-d) {
+@mixin hd($c: $color-text, $ch: $color-secondary) {
   font-family: $font;
   @include l;
-  color: $c;
+  color: $c !important;
   line-height: 1.0;
-  a {
-    color: $c;
+
+  a, span {
+    color: $c !important;
 
     &:hover {
-      color: $ch;
+      color: $ch !important;
     }
   }
 }
 
 
-@mixin hdsmall($c: $color-text, $ch: $color-primary-d) {
+@mixin hdsmall($c: $color-text, $ch: $color-secondary) {
   font-family: $font;
   @include b;
   line-height: 1.2;
-  color: $c;
-  a {
-    color: $c;
+  color: $c !important;
+  a, span {
+    color: $c !important;
 
     &:hover {
-      color: $ch;
+      color: $ch !important;
     }
   }
 }
