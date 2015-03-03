@@ -41,6 +41,7 @@ sx.build({
                             openEffect: 'elastic',
                             openSpeed: 250,
                             openEasing: 'swing',
+                            hideOnContentClick: true,
                             margin: [50, 50, 50, 50]
                         });
                     var innerEl = $('<div class="inner-image"/>').append(aEl);

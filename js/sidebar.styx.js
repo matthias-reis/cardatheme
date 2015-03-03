@@ -8,6 +8,11 @@ sx.build({
         init: function () {
             this.el.click($.proxy(this.onClick, this));
             this.els = this.el.parent().children();
+            $('body').on('contextmenu', function(ev) {
+                if($(ev.target).is('img')) {
+                    ev.preventDefault();
+                }
+            });
         },
 
         onClick: function (ev) {

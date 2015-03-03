@@ -259,7 +259,16 @@ function c_content_filter($content)
 
 function c_flickr_gallery($atts)
 {
-    return '</div></section><section class="ribbon ribbon-grey gallery-ribbon"><div class="row"><div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '"></div><div style="clear:both"></div></section><section class="ribbon"><div class="row">';
+    return '</div>
+        <section class="ribbon ribbon-grey gallery-ribbon">
+            <div class="row">
+                <div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '">
+                </div>
+                <div style="clear:both">
+                </div>
+            </div>
+            </section>
+            <div class="row hyphenate">';
 }
 
 add_shortcode('myflickr', 'c_flickr_gallery');

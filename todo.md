@@ -17,9 +17,6 @@ ins Theme übertragen
 - Bilder
 Mittlere Größe fehlt
 
-- Beitragsbild
-richtig formatieren
-
 - Galerien
 Liegen über dem Text
 Popup soll nicht rechtsklickbar sein (download verhindern)
