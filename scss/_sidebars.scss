@@ -21,6 +21,7 @@
       display: inline-block;
       vertical-align: top;
       width: 80px;
+      height: 34px;
       padding: 5px;
       line-height: 17px;
       margin: 0 10px;
@@ -37,6 +38,15 @@
         padding-bottom: 25px;
         background: $color-primary-m;
         color: #fff;
+      }
+
+      &.search-icon {
+        background-image: url(../img/search-icon.png);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        width: 44px;
+        text-indent: -9999px;
+        overflow: hidden;
       }
     }
   }
@@ -187,6 +197,48 @@
       display: block;
       font-size: $size-m;
       text-align: right;
+    }
+  }
+}
+
+.search-sidebar {
+  form{
+    padding: 30px 10px;
+    div {
+      text-align: center;
+    }
+
+    label {
+      color: $color-text-bright;
+      @include l;
+      display: inline-block;
+      @media (max-width: $break-s) {
+        display: none;
+      }
+    }
+
+    input {
+      display: inline-block;
+      &[type=text] {
+        width: 60%;
+        max-width: 500px;
+        background: rgba($color-text-bright, .5);
+        border: 1px solid $color-text-bright;
+        margin: 0 5px;
+        padding: 5px;
+      }
+      &[type=submit] {
+        width: 34px;
+        height: 34px;
+        border: 0;
+        background: transparent url(../img/search-icon.png) 50% 50% no-repeat;
+        text-indent: -9999px;
+        overflow: hidden;
+        &:hover {
+          background-color: $color-secondary;
+          border-radius: 2px;
+        }
+      }
     }
   }
 }

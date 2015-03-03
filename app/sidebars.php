@@ -1,5 +1,7 @@
 <aside class="sidebars">
     <ul>
+        <li class="search-icon <?php if(get_search_query() != '') {echo 'active';}?>" typeof="sx:carda.Sidebar" data-target="$('.sidebars .search-sidebar')" data-sidebars="$('.sidebars .sidebar')">
+            Suche</li>
         <li class="social-icon" typeof="sx:carda.Sidebar" data-target="$('.sidebars .social-sidebar')" data-sidebars="$('.sidebars .sidebar')">
             Soziale Netzwerke</li>
         <li class="nav-icon" typeof="sx:carda.Sidebar" data-target="$('.sidebars .nav-sidebar')" data-sidebars="$('.sidebars .sidebar')">
@@ -9,6 +11,10 @@
     </ul>
 
     <div class="ribbon ribbon-medium">
+        <section class="sidebar search-sidebar <?php if (get_search_query() == '') {echo 'initial-hide';} ?> row">
+            <?php get_search_form(true); ?>
+        </section>
+
         <section class="sidebar social-sidebar initial-hide row">
             <h3>Soziale Netzwerke</h3>
             <?php if (is_active_sidebar('social_widgets')) : ?>
