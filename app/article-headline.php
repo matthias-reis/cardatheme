@@ -1,7 +1,7 @@
 <header class="ribbon ribbon-main headline<?php if (has_post_thumbnail()) : ?> with-thumbnail<?php endif; ?>">
     <div class="row inner-headline">
         <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail('title'); ?>
+            <?php the_post_thumbnail(); ?>
         <?php endif; ?>
         <hgroup>
             <h4 class="super">

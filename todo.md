@@ -8,11 +8,22 @@ Suchschlitz einbauen
 Für memes
 Für Icon
 
+- Textformate
+OL und UL
+
 - Galerietypen
 ins Theme übertragen
 
-- Ladeanzeige
-Andere Grafik
+- Bilder
+Mittlere Größe fehlt
+
+- Beitragsbild
+richtig formatieren
+
+- Galerien
+Liegen über dem Text
+Popup soll nicht rechtsklickbar sein (download verhindern)
+
 
 - Social-Media Sidebar
 __Community__ ergänzen
