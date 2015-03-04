@@ -1,15 +1,9 @@
 TODOs
 =====
 
-- Suche
-Suchschlitz einbauen
-
 - Logo
 Für memes
 Für Icon
-
-- Textformate
-OL und UL
 
 - Galerietypen
 ins Theme übertragen
@@ -30,6 +24,10 @@ __Guests__ mit Counter ergänzen
 Cardaguests -> Gäste (Zahl)
 Community -> Leser (Wordpress Abonnenten)
 
+
+- - -
+
+
 - Anmeldung
 Der Blog muss den alten Blog ersetzen. Abonnenten müssen __übernommen__ werden.
 Geht von der wp.com Seite aus
@@ -44,6 +42,10 @@ Außerdem muss der Blog auf Von Google __indizierbar__ gestellt werden
 
 - Google Analytics
 __Google Webmastertools__ anbinden
+
+
+- - -
+
 
 - Highlight Artikel
 Oben im Header auf der rechten Seite leicht transparent

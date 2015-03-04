@@ -26,7 +26,9 @@
       line-height: 17px;
       margin: 0 10px;
       background: rgba($color-secondary, 0.4);
-      color: $color-text-bright;
+      color: $color-text-bright !important;
+      font-size: $size-s;
+      @include l;
       text-align: center;
       overflow: hidden;
 
@@ -169,8 +171,15 @@
   margin: 0 !important
 }
 
-.cite {
+//INSTAGRAM
+.easy-instagram-container {
+  .easy-instagram-thumbnail-wrapper {
+    text-align: left;
+    color: $color-text-bright;
+  }
+}
 
+.cite {
   .row {
     width: 50em;
     margin: 2em auto;
@@ -241,4 +250,27 @@
       }
     }
   }
+}
+
+.more-social {
+  padding-top: 90px;
+  li a{
+    display: block;
+    height: 40px;
+    border-radius: 20px;
+    line-height: 40px;
+    padding-left: 45px;
+    @include l;
+    background: transparent url(../img/social.png) 0 0 no-repeat;
+    &:hover {background-color: rgba($color-primary-h, 0.5);}
+    &.pinterest {background-position: 0 -40px;}
+    &.flattr {background-position: 0 -120px;}
+    &.flickr {background-position: 0 0-160px}
+    &.lastfm {background-position: 0 -200px;}
+    &.tumblr {background-position: 0 0;}
+    &.google {background-position: 0 -240px;}
+    &.bloglovin {background-position: 0 -80px;}
+    &.visits {background-position: 0 -280px;}
+  }
+
 }

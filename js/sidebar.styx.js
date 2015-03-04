@@ -8,6 +8,13 @@ sx.build({
         init: function () {
             this.el.click($.proxy(this.onClick, this));
             this.els = this.el.parent().children();
+            this.sectionEl = this.el.parent().parent();
+
+            if(!this.sectionEl.data('layouted') === true) {
+                var sectionEls = this.sidebars.eq(1).find('section');
+                sectionEls.eq(2).wrap('<section/>').append(sectionEls.eq(3));
+                this.sectionEl.data('layouted', true);
+            }
             $('body').on('contextmenu', function(ev) {
                 if($(ev.target).is('img')) {
                     ev.preventDefault();

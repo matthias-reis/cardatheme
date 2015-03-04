@@ -52,6 +52,15 @@ p {
   color: $color-text !important;
 }
 
+li {
+  color: $color-text !important;
+  font-size: $size-m;
+  margin: ($size-m / 2) 0;
+  p {
+    margin: 0;
+  }
+}
+
 
 b, strong {
   @include b;
