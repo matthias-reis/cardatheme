@@ -32,6 +32,7 @@ sx.build({
                         load(function () {
                             if(self.el.isotope) {
                                 self.el.isotope('layout');
+                                self.relayout(1);
                             }
                         });
                     var aEl = $('<a href="' + url + '_b.jpg">').
@@ -54,6 +55,19 @@ sx.build({
                 itemSelector: '.outer-image',
                 layoutMode: 'masonry'
             }).isotope('layout');
+        },
+
+        relayout: function (runs) {
+            var self = this;
+            sx.utils.delay('isotope', function () {
+                console.log('relayout ' + self.count);
+                if (self.count < runs) {
+                    self.count++;
+                    self.el.isotope('layout');
+                    self.relayout(runs);
+                }
+            }, 500);
+
         }
 
     }

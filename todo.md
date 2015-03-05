@@ -1,28 +1,12 @@
 TODOs
 =====
 
-- Logo
-Für memes
-Für Icon
-
 - Galerietypen
 ins Theme übertragen
 
-- Social-Media Sidebar
-__Community__ ergänzen
-Weitere Spalte mit Links einfügen
-__Tumblr__
-__Pinterest__
-__Bloglovin__
-__Flattr__
-__Flickr__
-__Last.fm__
-__Google+__
-__Guests__ mit Counter ergänzen
 
-- Umbenennen Bannerbereich:
-Cardaguests -> Gäste (Zahl)
-Community -> Leser (Wordpress Abonnenten)
+- Community
+Leser (Wordpress Abonnenten)
 
 
 - - -

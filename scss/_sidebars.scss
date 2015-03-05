@@ -25,7 +25,7 @@
       padding: 5px;
       line-height: 17px;
       margin: 0 10px;
-      background: rgba($color-secondary, 0.4);
+      background: rgba($color-secondary, 0.6);
       color: $color-text-bright !important;
       font-size: $size-s;
       @include l;
@@ -33,7 +33,7 @@
       overflow: hidden;
 
       &:hover {
-        background: rgba($color-secondary, 0.6);
+        background: rgba($color-secondary, 0.75);
       }
 
       &.active {
@@ -51,6 +51,17 @@
         overflow: hidden;
       }
     }
+
+    @media (max-width: $break-s) {
+      width: 100%;
+      li {
+        width: 70px;
+        padding: 4px;
+        margin: 0 5px;
+        font-size: 0.9em;
+      }
+    }
+
   }
 }
 
@@ -181,7 +192,7 @@
 
 .cite {
   .row {
-    width: 50em;
+    max-width: 50em;
     margin: 2em auto;
 
     & > * {
@@ -253,7 +264,6 @@
 }
 
 .more-social {
-  padding-top: 90px;
   li a{
     display: block;
     height: 40px;

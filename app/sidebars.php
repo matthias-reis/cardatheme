@@ -21,9 +21,10 @@
                 <?php dynamic_sidebar('social_widgets'); ?>
             <?php endif; ?>
             <section class="more-social">
+                <h4>Anne im Netz</h4>
                 <ul>
-                    <li><a class="pinterest" href="http://pinterest.com/annereko/boards/">Pinterest</a></li>
                     <li><a class="flattr" href="https://flattr.com/profile/cardamonchai">Flattr</a></li>
+                    <li><a class="pinterest" href="http://pinterest.com/annereko/boards/">Pinterest</a></li>
                     <li><a class="flickr" href="http://www.flickr.com/photos/99929697@N07/">Flickr</a></li>
                     <li><a class="lastfm" href="http://www.lastfm.de/user/cardamon82">last.fm</a></li>
                     <li><a class="tumblr" href="http://cardamonchai.tumblr.com/">Tumblr</a></li>
