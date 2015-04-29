@@ -38,6 +38,10 @@ sx.build({
             } else {
                 this.target.addClass('initial-hide');
             }
+
+            $('html, body').animate({
+                scrollTop: this.el.offset().top - 120
+            }, 500);
         }
 
     }

@@ -6,12 +6,14 @@ $color-text-bright: #fff;
 $color-text-light: lighten($color-text, 25%);
 $color-border: lighten($color-text, 50%);
 
-$color-bg: hsl(165, 5, 90);
-$color-primary: hsl(165, 4, 40);
-$color-primary-m: hsl(165, 5, 55);
-$color-primary-l: hsl(165, 7, 70);
-$color-primary-ll: hsl(165, 9, 85);
-$color-primary-h: hsl(165, 40, 80);
+$hue: 135;
+
+$color-bg: hsl($hue, 5, 90);
+$color-primary: hsl($hue, 4, 40);
+$color-primary-m: hsl($hue, 5, 55);
+$color-primary-l: hsl($hue, 7, 70);
+$color-primary-ll: hsl($hue, 9, 85);
+$color-primary-h: hsl($hue, 40, 80);
 
 $color-secondary: #a94f5c;
 $color-secondary-l: #d08b95;

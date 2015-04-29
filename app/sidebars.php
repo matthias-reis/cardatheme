@@ -23,13 +23,13 @@
             <section class="more-social">
                 <h4>Anne im Netz</h4>
                 <ul>
-                    <li><a class="flattr" href="https://flattr.com/profile/cardamonchai">Flattr</a></li>
-                    <li><a class="pinterest" href="http://pinterest.com/annereko/boards/">Pinterest</a></li>
-                    <li><a class="flickr" href="http://www.flickr.com/photos/99929697@N07/">Flickr</a></li>
-                    <li><a class="lastfm" href="http://www.lastfm.de/user/cardamon82">last.fm</a></li>
-                    <li><a class="tumblr" href="http://cardamonchai.tumblr.com/">Tumblr</a></li>
-                    <li><a class="google" href="https://plus.google.com/u/0/+AnneReiscardamonchai">Google+</a></li>
-                    <li><a class="bloglovin" href="http://www.bloglovin.com/blog/2889954/cardamonchai">Bloglovin</a></li>
+                    <li><a class="flattr" target="_blank" href="https://flattr.com/profile/cardamonchai">Flattr</a></li>
+                    <li><a class="pinterest" target="_blank" href="http://pinterest.com/annereko/boards/">Pinterest</a></li>
+                    <li><a class="flickr" target="_blank" href="http://www.flickr.com/photos/99929697@N07/">Flickr</a></li>
+                    <li><a class="lastfm" target="_blank" href="http://www.lastfm.de/user/cardamon82">last.fm</a></li>
+                    <li><a class="tumblr" target="_blank" href="http://cardamonchai.tumblr.com/">Tumblr</a></li>
+                    <li><a class="google" target="_blank" href="https://plus.google.com/u/0/+AnneReiscardamonchai">Google+</a></li>
+                    <li><a class="bloglovin" target="_blank" href="http://www.bloglovin.com/blog/2889954/cardamonchai">Bloglovin</a></li>
                     <li><a class="visits" href="/">52.483 Besucher bisher</a></li>
                 </ul>
             </section>

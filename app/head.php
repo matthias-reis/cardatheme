@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <meta name="description" content="<?php bloginfo('description'); ?>">
+    <meta name="google-site-verification" content="5QfgSmDjmWKGtsXLfeirHMiVgXSp99T7jdMpnnvILQ0" />
     <?php get_template_part('app/css')?>
 
     <?php wp_head(); ?>

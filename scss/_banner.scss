@@ -1,0 +1,34 @@
+@mixin banner($color: #888888) {
+  border: 1px solid $color;
+  background: desaturate(lighten($color, 40%), 10%);
+  border-radius: 15px;
+  padding: 15px;
+  text-align:center;
+  display: block;
+  text-decoration: none;
+
+  .head {
+    border-bottom: 1px solid $color;
+    display: block;
+    color: darken($color, 10%);
+    font-weight: $weightBold;
+    font-size: $size-l;
+    margin-bottom: 5px;
+  }
+  .text {
+    color: #888;
+    display: block;
+    font-size: $size-m;
+    font-weight: $weightLight;
+  }
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  }
+}
+.banner-standard {
+  @include banner;
+}
+.banner-green {
+  @include banner(#2bbb42);
+}

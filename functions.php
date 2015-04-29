@@ -229,9 +229,9 @@ function c_get_splitted_content($rawContent = null)
         $rawContent = get_the_content('');
     }
     $matches = array();
-    $hasMatch = preg_match('/^\w*<h2[^>]*>(.+)<\/h2>/', $rawContent, $matches) === 1;
+    $hasMatch = preg_match('/^\w*<h2[^>]*>(.+)<\/h2>/s', $rawContent, $matches) === 1;
     $headline = $hasMatch ? $matches[1] : '';
-    $content = preg_replace('/^<h2.+<\/h2>/', '', $rawContent);
+    $content = preg_replace('/^<h2.+<\/h2>/s', '', $rawContent);
     return array(
         'headline' => $headline,
         'content' => $content,

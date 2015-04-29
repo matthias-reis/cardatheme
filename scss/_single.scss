@@ -3,26 +3,26 @@
 
 .article-content {
   width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
   margin: 0;
   padding: 0;
-  @include clearfix;
-  overflow: hidden;
+  @media (max-width: $break-l) {
+    display: block;
+  }
 
   .article-text {
-    width: 61%;
-    float: left;
-    padding-bottom: 9999px;
-    margin-bottom: -9999px;
+    flex: 3 2 0;
+
     @media (max-width: $break-l) {
       width: 100%;
-      float: none;
+      flex: 1 1 0;
     }
   }
   .article-comment {
-    width: 39%;
-    float: right;
-    padding-bottom: 9999px;
-    margin-bottom: -9999px;
+    flex: 2 1 0;
     color: $color-text-bright;
 
     .message {
@@ -33,7 +33,6 @@
 
     @media (max-width: $break-l) {
       width: 100%;
-      float: none;
     }
 
     h2 {
@@ -50,6 +49,7 @@
         .comment-body {
           margin-bottom: 0.35em;
           background: rgba(#fff, 0.4);
+          overflow: hidden;
           @include l;
         }
       }

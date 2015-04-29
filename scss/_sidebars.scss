@@ -57,7 +57,7 @@
       li {
         width: 70px;
         padding: 4px;
-        margin: 0 5px;
+        margin: 0 2px;
         font-size: 0.9em;
       }
     }
@@ -125,6 +125,9 @@
     p {
       font-size: 1rem;
       color: $color-text-bright !important;
+      input {
+        color: $color-text !important;
+      }
     }
 
     input[type=text] {
@@ -194,6 +197,7 @@
   .row {
     max-width: 50em;
     margin: 2em auto;
+    padding: 0 1em;
 
     & > * {
       padding: 0;

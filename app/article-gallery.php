@@ -3,6 +3,9 @@
 <section class="article-content gallery-content ribbon">
     <section class="article-gallery ribbon">
         <div class="row hyphenate">
+            <h2>
+                <?php c_the_subhead(); ?>
+            </h2>
             <?php the_content(); ?>
         </div>
     </section>

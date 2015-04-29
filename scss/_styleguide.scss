@@ -149,6 +149,9 @@ b, strong {
 .headline.archive-headline {
   h1 {
     padding: 1em 0;
+    @media (max-width: $break-s) {
+      font-size: $size-xl;
+    }
   }
 }
 
