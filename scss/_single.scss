@@ -107,13 +107,9 @@
 }
 
 .gallery-content {
+  display: block;
+
   .ribbon p {
     color: $color-text-bright !important;
   }
-
-  .article-comment {
-    width: 100%;
-  }
 }
-
-

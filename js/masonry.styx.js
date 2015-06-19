@@ -30,7 +30,6 @@ sx.build({
                     self.relayout(runs);
                 }
             }, 700);
-
         }
     }
 });

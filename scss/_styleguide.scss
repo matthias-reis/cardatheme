@@ -241,11 +241,6 @@ b, strong {
   margin: 1em auto;
 }
 
-.aligncenter {
-  float: none;
-  margin: 1em auto;
-}
-
 
 @media (max-width: $break-m) {
   .alignright {
@@ -256,6 +251,21 @@ b, strong {
   .alignleft {
     float: none;
     margin: 1em auto;
+  }
+
+  .wp-caption {
+    max-width: 90%;
+    height: auto !important;
+
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+}
+@media (max-width: $break-s) {
+  .wp-caption {
+    max-width: 100%;
   }
 }
 
