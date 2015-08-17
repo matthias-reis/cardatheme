@@ -14,7 +14,7 @@ sx.build({
 
             var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=09cf08983f8f2c5e24f90d9fd616af24&user_id=99929697%40N07&tags=' +
                 this.tag +
-                '&format=json&sort=date-posted-asc';
+                '&format=json&sort=date-taken-asc';
             $.get(url);
         },
 
@@ -60,7 +60,6 @@ sx.build({
         relayout: function (runs) {
             var self = this;
             sx.utils.delay('isotope', function () {
-                console.log('relayout ' + self.count);
                 if (self.count < runs) {
                     self.count++;
                     self.el.isotope('layout');
