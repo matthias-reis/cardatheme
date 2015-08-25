@@ -29,6 +29,22 @@
   }
 }
 
+.myflickr-gallery {
+  background: $color-grey;
+  @include clearfix;
+  .outer-image {
+    float: left;
+    overflow: hidden;
+    img {
+      border: solid #fff;
+      display: block;
+    }
+    &:last-child {
+      float:left !important;
+    }
+  }
+}
+
 
 .article-gallery .image-gallery {
 

@@ -28,7 +28,7 @@ sx.build({
             for(var i in urls) {
                 if(typeof urls[i] === 'string' && urls.hasOwnProperty(i)) {
                     var url = urls[i];
-                    var imgEl = $('<img src="' + url + '_n.jpg">').
+                    var imgEl = $('<img src="' + url + '_z.jpg">').
                         load(function () {
                             if(self.el.isotope) {
                                 self.el.isotope('layout');
