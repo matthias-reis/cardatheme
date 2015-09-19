@@ -3,41 +3,44 @@
   max-width: 100%;
 }
 
+//
+//.image-gallery {
+//  .outer-image {
+//    width: 100%;
+//    @media (min-width: $break-l) {
+//      width: 50%;
+//    }
+//
+//    .inner-image {
+//      margin: 10px;
+//      padding: 10px;
+//      background: #fff;
+//      border: 2px solid #888;
+//      text-align: center;
+//
+//      &:hover {
+//        background: #333;
+//      }
+//    }
+//    img {
+//      display: block;
+//      width: 100%;
+//    }
+//  }
+//}
 
 .image-gallery {
-  .outer-image {
-    width: 100%;
-    @media (min-width: $break-l) {
-      width: 50%;
-    }
-
-    .inner-image {
-      margin: 10px;
-      padding: 10px;
-      background: #fff;
-      border: 2px solid #888;
-      text-align: center;
-
-      &:hover {
-        background: #333;
-      }
-    }
-    img {
-      display: block;
-      width: 100%;
-    }
-  }
-}
-
-.myflickr-gallery {
   background: $color-grey;
   @include clearfix;
   .outer-image {
     float: left;
     overflow: hidden;
     img {
-      border: solid #fff;
+      border: solid $color-grey;
       display: block;
+      &:hover {
+        border-color: #fff;
+      }
     }
     &:last-child {
       float:left !important;
@@ -45,19 +48,19 @@
   }
 }
 
-
-.article-gallery .image-gallery {
-
-  .outer-image {
-    width: 100%;
-    @media (min-width: $break-s) {
-      width: 50%;
-    }
-    @media (min-width: $break-l) {
-      width: 33.333333%;
-    }
-    @media (min-width: $break-xl) {
-      width: 25%;
-    }
-  }
-}
+//
+//.article-gallery .image-gallery {
+//
+//  .outer-image {
+//    width: 100%;
+//    @media (min-width: $break-s) {
+//      width: 50%;
+//    }
+//    @media (min-width: $break-l) {
+//      width: 33.333333%;
+//    }
+//    @media (min-width: $break-xl) {
+//      width: 25%;
+//    }
+//  }
+//}
