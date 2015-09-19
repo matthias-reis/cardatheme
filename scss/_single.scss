@@ -28,7 +28,7 @@
     .message {
       font-size: $size-l;
       @include b;
-      color: rgba($color-text-bright, 0.5) !important;
+      color: rgba($color-text, 0.5) !important;
     }
 
     @media (max-width: $break-l) {
@@ -109,8 +109,21 @@
 .gallery-content {
   display: block;
 
-  .ribbon p {
-    color: $color-text-bright !important;
+  .ribbon:not(.article-comment) {
+    p, li {
+      color: darken($color-text-bright, 15%) !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-text-bright !important;
+    }
+
+    a {
+      color: lighten($color-secondary-l, 15%);
+      &:hover {
+        color: $color-text-bright !important;
+      }
+    }
   }
 
   .comments p {

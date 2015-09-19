@@ -45,6 +45,7 @@ $size-xxl: 3.5rem;
 
   &:hover {
     color: $ch;
+    text-decoration: underline;
   }
 }
 
@@ -76,6 +77,7 @@ $size-xxl: 3.5rem;
 
     &:hover {
       color: $ch !important;
+      text-decoration: none;
     }
   }
 }

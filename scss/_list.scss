@@ -26,6 +26,7 @@
       &:hover {
         color: $color-primary;
         @include shadow;
+        text-decoration: none;
 
         .more {
           color: $color-secondary;
