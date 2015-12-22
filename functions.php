@@ -1,5 +1,6 @@
 <?php
 
+
 if (!isset($content_width)) {
     $content_width = 900;
 }
@@ -300,3 +301,11 @@ function c_init_infinite_scroll()
     );
 }
 add_action('after_setup_theme', 'c_init_infinite_scroll');
+
+function c_enqueue_script() {
+    wp_deregister_script('jquery');
+	wp_register_script('jquery', get_stylesheet_directory_uri() . '/libs/jquery.min.js');
+	wp_enqueue_script( 'jquery');
+}
+
+add_action( 'wp_enqueue_scripts', 'c_enqueue_script' );
