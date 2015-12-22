@@ -6,19 +6,20 @@ var gulp = require('gulp'),
 
 gulp.task('js', function () {
     gulp.src([
-      'libs/isotope.js',
-      'libs/fancybox/jquery.fancybox.pack.js',
-      'libs/styx.js',
+        'libs/styx.js',
+        'libs/isotope.js',
+        'libs/fancybox/jquery.fancybox.pack.js',
+        'libs/Hyphenator/Hyphenator.js',
 
-      'js/background.styx.js',
-      'js/article.styx.js',
-      'js/masonry.styx.js',
-      'js/flickr.styx.js',
-      'js/sidebar.styx.js'
+        'js/background.styx.js',
+        'js/article.styx.js',
+        'js/masonry.styx.js',
+        'js/flickr.styx.js',
+        'js/sidebar.styx.js'
     ])
         //.pipe(babel({presets: ['es2015']}))
         .pipe(concat('cardatheme.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('./assets'))
 });
 
@@ -32,6 +33,11 @@ gulp.task('css', function () {
             console.log(error);
             this.emit('end');
         }));
+});
+
+gulp.task('watch', function () {
+    gulp.watch('scss/**/*.scss', ['css']);
+    gulp.watch('js/**/*.js', ['js']);
 });
 
 

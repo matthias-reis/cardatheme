@@ -13,7 +13,7 @@ sx.build({
                 layoutMode: 'masonry'
             }).isotope('layout');
                 self.relayout(5);
-            $('body').on('articles-loaded', function (ev, data) {
+            jQuery('body').on('articles-loaded', function (ev, data) {
                 self.el.isotope('appended', data);
                 Hyphenator.run();
                 self.count = 0;

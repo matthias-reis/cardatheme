@@ -25,6 +25,7 @@ if (function_exists('add_theme_support')) {
     add_image_size('small', 320, '', true);
     add_image_size('title', '', 400, false);
     set_post_thumbnail_size('', 400, false);
+    add_filter( 'jpeg_quality', create_function( '', 'return 70;' ) );
 }
 /*** CUSTOM FUNCTIONS ***/
 add_action('init', 'c_setup');

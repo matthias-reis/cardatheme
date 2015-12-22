@@ -8,12 +8,12 @@ sx.build({
         init: function () {
             this.el.show();
             this.draw();
-            this.adminBarHeight = $('#wpadminbar').length > 0 ? 32 : 0;
+            this.adminBarHeight = jQuery('#wpadminbar').length > 0 ? 32 : 0;
 
             this.el.find('a').click(function (ev) {
                 ev.preventDefault();
-                $('html, body').animate({
-                    scrollTop: $("body > main").offset().top - 50
+                jQuery('html, body').animate({
+                    scrollTop: jQuery("body > main").offset().top - 50
                 }, 500);
             });
         },

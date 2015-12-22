@@ -109,7 +109,6 @@
                     image = this.images[i];
                     if (image.loaded) {
                         if (!image.appended) {
-                            console.log(image.id);
                             this.el.append(image.outerEl);
                             this.visibleImages.push(image);
                             image.width = image.el.width();

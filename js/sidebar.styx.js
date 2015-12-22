@@ -6,7 +6,7 @@ sx.build({
     /** @namespace this.imageEl */
     m: {
         init: function () {
-            this.el.click($.proxy(this.onClick, this));
+            this.el.click(jQuery.proxy(this.onClick, this));
             this.els = this.el.parent().children();
             this.sectionEl = this.el.parent().parent();
 
@@ -15,15 +15,16 @@ sx.build({
                 sectionEls.eq(2).wrap('<section/>').append(sectionEls.eq(3));
                 this.sectionEl.data('layouted', true);
             }
-            $('body').on('contextmenu', function(ev) {
-                if($(ev.target).is('img')) {
+            jQuery('body').on('contextmenu', function(ev) {
+                if(jQuery(ev.target).is('img')) {
                     ev.preventDefault();
                 }
             });
         },
 
+
         onClick: function (ev) {
-            var el = $(ev.currentTarget);
+            var el = jQuery(ev.currentTarget);
 
             if(el.hasClass('active')) {
                this.els.removeClass('active');
@@ -39,7 +40,7 @@ sx.build({
                 this.target.addClass('initial-hide');
             }
 
-            $('html, body').animate({
+            jQuery('html, body').animate({
                 scrollTop: this.el.offset().top - 120
             }, 500);
         }
