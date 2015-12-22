@@ -11,8 +11,7 @@
 <script type="text/javascript">
     Hyphenator.config({
         displaytogglebox: false,
-        intermediatestate: 'visible',
-        useCSS3hyphenation: true
+        intermediatestate: 'visible'
     });
     Hyphenator.run();
 </script>

@@ -293,7 +293,7 @@ function c_init_infinite_scroll()
         'infinite-scroll',
         array(
             'container' => 'infinite-scroll-container',
-            'type' => 'click',
+            'type' => 'scroll',
             'wrapper' => false,
             'render' => 'c_render_infinite_scroll'
         )

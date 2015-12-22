@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600|Kaushan+Script);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600&subset=latin,latin-ext);
 
 
 $color-text: #555;
@@ -27,7 +27,7 @@ $break-xl: 1280px;
 $width: 1400px;
 
 $font: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-$fontHeadline: 'Kaushan Script', 'Georgia', serif;
+$fontHeadline: $font;
 
 $weightLight: 200;
 $weightNormal: 400;

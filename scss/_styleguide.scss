@@ -278,11 +278,14 @@ sup {
   .wp-caption {
     max-width: 90%;
     height: auto !important;
+  }
 
-    img {
-      width: 100% !important;
-      height: auto !important;
-    }
+  main img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  main .outer-image {
+    float: none !important;
   }
 }
 @media (max-width: $break-s) {

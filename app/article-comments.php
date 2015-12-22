@@ -1,6 +1,6 @@
 
 <div class="comments">
-    <h2>Diskutiere doch einfach mit</h2>
+    <h2>Mitdiskutieren</h2>
 
     <p class="message"><?php comments_number(
             'Derzeit ist noch kein Kommentar vorhanden',

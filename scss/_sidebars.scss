@@ -111,6 +111,14 @@
       margin: 0;
       ul {
         padding-left: 1rem;
+
+        li {
+          font-size: 75%;
+          line-height: 1.25;
+          display: inline-block;
+          opacity: 0.8;
+          margin: 0 10px 0 0;
+        }
       }
     }
 
@@ -150,6 +158,16 @@
       margin-right: 0;
       width: 80% !important;
     }
+  }
+}
+
+.nav-sidebar > section:last-of-type {
+  li {
+    font-size: 75%;
+    line-height: 1.25;
+    display: inline-block;
+    opacity: 0.8;
+    margin: 0 10px 0 0;
   }
 }
 

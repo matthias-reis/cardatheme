@@ -31,6 +31,8 @@
 
 .image-gallery {
   background: $color-grey;
+  margin-bottom: -60px;
+
   @include clearfix;
   .outer-image {
     float: left;
