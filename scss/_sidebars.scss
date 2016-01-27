@@ -65,19 +65,27 @@
   }
 }
 
-
 .sidebar {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.initial-hide {
+    display: none;
+  }
+
   h3 {
     font-size: $size-xl;
     @include l;
     margin: 0;
     color: $color-text-bright;
     padding: 2rem 0 0 1rem;
+    width: 100%;
+    flex: 1 1 auto;
   }
   h4 {
     @include l;
     color: rgba(255, 255, 255, 0.5);
-    margin: 2rem 0 0,5rem 0;
+    margin: 2rem 0 0.5rem 0;
     font-size: $size-l;
 
     a {
@@ -94,12 +102,16 @@
   }
   & > section {
     width: 25%;
-    float: left;
+    flex: 1 1 auto;
+
+    &.filler {
+      width: 0 !important;
+    }
     @media (max-width: $break-l - 1) {
       width: 50%;
-      &:nth-of-type(2n + 1){
-        clear: both;
-      }
+    }
+    @media (max-width: $break-s - 1) {
+      width: 100%;
     }
 
     & > * {
@@ -161,6 +173,10 @@
   }
 }
 
+.search-sidebar {
+  display: block;
+}
+
 .nav-sidebar > section:last-of-type {
   li {
     font-size: 75%;
@@ -168,46 +184,6 @@
     display: inline-block;
     opacity: 0.8;
     margin: 0 10px 0 0;
-  }
-}
-
-//TWITTER
-.fetched_tweets {
-  .tweets_avatar {
-    width: 80%;
-    background: rgba($color-text-bright, 0.65) !important;
-    .tweet_data {
-      font-family: $font;
-      @include n;
-      color: $color-text;
-      font-size: 1rem;
-    }
-    .times, .tweets-intent-data {
-      font-family: $font;
-      @include l;
-      color: $color-text-light;
-      font-size: 0.8rem;
-      text-align: right;
-      em {
-        font-style: normal;
-      }
-    }
-  }
-}
-
-//FACEBOOK
-.social-sidebar iframe {
-  background: rgba($color-text-bright, 0.65) !important;
-  width: 80% !important;
-  border-radius: 5px;
-  margin: 0 !important
-}
-
-//INSTAGRAM
-.easy-instagram-container {
-  .easy-instagram-thumbnail-wrapper {
-    text-align: left;
-    color: $color-text-bright;
   }
 }
 
@@ -286,6 +262,9 @@
 }
 
 .more-social {
+  @media (max-width: $break-s - 1) {
+    order: 1;
+  }
   li a{
     display: block;
     height: 40px;

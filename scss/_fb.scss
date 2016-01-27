@@ -1,0 +1,51 @@
+.fb {
+  height: 40px;
+  line-height: 40px;
+  background: transparent url(../img/social.png) 0 -320px no-repeat;
+  padding-left: 44px;
+
+  .fb-preview {
+    line-height: 20px;
+    display: block;
+    color: #fff;
+    font-weight: $weightBold;
+    span {
+      font-weight: $weightLight;
+    }
+  }
+  .fb-like {
+    display: none;
+  }
+}
+
+header .fb {
+  @media (max-width: $break-s - 1) {
+    display: none;
+  }
+}
+
+
+.fb.available {
+  .fb-preview {
+    display: none;
+  }
+  .fb-like {
+    display: block;
+    overflow: hidden;
+    line-height: 30px;
+  }
+  iframe {
+    margin: 0;
+  }
+}
+
+.header-menu .fb {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+}
+
+
+.sidebars .fb .fb-preview {
+  line-height: 40px;
+}

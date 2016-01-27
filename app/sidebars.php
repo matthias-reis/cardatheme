@@ -1,12 +1,12 @@
 <aside class="sidebars">
     <ul>
-        <li class="search-icon <?php if(get_search_query() != '') {echo 'active';}?>" typeof="sx:carda.Sidebar" data-target="$('.sidebars .search-sidebar')" data-sidebars="$('.sidebars .sidebar')">
+        <li class="search-icon <?php if(get_search_query() != '') {echo 'active';}?>" typeof="sx:carda.Sidebar" data-name="search" data-target="$('.sidebars .search-sidebar')" data-sidebars="$('.sidebars .sidebar')">
             Suche</li>
-        <li class="social-icon" typeof="sx:carda.Sidebar" data-target="$('.sidebars .social-sidebar')" data-sidebars="$('.sidebars .sidebar')">
+        <li class="social-icon" typeof="sx:carda.Sidebar" data-target="$('.sidebars .social-sidebar')" data-name="social" data-sidebars="$('.sidebars .sidebar')">
             Soziale Netzwerke</li>
-        <li class="nav-icon" typeof="sx:carda.Sidebar" data-target="$('.sidebars .nav-sidebar')" data-sidebars="$('.sidebars .sidebar')">
+        <li class="nav-icon" typeof="sx:carda.Sidebar" data-target="$('.sidebars .nav-sidebar')" data-name="nav" data-sidebars="$('.sidebars .sidebar')">
             Inhalte & Archiv</li>
-        <li class="links-icon" typeof="sx:carda.Sidebar" data-target="$('.sidebars .links-sidebar')" data-sidebars="$('.sidebars .sidebar')">
+        <li class="links-icon" typeof="sx:carda.Sidebar" data-target="$('.sidebars .links-sidebar')" data-name="links" data-sidebars="$('.sidebars .sidebar')">
             Links & Pinnwand</li>
     </ul>
 
@@ -17,12 +17,25 @@
 
         <section class="sidebar social-sidebar initial-hide row">
             <h3>Soziale Netzwerke</h3>
+
+            <section class="twitter-feed">
+                <h4>Anne bei Twitter</h4>
+                <div class="feed" typeof="sx:carda.Twitter">
+                    Die aktuellen Twitternachrichten werden geladen ...
+                </div>
+            </section>
+
             <?php if (is_active_sidebar('social_widgets')) : ?>
                 <?php dynamic_sidebar('social_widgets'); ?>
             <?php endif; ?>
+
             <section class="more-social">
                 <h4>Anne im Netz</h4>
                 <ul>
+                    <li class="fb" typeof="sx:carda.Facebook">
+                        <div class="fb-preview" property="previewEl"><span>Facebook</span></div>
+                        <div class="fb-like" property="likeEl" class="fb-like" data-href="https://www.facebook.com/cardamonchai" data-layout="button_count" data-action="like" data-share="false"></div>
+                    </li>
                     <li><a class="flattr" target="_blank" href="https://flattr.com/profile/cardamonchai">Flattr</a></li>
                     <li><a class="pinterest" target="_blank" href="http://pinterest.com/annereko/boards/">Pinterest</a></li>
                     <li><a class="flickr" target="_blank" href="http://www.flickr.com/photos/99929697@N07/">Flickr</a></li>

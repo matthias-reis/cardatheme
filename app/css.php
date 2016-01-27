@@ -1,2 +1,2 @@
-<link href="<?php echo get_template_directory_uri() ?>/css/cardatheme.css" media="all" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+<link href="<?php echo get_template_directory_uri() ?>/assets/cardatheme.css" media="all" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/libs/fancybox/jquery.fancybox.css" type="text/css" media="screen" />

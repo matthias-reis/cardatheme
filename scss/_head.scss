@@ -8,6 +8,7 @@
   text-align: center;
   width: 100%;
 
+
   .admin-bar & {
     top: 32px;
   }
@@ -56,6 +57,13 @@
       }
     }
   }
+
+
+}
+
+
+.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
+  display: none !important;
 }
 
 

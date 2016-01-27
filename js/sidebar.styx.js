@@ -25,12 +25,15 @@ sx.build({
 
         onClick: function (ev) {
             var el = jQuery(ev.currentTarget);
-
+            var name =jQuery(ev.currentTarget).data('name') || 'unknown';
             if(el.hasClass('active')) {
-               this.els.removeClass('active');
+                this.els.removeClass('active');
+                sx.e('sidebar', 'tab-close-' + name);
             } else {
                 this.els.removeClass('active');
                 el.addClass('active');
+                sx.e('sidebar', 'tab-open-' + name);
+                jQuery(window).trigger('tab-open-' + name);
             }
 
             if(this.target.hasClass('initial-hide')){

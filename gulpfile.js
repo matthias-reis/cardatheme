@@ -10,12 +10,17 @@ gulp.task('js', function () {
         'libs/isotope.js',
         'libs/fancybox/jquery.fancybox.pack.js',
         'libs/Hyphenator/Hyphenator.js',
+        'libs/twitterfetcher.js',
 
+        'js/event.js',
         'js/background.styx.js',
         'js/article.styx.js',
         'js/masonry.styx.js',
         'js/flickr.styx.js',
-        'js/sidebar.styx.js'
+        'js/sidebar.styx.js',
+        'js/facebook.styx.js',
+        'js/twitter.styx.js',
+        'js/bootstrap.styx.js'
     ])
         //.pipe(babel({presets: ['es2015']}))
         .pipe(concat('cardatheme.js'))

@@ -16,6 +16,8 @@
                 window[id] = function (response) {
                     if (response.stat == 'ok') {
                         $(window).trigger('incoming-' + id, response);
+                    } else {
+                        sx.e('flickr','meta-load-error');
                     }
                 };
                 $w.on('incoming-' + id, $.proxy(this.onResponse, this));
@@ -83,6 +85,7 @@
                         }
                     } catch (e) {
                         console.error(e);
+                        sx.e('flickr', 'image-load-error');
                     }
                     self.images.push(image);
                 });

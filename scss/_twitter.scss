@@ -1,0 +1,94 @@
+.sidebar > .twitter-feed {
+  width: 50%;
+
+  @media (max-width: $break-l - 1) {
+    width: 100%;
+    clear: both;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    width: 50%;
+    flex: 1 1 auto;
+
+    @media (max-width: $break-s - 1) {
+      width: 100%;
+      clear: both;
+    }
+  }
+
+  .user {
+    a {
+      display: block;
+      color: $color-primary-ll;
+      height: 42px;
+      position: relative;
+      padding: 4px 0 4px 56px;
+      margin-bottom: 4px;
+      font-size: 1rem;
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+    img {
+      width: 48px;
+      height: 48px;
+      border-radius: 5px;
+      position: absolute;
+      border: 1px solid #fff;
+      top: 0;
+      left: 0;
+    }
+    span {
+      display: block;
+      line-height: 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    [data-scribe="element:screen_name"] {
+      color: $color-primary-l;
+    }
+    a:hover [data-scribe="element:screen_name"] {
+      color: $color-primary-ll;
+    }
+  }
+
+  .tweet {
+    text-overflow: ellipsis;
+
+    .tco-hidden {
+      display: none;
+    }
+  }
+
+  .timePosted {
+    margin-bottom: 4px;
+
+    a {
+      color: $color-primary-l;
+    }
+  }
+
+  .interact a {
+    display: inline-block;
+    background: $color-primary-l;
+    color: $color-primary-m;
+    padding: 2px 4px;
+    margin-right: 2px;
+    border-radius: 3px;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-primary-l;
+    }
+  }
+
+}

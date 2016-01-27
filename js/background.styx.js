@@ -11,6 +11,7 @@ sx.build({
             this.adminBarHeight = jQuery('#wpadminbar').length > 0 ? 32 : 0;
 
             this.el.find('a').click(function (ev) {
+                sx.e('background', 'scroll-to-articles');
                 ev.preventDefault();
                 jQuery('html, body').animate({
                     scrollTop: jQuery("body > main").offset().top - 50
