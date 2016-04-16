@@ -80,8 +80,8 @@ function c_create_sidebars()
         array(
             'name' => 'Link-Slide',
             'id' => 'link_widgets',
-            'before_widget' => '<section>',
-            'after_widget' => '</section>',
+            'before_widget' => '<div>',
+            'after_widget' => '</div>',
             'before_title' => '<h4>',
             'after_title' => '</h4>',
         )

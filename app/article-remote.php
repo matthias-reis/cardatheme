@@ -3,7 +3,7 @@
     <div class="row inner-headline">
       <hgroup>
         <h4 class="super">
-          Anne in anderen Weblogs
+          Anne in anderen Blogs
         </h4>
 
         <h1>
