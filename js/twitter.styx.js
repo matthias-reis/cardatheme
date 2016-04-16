@@ -1,24 +1,25 @@
 sx.build({
-    name: 'Twitter',
-    nsp: 'carda',
-    parent: sx.Plugin,
+  name: 'Twitter',
+  nsp: 'carda',
+  parent: sx.Plugin,
 
-    m: {
-        loaded: true,
-        init: function () {
-            this.el.prop('id', 'twitterfetcher');
-            jQuery(window).on('tab-open-social', this.load.bind(this));
-        },
+  m: {
+    loaded: true,
+    init: function () {
+      console.log('twitterfetcher'),
+      this.el.prop('id', 'twitterfetcher');
+      jQuery(window).on('tab-open-social', this.load.bind(this));
+    },
 
-        load: function () {
-            twitterFetcher.fetch({
-                "id": '690931036302249984',
-                "domId": 'twitterfetcher',
-                "maxTweets": 6,
-                "enableLinks": true,
-                "lang": 'de',
-                "showPermalinks": true
-            });
-        }
+    load: function () {
+      twitterFetcher.fetch({
+        "id": '690931036302249984',
+        "domId": 'twitterfetcher',
+        "maxTweets": 6,
+        "enableLinks": true,
+        "lang": 'de',
+        "showPermalinks": true
+      });
     }
+  }
 });

@@ -127,3 +127,49 @@
     color: $color-text !important;
   }
 }
+
+.remote-content {
+  .article-text {
+    width: 100%;
+  }
+  
+  .row {
+    max-width: 50em;
+  }
+  
+  .description {
+    font-style: italic;
+    margin-bottom: 2rem;
+    @include l;
+  }
+  
+  .link {
+    border: 1px solid $color-border;
+    background: #fff;
+    padding: 2rem;
+    display: block;
+    @include link;
+    text-decoration: none !important;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    i {
+      border: 1px solid transparent;
+      padding: .5em;
+      display: block;
+      font-style: normal;
+      border-radius: 5px;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+  }
+  
+  .link:hover i{
+    border: 1px solid $color-primary-m;
+  }
+}

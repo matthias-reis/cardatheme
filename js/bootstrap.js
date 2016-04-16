@@ -1,5 +1,4 @@
 jQuery(function() {
-  console.log('starting application');
   sx.nsp('cardatheme');
   cardatheme.app = new sx.Application();
   cardatheme.app.run();

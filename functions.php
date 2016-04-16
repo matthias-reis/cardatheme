@@ -204,7 +204,7 @@ function c_excerpt($manualExcerpt)
         $rawContent = strip_shortcodes($rawContent);
         $rawContent = apply_filters('the_content', $rawContent);
         $rawContent = str_replace(']]>', ']]&gt;', $rawContent);
-        $rawContent = strip_tags($rawContent, array('<p>'));
+        $rawContent = strip_tags($rawContent, '<p>');
         $wordCount = 15;
         $tokens = array();
         $output = '';
@@ -310,3 +310,32 @@ function c_enqueue_script() {
 }
 
 add_action( 'wp_enqueue_scripts', 'c_enqueue_script' );
+
+function c_post_type_remote() {
+  register_post_type( 'remote',
+    array(
+      'label'             => 'Andere Blogs',
+      'labels' => array(
+        'add_new' => 'Neuer Link',
+        'add_new_item' => 'Neuer Link',
+        'all_items' => 'Links',
+        'singular_name' => 'Link'
+      ),
+      'public'            => true,
+      'show_ui'           => true,
+      'show_in_admin_bar' => true,
+      'show_in_nav_menus' => false,
+      'menu_position'     => 21,
+      'menu_icon'         => 'dashicons-editor-quote',
+      'rewrite'           => array(
+        'slug'       => 'andere-blogs'
+      ),
+      'supports' => array(
+        'title',
+        'thumbnail',
+        'custom-fields'
+      )
+    )
+  );
+}
+add_action('init', 'c_post_type_remote');
