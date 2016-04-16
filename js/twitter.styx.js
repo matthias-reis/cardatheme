@@ -6,7 +6,6 @@ sx.build({
   m: {
     loaded: true,
     init: function () {
-      console.log('twitterfetcher'),
       this.el.prop('id', 'twitterfetcher');
       jQuery(window).on('tab-open-social', this.load.bind(this));
     },
