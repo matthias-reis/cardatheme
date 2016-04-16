@@ -1,21 +1,23 @@
 {
-    "name": "cardatheme",
-    "version": "1.0.0",
-    "homepage": "https://github.com/matthias-reis/cardatheme",
-    "authors": [
-        "mre <matthias.reis@gmail.com>"
-    ],
-    "description": "Theme for cardamonchai.com",
-    "license": "MIT",
-    "private": true,
-    "dependencies": {
-        "styx": "https://bitbucket.org/weltbild/styx.js.git#master"
-    },
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ]
+  "name": "cardatheme",
+  "version": "1.0.0",
+  "homepage": "https://github.com/matthias-reis/cardatheme",
+  "authors": [
+    "mre <matthias.reis@gmail.com>"
+  ],
+  "description": "Theme for cardamonchai.com",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "styx": "https://bitbucket.org/weltbild/styx.js.git#master",
+    "compass-sass-mixins": "*",
+    "foundation": "^5.5.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

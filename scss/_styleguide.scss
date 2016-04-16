@@ -7,7 +7,7 @@ body {
   font-family: $font;
   font-size: 16px;
   @include n;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 
@@ -304,5 +304,16 @@ blockquote {
 iframe {
   margin: 1em auto;
   max-width: 100% !important;
+}
+
+.hyphenate {
+  text-overflow: ellipsis;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 
