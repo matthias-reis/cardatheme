@@ -5,7 +5,8 @@
 
     <?php else: ?>
         <article>
-            <h2><?php _e('Sorry, nothing to display.', 'html5blank'); ?></h2>
+            <h4>Fehler 404</h4>
+            <h2>Leider nichts gefunden ...</h2>
         </article>
     <?php endif; ?>
 </div>
