@@ -236,7 +236,7 @@ function c_get_splitted_content($rawContent = null)
   $content = preg_replace('/^<h2.+<\/h2>/s', '', $rawContent);
   return array(
     'headline' => $headline,
-    'content' => $content,
+    'content' => $rawContent,
   );
 }
 
