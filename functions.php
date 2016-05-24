@@ -168,7 +168,9 @@ function c_get_type()
   $terms = get_the_terms($post->ID, 'type');
   if ($terms) {
     foreach ($terms as $term) {
-      return $term->slug;
+      $ret = $term->slug;
+      if($ret === 'galerierechts') $ret = 'Galerie';
+      return $ret;
     }
   } else {
     return 'Beitrag';

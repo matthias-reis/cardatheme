@@ -10,7 +10,7 @@
 
 
         <div class="text">
-            <h4 class="super"><?php echo ucfirst(c_get_type()) ?> vom <?php the_date() ?></h4>
+            <h4 class="super"><?php echo ucfirst(c_get_type()) ?> vom <?php echo get_the_date('d.m.Y') ?></h4>
 
             <h1 class="hyphenate">
                 <?php the_title(); ?>

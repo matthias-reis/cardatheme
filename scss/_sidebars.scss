@@ -244,6 +244,8 @@
         border: 1px solid $color-text-bright;
         margin: 0 5px;
         padding: 5px;
+        color: $color-text;
+        font-weight: $weightNormal;
       }
       &[type=submit] {
         width: 34px;

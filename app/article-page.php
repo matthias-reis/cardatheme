@@ -3,9 +3,6 @@
 <section class="article-content ribbon">
     <section class="page-text ribbon">
         <div class="row hyphenate">
-            <h2>
-                <?php c_the_subhead(); ?>
-            </h2>
             <?php the_content(); ?>
         </div>
     </section>
@@ -16,4 +13,3 @@
         </div>
     </section>
 </section>
-

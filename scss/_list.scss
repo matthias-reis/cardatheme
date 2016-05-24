@@ -69,7 +69,7 @@
         }
 
         .excerpt {
-          div {
+          div, div p {
             color: $color-text !important;
             font-size: $size-s;
           }

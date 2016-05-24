@@ -3,6 +3,7 @@
 <section class="article-content gallery-content ribbon">
     <section class="article-gallery ribbon">
         <div class="row hyphenate">
+            <blockquote>Gallery Right</blockquote>
             <?php the_content(); ?>
         </div>
     </section>

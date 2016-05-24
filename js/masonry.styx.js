@@ -15,7 +15,6 @@ sx.build({
                 self.relayout(5);
             jQuery('body').on('articles-loaded', function (ev, data) {
                 self.el.isotope('appended', data);
-                Hyphenator.run();
                 self.count = 0;
                 self.relayout(5);
             });
