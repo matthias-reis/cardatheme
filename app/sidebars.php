@@ -36,7 +36,6 @@
                     <div class="fb-preview" property="previewEl"><span>Facebook</span></div>
                     <div class="fb-like" property="likeEl" class="fb-like" data-href="https://www.facebook.com/cardamonchai" data-layout="button_count" data-action="like" data-share="false"></div>
                   </li>
-                  <li><a class="flattr" target="_blank" href="https://flattr.com/profile/cardamonchai">Flattr</a></li>
                   <li><a class="pinterest" target="_blank" href="http://pinterest.com/annereko/boards/">Pinterest</a></li>
                   <li><a class="flickr" target="_blank" href="http://www.flickr.com/photos/99929697@N07/">Flickr</a></li>
                   <li><a class="lastfm" target="_blank" href="http://www.lastfm.de/user/cardamon82">last.fm</a></li>
@@ -73,6 +72,7 @@
                    }
                 ?>
                 </ul>
+                <a href="/andere-blogs" class="sidebar-more-link">&rarr; alle Beiträge ansehen</a>
               </section>
               <section>
                 <?php if (is_active_sidebar('link_widgets')) : ?>

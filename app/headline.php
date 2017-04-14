@@ -15,6 +15,9 @@
     elseif (is_year()) : ?>
         <h1>Jahresarchiv <strong><?php echo get_the_time('Y'); ?></strong></h1>
     <?php
+    elseif (get_post_type() === 'remote') : ?>
+        <h1>Anne in anderen Blogs</h1>
+    <?php
     elseif (is_category()) : ?>
         <h1>Kategorie <strong><?php echo single_cat_title(); ?></strong></h1>
     <?php

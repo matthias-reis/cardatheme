@@ -300,7 +300,6 @@ blockquote {
   margin-left: 0;
 }
 
-
 iframe {
   margin: 1em auto;
   max-width: 100% !important;
@@ -310,8 +309,9 @@ iframe {
   text-overflow: ellipsis;
   -ms-word-break: break-all;
   word-break: break-all;
-  word-break: break-word;
-
+  // word-break: break-word;
+  word-wrap: break-word;
+  
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;

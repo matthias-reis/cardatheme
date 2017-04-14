@@ -62,6 +62,7 @@
   }
 
   .tweet {
+    overflow: hidden;
     text-overflow: ellipsis;
 
     .tco-hidden {
