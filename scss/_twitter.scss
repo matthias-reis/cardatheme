@@ -1,32 +1,21 @@
-.sidebar > .twitter-feed {
-  width: 50%;
-
-  @media (max-width: $break-l - 1) {
-    width: 100%;
-    clear: both;
-  }
-
+.aside-twitter-feed {
   ul {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: column;
+    list-style: none;
   }
 
   li {
-    width: 50%;
     flex: 1 1 auto;
-
-    @media (max-width: $break-s - 1) {
-      width: 100%;
-      clear: both;
-    }
   }
 
   .user {
+    font-family: $fontHeadline;
     a {
       display: block;
-      color: $color-primary-ll;
+      color: $color-text-link;
       height: 42px;
       position: relative;
       padding: 4px 0 4px 56px;
@@ -34,7 +23,7 @@
       font-size: 1rem;
 
       &:hover {
-        color: #fff;
+        color: $color-text-link-dark;
         text-decoration: none;
       }
     }
@@ -43,7 +32,7 @@
       height: 48px;
       border-radius: 5px;
       position: absolute;
-      border: 1px solid #fff;
+      border: 1px solid $color-border;
       top: 0;
       left: 0;
     }
@@ -64,6 +53,7 @@
   .tweet {
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 1rem;
 
     .tco-hidden {
       display: none;
@@ -91,5 +81,4 @@
       color: $color-primary-l;
     }
   }
-
 }

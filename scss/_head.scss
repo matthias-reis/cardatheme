@@ -1,109 +1,116 @@
-.header-menu {
+.header {
+  background: #fff;
+  height: 72px;
+  border-bottom: 1px solid $color-border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
   z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba($color-primary, 0.6);
-  height: 45px;
-  text-align: center;
-  width: 100%;
 
-
-  .admin-bar & {
-    top: 32px;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    position: relative;
-    display: inline-block;
-    padding: 0 5px;
-    margin: 0;
-    line-height: 45px;
-
-    a {
-      @include link(#fff, #ccc);
-      @include l;
-      @media (max-width: $break-s) {
-        font-size: $size-s;
-      }
+  & > a {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    img {
+      flex: 0 0 auto;
+      margin-left: 20px;
     }
+    hgroup {
+      flex: 0 0 auto;
+      background: transparent url(../img/hl.svg) no-repeat;
+      width: 193px;
+      height: 49px;
+      margin-left: 40px;
 
-    ul {
-      display: none;
-      position: absolute;
-      top: 45px;
-      left: 0;
-      border: 1px solid #fff;
-      border-top: 0;
-      background: rgba($color-primary, 0.6);
-      padding: 10px;
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-
-      li {
-        white-space: nowrap;
-        display: block;
-        text-align: left;
-      }
-    }
-
-    &:hover {
-      ul {
-        display: block;
+      h1,
+      h2 {
+        display: none;
       }
     }
   }
-
-
 }
 
+.search-bar {
+  display: none;
+  height: 0;
+
+  &.active {
+    display: block;
+    height: 72px;
+  }
+}
+
+.header-menu {
+  h4 {
+    display: none;
+  }
+  & > section {
+    flex: 1 1 auto;
+
+    & > ul {
+      margin: 0;
+      padding: 0;
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style: none;
+
+      & > li {
+        flex: 0 0 auto;
+        position: relative;
+
+        a {
+          line-height: 70px;
+          padding: 0 12px;
+          @include link($color-text-light, $color-text);
+          font-family: $fontHeadline;
+          font-size: $size-m;
+          text-transform: uppercase;
+          font-weight: 300;
+          display: block;
+        }
+
+        .children {
+          display: none;
+          position: absolute;
+          top: 70px;
+          right: 0;
+          border: 1px solid $color-border;
+          border-top: 0;
+          background: #fff;
+          padding: 10px;
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+          li {
+            white-space: nowrap;
+            display: block;
+            text-align: left;
+          }
+
+          a {
+            line-height: 36px;
+            padding: 0 4px;
+            font-size: $size-s;
+            text-transform: none;
+            font-weight: 300;
+            text-align: right;
+          }
+        }
+
+        &:hover {
+          .children {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
 
 .fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
   display: none !important;
-}
-
-
-body > .bg-l {
-  a{
-    display: block;
-    position: fixed;
-
-    hgroup {
-      display: none;
-    }
-  }
-}
-
-body > .bg-s {
-  a {
-    display: block;
-    overflow: hidden;
-
-    img {
-      display: block;
-      width: 100%;
-      @media (max-width: $break-l) {
-        width: 130%;
-        margin-left: -15%;
-      }
-      @media (max-width: $break-m) {
-        width: 160%;
-        margin-left: -30%;
-      }
-      @media (max-width: $break-s) {
-        width: 200%;
-        margin-left: -50%;
-      }
-    }
-
-    hgroup {
-      display: none;
-    }
-  }
 }
 
 body > main {

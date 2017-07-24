@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Theme for cardamonchai.com",
   "main": "index.js",
+  "scripts": {
+    "up": "gulp && rsync -avr . ops@aithir.de:/var/www/cardamon/wp-content/themes/cardatheme --exclude=.git --exclude=.history --exclude=_old --exclude=scss --exclude=node_modules"
+  },
   "dependencies": {
     "babel-preset-es2015": "^6.3.13",
     "compass-mixins": "^0.12.7",

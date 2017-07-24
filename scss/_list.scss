@@ -1,92 +1,139 @@
-.article-list {
-  padding-bottom: 80px;
+%article {
+  a {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    color: $color-text;
 
-  article {
-    width: 100%;
-    @media (min-width: $break-s) {
-      width: 50%;
-    }
-    @media (min-width: $break-l) {
-      width: 33.333333%;
-    }
-    @media (min-width: $break-xl) {
-      width: 20%;
-    }
+    &:hover {
+      color: $color-primary;
+      text-decoration: none;
 
-    a {
-      display: block;
-      border: 1px solid $color-border;
-      border-top-width: 0.7rem;
-      border-radius: 3px;
-      margin: 1rem 0.5rem 0.5rem 0.5rem;
-      color: $color-text;
-      background: #fff;
-      @include shadow($depth: 3px, $strength: 0.5);
-
-      &:hover {
-        color: $color-primary;
-        @include shadow;
-        text-decoration: none;
-
-        .more {
-          color: $color-secondary;
-        }
+      .more {
+        color: $color-secondary;
       }
+    }
+  }
 
-      .image {
-        width: 100%;
+  img {
+    width: 100% !important;
+    height: auto !important;
+  }
 
-        img {
-          width: 100% !important;
-          height: auto !important;
-        }
+  .text {
+    margin: 0.5rem;
+    text-align: center;
+
+    .super {
+      font-size: 0.8em;
+      margin-bottom: 2em;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+      &:before,
+      &:after {
+        content: ' ';
+        flex: 1 1 auto;
+        height: 1px;
+        background: $color-text-light;
       }
-
-      .text {
-        margin: 0.5em;
-        text-align: center;
-
-        .super {
-          font-size: 0.8em;
-          margin-bottom: 2em;
-          text-transform: uppercase;
-          font-weight: bold;
-        }
-
-        h1 {
-          margin: 0;
-          font-size: $size-xl;
-          font-family: $font;
-          line-height: 0.9;
-          @include l;
-        }
-
-        h2 {
-          font-family: $font;
-          @include b;
-          margin: 0.3em 0 1em 0;
-          font-size: $size-m;
-        }
-
-        .excerpt {
-          div, div p {
-            color: $color-text !important;
-            font-size: $size-s;
-          }
-        }
-        .more {
-          text-align: right;
-          @include b;
-          text-transform: uppercase;
-          color: $color-secondary;
-          font-size: 0.8em;
-          margin: 1em 0 0 0;
-        }
+      &:before {
+        margin: 0 4px 0 0;
       }
+      &:after {
+        margin: 0 0 0 4px;
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-size: $size-l;
+      line-height: 1;
+      text-transform: uppercase;
+      @include b;
+    }
+
+    h2 {
+      @include l;
+      margin: 0.3em 0 1em 0;
+      font-size: $size-m;
+      color: $color-text-light !important;
+    }
+
+    .excerpt {
+      div,
+      div p {
+        color: $color-text !important;
+        font-size: $size-s;
+      }
+    }
+    .more {
+      text-align: right;
+      @include b;
+      font-family: $fontHeadline;
+      text-transform: uppercase;
+      color: $color-secondary;
+      font-size: 0.8em;
+      margin: 1em 0 0 0;
     }
   }
 }
 
+%standard-article {
+  @extend %article;
+
+  .image {
+    width: 100%;
+  }
+
+  @media (min-width: $break-s) {
+    width: calc(50% - 3rem);
+  }
+  @media (min-width: $break-m) {
+    width: calc(33.3% - 3rem);
+  }
+  @media (min-width: $break-xl) {
+    width: calc(25% - 3rem);
+  }
+}
+
+%highlight-article {
+  @extend %article;
+  @media (min-width: $break-m) {
+    width: calc(50% - 3rem);
+  }
+}
+
+.article-list {
+  margin: 0 3% 8rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: stretch;
+
+  article {
+    flex: 1 1 auto;
+    height: auto;
+    margin: 0.5rem;
+    width: calc(100% - 3rem);
+    background: #fff;
+
+    &:nth-of-type(1) {
+      @extend %highlight-article;
+    }
+    &:nth-of-type(2) {
+      @extend %highlight-article;
+    }
+    &:nth-of-type(n + 2) {
+      @extend %standard-article;
+    }
+  }
+}
 
 #article-nav {
   width: 100%;
@@ -101,7 +148,8 @@
     background: rgba($color-secondary, 0.4);
     color: $color-text-bright;
 
-    a, a:hover {
+    a,
+    a:hover {
       padding: 10px;
       color: $color-text-bright;
       display: block;

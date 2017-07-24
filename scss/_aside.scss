@@ -1,14 +1,137 @@
-.sidebars {
-  padding-top: 0;
-  background: transparent !important;
-  position: relative;
-  z-index: 3;
-  margin-top: -64px;
+.aside {
+  h2 {
+    display: none;
+  }
 
-  .ribbon {
+  .aside-ribbon {
+    padding: 8px;
+  }
+
+  .aside-ribbon-bright {
+    background: $color-bg-aside-light;
+  }
+
+  .aside-ribbon-dark {
+    background: $color-bg-aside-dark;
+  }
+
+  .aside-visual {
     padding: 0;
   }
 
+  h3 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 0.3rem;
+    &:before,
+    &:after {
+      content: ' ';
+      flex: 1 1 auto;
+      height: 1px;
+      background: $color-text-light;
+    }
+    &:before {
+      margin: 0 4px 0 0;
+    }
+    &:after {
+      margin: 0 0 0 4px;
+    }
+  }
+
+  .aside-visual-image {
+    width: 100%;
+  }
+
+  .aside-social {
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+    li a,
+    li > div {
+      display: block;
+      height: 32px;
+      line-height: 32px;
+      padding-left: 36px;
+      @include l;
+      background: transparent 0 50% no-repeat;
+      background-size: 24px 24px;
+      font-family: $fontHeadline;
+
+      @include link($color-text-light, $color-text-link-dark);
+
+      &.instagram {
+        background-image: url(../img/svg/instagram.svg);
+      }
+      &.pinterest {
+        background-image: url(../img/svg/pinterest.svg);
+      }
+      &.flickr {
+        background-image: url(../img/svg/flickr.svg);
+      }
+      &.lastfm {
+        background-image: url(../img/svg/lastfm.svg);
+      }
+      &.tumblr {
+        background-image: url(../img/svg/tumblr.svg);
+      }
+      &.google {
+        background-image: url(../img/svg/google-plus.svg);
+      }
+      &.bloglovin {
+        background-image: url(../img/svg/bloglovin.svg);
+      }
+    }
+
+    .fb > div {
+      background-image: url(../img/svg/facebook.svg);
+    }
+
+    .fb-preview {
+      display: block;
+    }
+
+    .fb-like {
+      display: none;
+      line-height: 26px;
+    }
+
+    .fb.available {
+      .fb-preview {
+        display: none;
+      }
+      .fb-like {
+        display: block;
+        overflow: hidden;
+      }
+      iframe {
+        margin: 0;
+      }
+    }
+  }
+
+  .aside-cite {
+    blockquote {
+      border: 0;
+      font-size: $size-m;
+      color: $color-text-bright;
+      margin: 1rem;
+      padding: 0;
+
+      cite {
+        margin-top: 0.8rem;
+        display: block;
+        font-family: $fontHeadline;
+        font-style: normal;
+        font-size: $size-s;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.sidebars {
   & > ul {
     height: 60px;
     text-align: center;
@@ -61,7 +184,6 @@
         font-size: 0.9em;
       }
     }
-
   }
 }
 
@@ -119,7 +241,7 @@
     }
 
     ul {
-      list-style:none;
+      list-style: none;
       margin: 0;
       ul {
         padding-left: 1rem;
@@ -187,40 +309,8 @@
   }
 }
 
-.cite {
-  .row {
-    max-width: 50em;
-    margin: 2em auto;
-    padding: 0 1em;
-
-    & > * {
-      padding: 0;
-    }
-  }
-
-  section {
-    width: auto;
-    float: none;
-  }
-
-  blockquote {
-    border: 0;
-    font-size: $size-l;
-    font-style: italic;
-    color: $color-text-bright;
-    padding-bottom: 2rem;
-    margin-bottom: 0;
-
-    cite {
-      display: block;
-      font-size: $size-m;
-      text-align: right;
-    }
-  }
-}
-
 .search-sidebar {
-  form{
+  form {
     padding: 30px 10px;
     div {
       text-align: center;
@@ -261,29 +351,4 @@
       }
     }
   }
-}
-
-.more-social {
-  @media (max-width: $break-s - 1) {
-    order: 1;
-  }
-  li a{
-    display: block;
-    height: 40px;
-    border-radius: 20px;
-    line-height: 40px;
-    padding-left: 45px;
-    @include l;
-    background: transparent url(../img/social.png) 0 0 no-repeat;
-    &:hover {background-color: rgba($color-primary-h, 0.5);}
-    &.pinterest {background-position: 0 -40px;}
-    &.flattr {background-position: 0 -120px;}
-    &.flickr {background-position: 0 0-160px}
-    &.lastfm {background-position: 0 -200px;}
-    &.tumblr {background-position: 0 0;}
-    &.google {background-position: 0 -240px;}
-    &.bloglovin {background-position: 0 -80px;}
-    &.visits {background-position: 0 -280px;}
-  }
-
 }

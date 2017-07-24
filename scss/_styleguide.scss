@@ -2,7 +2,6 @@ a {
   @include link;
 }
 
-
 body {
   font-family: $font;
   font-size: 16px;
@@ -10,19 +9,15 @@ body {
   line-height: 1.45;
 }
 
-
 h1 {
   @include hd;
   font-size: $size-xxl;
 }
 
-
-
 h2 {
   @include hd;
   font-size: $size-xl;
 }
-
 
 h3 {
   @include hdsmall;
@@ -31,7 +26,6 @@ h3 {
     border: 0 !important;
   }
 }
-
 
 h4 {
   @include hdsmall;
@@ -43,12 +37,10 @@ h5 {
   font-size: $size-m;
 }
 
-
 h6 {
   @include hdsmall;
   font-size: $size-m;
 }
-
 
 p {
   font-size: $size-m;
@@ -65,11 +57,10 @@ li {
   }
 }
 
-
-b, strong {
+b,
+strong {
   @include b;
 }
-
 
 sup {
   display: inline-block;
@@ -120,16 +111,17 @@ sup {
   background: $color-grey;
 }
 
-
 .gallery-content .ribbon-light {
   background: $color-primary-ll;
 }
 
-
 .headline {
-  padding: 0 !important;
+  padding: 4rem 8rem;
   text-align: center;
 
+  @media (max-width: $break-s) {
+    padding: 3rem 0;
+  }
   .super {
     font-size: $size-m;
     color: rgba($color-text-bright, 0.5) !important;
@@ -140,7 +132,24 @@ sup {
 
   h1 {
     margin: 0;
-    @include hd($c: $color-text-bright, $ch: rgba($color-text-bright, 0.3));
+    @include hd($c: $color-text, $ch: $color-text);
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    &:before,
+    &:after {
+      content: ' ';
+      flex: 1 1 auto;
+      height: 1px;
+      background: $color-text-light;
+    }
+    &:before {
+      margin: 0 4px 0 0;
+    }
+    &:after {
+      margin: 0 0 0 4px;
+    }
 
     strong {
       @include b;
@@ -148,7 +157,7 @@ sup {
   }
 
   h3 {
-    @include hdsmall($c: $color-text-bright, $ch: rgba($color-text-bright, 0.3));
+    @include hdsmall($c: $color-text-light, $ch: $color-text-light);
     margin: 0.3em 0 0 0;
   }
 
@@ -157,22 +166,13 @@ sup {
     padding-bottom: 2em;
 
     hgroup {
-      padding: 0 2em
+      padding: 0 2em;
     }
 
     @media (max-width: $break-s) {
       hgroup {
         text-align: center;
       }
-    }
-  }
-}
-
-.headline.archive-headline {
-  h1 {
-    padding: 1em 0;
-    @media (max-width: $break-s) {
-      font-size: $size-xl;
     }
   }
 }
@@ -218,7 +218,6 @@ sup {
   }
 }
 
-
 .wp-caption {
   clear: both;
   max-width: 80%;
@@ -228,8 +227,6 @@ sup {
     float: none;
     margin: 1em 0;
   }
-
-
 
   a {
     display: block;
@@ -244,9 +241,7 @@ sup {
     font-size: $size-s;
     font-style: italic;
   }
-
 }
-
 
 .alignright {
   float: right;
@@ -262,7 +257,6 @@ sup {
   float: none;
   margin: 1em auto;
 }
-
 
 @media (max-width: $break-m) {
   .alignright {
@@ -311,9 +305,8 @@ iframe {
   word-break: break-all;
   // word-break: break-word;
   word-wrap: break-word;
-  
+
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
 }
-

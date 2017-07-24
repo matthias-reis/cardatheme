@@ -57,89 +57,59 @@ add_action('widgets_init', 'c_create_sidebars');
 function c_create_sidebars()
 {
   register_sidebar(
-  array(
-    'name' => 'Inhalts-Slide',
-    'id' => 'content_widgets',
-    'before_widget' => '<section>',
-    'after_widget' => '</section>',
-    'before_title' => '<h4>',
-    'after_title' => '</h4>',
-  )
-);
-register_sidebar(
-array(
-  'name' => 'Social-Slide',
-  'id' => 'social_widgets',
-  'before_widget' => '<section>',
-  'after_widget' => '</section>',
-  'before_title' => '<h4>',
-  'after_title' => '</h4>',
-)
-);
-register_sidebar(
-array(
-  'name' => 'Link-Slide',
-  'id' => 'link_widgets',
-  'before_widget' => '<div>',
-  'after_widget' => '</div>',
-  'before_title' => '<h4>',
-  'after_title' => '</h4>',
-)
-);
-register_sidebar(
-array(
-  'name' => 'Pinwand',
-  'id' => 'pinboard_widgets',
-  'before_widget' => '<section>',
-  'after_widget' => '</section>',
-  'before_title' => '<h5>',
-  'after_title' => '</h5>',
-)
-);
-register_sidebar(
-array(
-  'name' => 'Zitatbereich',
-  'id' => 'cite_widgets',
-  'before_widget' => '<section>',
-  'after_widget' => '</section>',
-  'before_title' => '<h4>',
-  'after_title' => '</h4>',
-)
-);
-register_sidebar(
-array(
-  'name' => 'Widgets im Footer',
-  'id' => 'footer_widgets',
-  'before_widget' => '<section>',
-  'after_widget' => '</section>',
-  'before_title' => '<h2>',
-  'after_title' => '</h2>',
-)
-);
+    array(
+      'name' => 'Kategorien',
+      'id' => 'category_nav',
+      'before_widget' => '<section>',
+      'after_widget' => '</section>',
+      'before_title' => '<h4>',
+      'after_title' => '</h4>',
+    )
+  );
+  register_sidebar(
+    array(
+      'name' => 'Seitenleiste',
+      'id' => 'aside_widgets',
+      'before_widget' => '<section>',
+      'after_widget' => '</section>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+    )
+  );
+  register_sidebar(
+    array(
+      'name' => 'Zitatbereich',
+      'id' => 'cite_widgets',
+      'before_widget' => '<section class="aside-ribbon aside-ribbon-dark aside-cite">',
+      'after_widget' => '</section>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+    )
+  );
 }
 
 function c_create_navigation($location)
 {
   wp_nav_menu(
-  array(
-    'theme_location' => $location,
-    'menu' => '',
-    'container' => 'div',
-    'container_class' => 'menu-{menu slug}-container',
-    'container_id' => '',
-    'menu_class' => 'menu',
-    'menu_id' => '',
-    'echo' => true,
-    'fallback_cb' => 'wp_page_menu',
-    'before' => '',
-    'after' => '',
-    'link_before' => '',
-    'link_after' => '',
-    'items_wrap' => '<ul>%3$s</ul>',
-    'depth' => 0,
-    'walker' => ''
-  )
-);
+    array(
+      'theme_location' => $location,
+      'menu' => '',
+      'container' => 'div',
+      'container_class' => 'menu-{menu slug}-container',
+      'container_id' => '',
+      'menu_class' => 'menu',
+      'menu_id' => '',
+      'echo' => true,
+      'fallback_cb' => 'wp_page_menu',
+      'before' => '',
+      'after' => '',
+      'link_before' => '',
+      'link_after' => '',
+      'items_wrap' => '<ul>%3$s</ul>',
+      'depth' => 0,
+      'walker' => ''
+    )
+  );
 }
 
 function c_custom_header($backgrounds)

@@ -13,3 +13,24 @@
   display: none;
   height: 0;
 }
+
+.content-container {
+  display: flex;
+  align-items: stretch;
+
+  & > .content {
+    flex: 1 1 auto;
+    background: $color-bg-content;
+  }
+
+  & > aside {
+    flex: 0 0 auto;
+    background: $color-bg-aside;
+    width: 20%;
+    max-width: 320px;
+
+    @media (max-width: $break-s) {
+      display: none;
+    }
+  }
+}

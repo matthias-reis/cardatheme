@@ -1,31 +1,39 @@
 <?php the_post() ?>
 
-<section class="ribbon ribbon-main headline archive-headline">
+<section class="headline archive-headline">
 
     <?php
-    if (is_day()) : ?>
-        <h1>Tagesarchiv <strong><?php echo get_the_time('t. F Y'); ?></strong></h1>
+if (is_day()) : ?>
+        <h1>Tagesarchiv</h1>
+        <h3>vom <?php echo get_the_time('d. F Y'); ?></h3>
     <?php
     elseif (is_month()) : ?>
-        <h1>Monatsarchiv <strong><?php echo get_the_time('F Y'); ?></strong></h1>
+        <h1>Monatsarchiv</h1>
+        <h3>des Monats <?php echo get_the_time('F Y'); ?></h3>
     <?php
     elseif (is_search()) : ?>
-        <h1>Suche nach <strong><?php echo get_search_query(); ?></strong></h1>
+        <h1>&laquo;<?php echo get_search_query(); ?>&raquo;</h1>
+        <h3>Deine Suchergebnisse</h3>
     <?php
     elseif (is_year()) : ?>
-        <h1>Jahresarchiv <strong><?php echo get_the_time('Y'); ?></strong></h1>
+        <h1>Jahresarchiv</h1>
+        <h3>des Jahres <?php echo get_the_time('Y'); ?></h3>
     <?php
     elseif (get_post_type() === 'remote') : ?>
         <h1>Anne in anderen Blogs</h1>
+        <h3>Arbeiten für Zeitschriften und vegane Newsportale</h3>
     <?php
     elseif (is_category()) : ?>
-        <h1>Kategorie <strong><?php echo single_cat_title(); ?></strong></h1>
+        <h1>&laquo;<?php echo single_cat_title(); ?>&raquo;</h1>
+        <h3>Kategorie</h3>
     <?php
     elseif (is_tag()) : ?>
-        <h1>Stichwort <strong><?php echo single_tag_title(); ?></strong></h1>
+        <h1>&laquo;<?php echo single_tag_title(); ?>&raquo;</h1>
+        <h3>Stichwort</h3>
     <?php
     else : ?>
-        <h1>Herzlich Willkommen</h1>
+        <h1>Cardamonchai</h1>
+        <h3>Der Rock'n'Roll vegane Blog von Anne Reis</h3>
     <?php endif; ?>
 </section>
 

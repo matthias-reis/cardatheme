@@ -1,13 +1,13 @@
 /*********************************************************************
- *  #### Twitter Post Fetcher v15.0.1 ####
- *  Coded by Jason Mayes 2015. A present to all the developers out there.
- *  www.jasonmayes.com
- *  Please keep this disclaimer with my code if you use it. Thanks. :-)
- *  Got feedback or questions, ask here:
- *  http://www.jasonmayes.com/projects/twitterApi/
- *  Github: https://github.com/jasonmayes/Twitter-Post-Fetcher
- *  Updates will be posted to this site.
- *********************************************************************/
+*  #### Twitter Post Fetcher v17.0.2 ####
+*  Coded by Jason Mayes 2015. A present to all the developers out there.
+*  www.jasonmayes.com
+*  Please keep this disclaimer with my code if you use it. Thanks. :-)
+*  Got feedback or questions, ask here:
+*  http://www.jasonmayes.com/projects/twitterApi/
+*  Github: https://github.com/jasonmayes/Twitter-Post-Fetcher
+*  Updates will be posted to this site.
+*********************************************************************/
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -21,7 +21,7 @@
     // Browser globals.
     factory();
   }
-}(this, function() {
+})(this, function() {
   var domNode = '';
   var maxTweets = 20;
   var parseLinks = true;
@@ -35,6 +35,7 @@
   var customCallbackFunction = null;
   var showInteractionLinks = true;
   var showImages = false;
+  var useEmoji = false;
   var targetBlank = true;
   var lang = 'en';
   var permalinks = true;
@@ -60,11 +61,14 @@
   }
 
   function strip(data) {
-    return data.replace(/<b[^>]*>(.*?)<\/b>/gi, function(a, s) {
-      return s;
-    })
-        .replace(/class="(?!(tco-hidden|tco-display|tco-ellipsis))+.*?"|data-query-source=".*?"|dir=".*?"|rel=".*?"/gi,
-        '');
+    return data
+      .replace(/<b[^>]*>(.*?)<\/b>/gi, function(a, s) {
+        return s;
+      })
+      .replace(
+        /class="(?!(tco-hidden|tco-display|tco-ellipsis))+.*?"|data-query-source=".*?"|dir=".*?"|rel=".*?"/gi,
+        ''
+      );
   }
 
   function targetLinksToNewWindow(el) {
@@ -87,9 +91,13 @@
   }
 
   function extractImageUrl(image_data) {
-    if (image_data !== undefined && image_data.innerHTML.indexOf('data-srcset') >= 0) {
-      var data_src = image_data.innerHTML
-          .match(/data-srcset="([A-z0-9%_\.-]+)/i)[0];
+    if (
+      image_data !== undefined &&
+      image_data.innerHTML.indexOf('data-srcset') >= 0
+    ) {
+      var data_src = image_data.innerHTML.match(
+        /data-srcset="([A-z0-9%_\.-]+)/i
+      )[0];
       return decodeURIComponent(data_src).split('"')[1];
     }
   }
@@ -123,6 +131,9 @@
       if (config.showImages === undefined) {
         config.showImages = false;
       }
+      if (config.useEmoji === undefined) {
+        config.useEmoji = false;
+      }
       if (config.linksInNewWindow === undefined) {
         config.linksInNewWindow = true;
       }
@@ -148,6 +159,7 @@
         customCallbackFunction = config.customCallback;
         showInteractionLinks = config.showInteraction;
         showImages = config.showImages;
+        useEmoji = config.useEmoji;
         targetBlank = config.linksInNewWindow;
         permalinks = config.showPermalinks;
         dataOnly = config.dataOnly;
@@ -158,17 +170,84 @@
         }
         script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = 'https://cdn.syndication.twimg.com/widgets/timelines/' +
-            config.id + '?&lang=' + (config.lang || lang) +
-            '&callback=twitterFetcher.callback&' +
-            'suppress_response_codes=true&rnd=' + Math.random();
+        if (config.list !== undefined) {
+          script.src =
+            'https://syndication.twitter.com/timeline/list?' +
+            'callback=__twttrf.callback&dnt=false&list_slug=' +
+            config.list.listSlug +
+            '&screen_name=' +
+            config.list.screenName +
+            '&suppress_response_codes=true&lang=' +
+            (config.lang || lang) +
+            '&rnd=' +
+            Math.random();
+        } else if (config.profile !== undefined) {
+          script.src =
+            'https://syndication.twitter.com/timeline/profile?' +
+            'callback=__twttrf.callback&dnt=false' +
+            '&screen_name=' +
+            config.profile.screenName +
+            '&suppress_response_codes=true&lang=' +
+            (config.lang || lang) +
+            '&rnd=' +
+            Math.random();
+        } else if (config.likes !== undefined) {
+          script.src =
+            'https://syndication.twitter.com/timeline/likes?' +
+            'callback=__twttrf.callback&dnt=false' +
+            '&screen_name=' +
+            config.likes.screenName +
+            '&suppress_response_codes=true&lang=' +
+            (config.lang || lang) +
+            '&rnd=' +
+            Math.random();
+        } else {
+          script.src =
+            'https://cdn.syndication.twimg.com/widgets/timelines/' +
+            config.id +
+            '?&lang=' +
+            (config.lang || lang) +
+            '&callback=__twttrf.callback&' +
+            'suppress_response_codes=true&rnd=' +
+            Math.random();
+        }
         head.appendChild(script);
       }
     },
     callback: function(data) {
+      if (data === undefined || data.body === undefined) {
+        inProgress = false;
+
+        if (queue.length > 0) {
+          twitterFetcher.fetch(queue[0]);
+          queue.splice(0, 1);
+        }
+        return;
+      }
+
+      // Remove emoji and summary card images.
+      if (!useEmoji) {
+        data.body = data.body.replace(
+          /(<img[^c]*class="Emoji[^>]*>)|(<img[^c]*class="u-block[^>]*>)/g,
+          ''
+        );
+      }
+
+      // Remove display images.
+      if (!showImages) {
+        data.body = data.body.replace(
+          /(<img[^c]*class="NaturalImage-image[^>]*>|(<img[^c]*class="CroppedImage-image[^>]*>))/g,
+          ''
+        );
+      }
+      // Remove avatar images.
+      if (!printUser) {
+        data.body = data.body.replace(/(<img[^c]*class="Avatar"[^>]*>)/g, '');
+      }
+
       var div = document.createElement('div');
       div.innerHTML = data.body;
-      if (typeof(div.getElementsByClassName) === 'undefined') {
+      if (typeof div.getElementsByClassName === 'undefined') {
         supportsClassName = false;
       }
 
@@ -176,7 +255,7 @@
         var avatarImg = element.getElementsByTagName('img')[0];
         avatarImg.src = avatarImg.getAttribute('data-src-2x');
         return element;
-      };
+      }
 
       var tweets = [];
       var authors = [];
@@ -190,21 +269,37 @@
       if (supportsClassName) {
         var tmp = div.getElementsByClassName('timeline-Tweet');
         while (x < tmp.length) {
-          if (tmp[x].getElementsByClassName('timeline-Tweet-retweetCredit').length > 0) {
+          if (
+            tmp[x].getElementsByClassName('timeline-Tweet-retweetCredit')
+              .length > 0
+          ) {
             rts.push(true);
           } else {
             rts.push(false);
           }
-          if (!rts[x] || rts[x] && showRts) {
-            tweets.push(tmp[x].getElementsByClassName('timeline-Tweet-text')[0]);
+          if (!rts[x] || (rts[x] && showRts)) {
+            tweets.push(
+              tmp[x].getElementsByClassName('timeline-Tweet-text')[0]
+            );
             tids.push(tmp[x].getAttribute('data-tweet-id'));
-            authors.push(swapDataSrc(tmp[x]
-                .getElementsByClassName('timeline-Tweet-author')[0]));
+            if (printUser) {
+              authors.push(
+                swapDataSrc(
+                  tmp[x].getElementsByClassName('timeline-Tweet-author')[0]
+                )
+              );
+            }
             times.push(tmp[x].getElementsByClassName('dt-updated')[0]);
-            permalinksURL.push(tmp[x].getElementsByClassName('timeline-Tweet-timestamp')[0]);
-            if (tmp[x].getElementsByClassName('timeline-Tweet-media')[0] !==
-                undefined) {
-              images.push(tmp[x].getElementsByClassName('timeline-Tweet-media')[0]);
+            permalinksURL.push(
+              tmp[x].getElementsByClassName('timeline-Tweet-timestamp')[0]
+            );
+            if (
+              tmp[x].getElementsByClassName('timeline-Tweet-media')[0] !==
+              undefined
+            ) {
+              images.push(
+                tmp[x].getElementsByClassName('timeline-Tweet-media')[0]
+              );
             } else {
               images.push(undefined);
             }
@@ -214,20 +309,37 @@
       } else {
         var tmp = getElementsByClassName(div, 'timeline-Tweet');
         while (x < tmp.length) {
-          if (getElementsByClassName(tmp[x], 'timeline-Tweet-retweetCredit').length > 0) {
+          if (
+            getElementsByClassName(tmp[x], 'timeline-Tweet-retweetCredit')
+              .length > 0
+          ) {
             rts.push(true);
           } else {
             rts.push(false);
           }
-          if (!rts[x] || rts[x] && showRts) {
-            tweets.push(getElementsByClassName(tmp[x], 'timeline-Tweet-text')[0]);
+          if (!rts[x] || (rts[x] && showRts)) {
+            tweets.push(
+              getElementsByClassName(tmp[x], 'timeline-Tweet-text')[0]
+            );
             tids.push(tmp[x].getAttribute('data-tweet-id'));
-            authors.push(swapDataSrc(getElementsByClassName(tmp[x],
-                'timeline-Tweet-author')[0]));
+            if (printUser) {
+              authors.push(
+                swapDataSrc(
+                  getElementsByClassName(tmp[x], 'timeline-Tweet-author')[0]
+                )
+              );
+            }
             times.push(getElementsByClassName(tmp[x], 'dt-updated')[0]);
-            permalinksURL.push(getElementsByClassName(tmp[x], 'timeline-Tweet-timestamp')[0]);
-            if (getElementsByClassName(tmp[x], 'timeline-Tweet-media')[0] !== undefined) {
-              images.push(getElementsByClassName(tmp[x], 'timeline-Tweet-media')[0]);
+            permalinksURL.push(
+              getElementsByClassName(tmp[x], 'timeline-Tweet-timestamp')[0]
+            );
+            if (
+              getElementsByClassName(tmp[x], 'timeline-Tweet-media')[0] !==
+              undefined
+            ) {
+              images.push(
+                getElementsByClassName(tmp[x], 'timeline-Tweet-media')[0]
+              );
             } else {
               images.push(undefined);
             }
@@ -237,12 +349,12 @@
       }
 
       if (tweets.length > maxTweets) {
-        tweets.splice(maxTweets, (tweets.length - maxTweets));
-        authors.splice(maxTweets, (authors.length - maxTweets));
-        times.splice(maxTweets, (times.length - maxTweets));
-        rts.splice(maxTweets, (rts.length - maxTweets));
-        images.splice(maxTweets, (images.length - maxTweets));
-        permalinksURL.splice(maxTweets, (permalinksURL.length - maxTweets));
+        tweets.splice(maxTweets, tweets.length - maxTweets);
+        authors.splice(maxTweets, authors.length - maxTweets);
+        times.splice(maxTweets, times.length - maxTweets);
+        rts.splice(maxTweets, rts.length - maxTweets);
+        images.splice(maxTweets, images.length - maxTweets);
+        permalinksURL.splice(maxTweets, permalinksURL.length - maxTweets);
       }
 
       var arrayTweets = [];
@@ -252,22 +364,55 @@
         while (n < x) {
           arrayTweets.push({
             tweet: tweets[n].innerHTML,
-            author: authors[n].innerHTML,
+            author: authors[n] ? authors[n].innerHTML : 'Unknown Author',
+            author_data: {
+              profile_url: authors[n]
+                ? authors[n].querySelector('[data-scribe="element:user_link"]')
+                    .href
+                : null,
+              profile_image: authors[n]
+                ? authors[n]
+                    .querySelector('[data-scribe="element:avatar"]')
+                    .getAttribute('data-src-1x')
+                : null,
+              profile_image_2x: authors[n]
+                ? authors[n]
+                    .querySelector('[data-scribe="element:avatar"]')
+                    .getAttribute('data-src-2x')
+                : null,
+              screen_name: authors[n]
+                ? authors[n].querySelector(
+                    '[data-scribe="element:screen_name"]'
+                  ).title
+                : null,
+              name: authors[n]
+                ? authors[n].querySelector('[data-scribe="element:name"]').title
+                : null
+            },
             time: times[n].textContent,
+            timestamp: times[n]
+              .getAttribute('datetime')
+              .replace('+0000', 'Z')
+              .replace(/([\+\-])(\d\d)(\d\d)/, '$1$2:$3'),
             image: extractImageUrl(images[n]),
             rt: rts[n],
             tid: tids[n],
-            permalinkURL: (permalinksURL[n] === undefined) ?
-                '' : permalinksURL[n].href
+            permalinkURL:
+              permalinksURL[n] === undefined ? '' : permalinksURL[n].href
           });
           n++;
         }
       } else {
         while (n < x) {
-          if (typeof(formatterFunction) !== 'string') {
+          if (typeof formatterFunction !== 'string') {
             var datetimeText = times[n].getAttribute('datetime');
-            var newDate = new Date(times[n].getAttribute('datetime')
-                .replace(/-/g, '/').replace('T', ' ').split('+')[0]);
+            var newDate = new Date(
+              times[n]
+                .getAttribute('datetime')
+                .replace(/-/g, '/')
+                .replace('T', ' ')
+                .split('+')[0]
+            );
             var dateString = formatterFunction(newDate, datetimeText);
             times[n].setAttribute('aria-label', dateString);
 
@@ -295,17 +440,23 @@
               }
             }
             if (printUser) {
-              op += '<div class="user">' + strip(authors[n].innerHTML) +
-                  '</div>';
+              op +=
+                '<div class="user">' + strip(authors[n].innerHTML) + '</div>';
             }
             op += '<p class="tweet">' + strip(tweets[n].innerHTML) + '</p>';
             if (printTime) {
               if (permalinks) {
-                op += '<p class="timePosted"><a href="' + permalinksURL[n] +
-                    '">' + times[n].getAttribute('aria-label') + '</a></p>';
+                op +=
+                  '<p class="timePosted"><a href="' +
+                  permalinksURL[n] +
+                  '">' +
+                  times[n].getAttribute('aria-label') +
+                  '</a></p>';
               } else {
-                op += '<p class="timePosted">' +
-                    times[n].getAttribute('aria-label') + '</p>';
+                op +=
+                  '<p class="timePosted">' +
+                  times[n].getAttribute('aria-label') +
+                  '</p>';
               }
             }
           } else {
@@ -317,7 +468,6 @@
               if (printTime) {
                 op += '<p class="timePosted">' + times[n].textContent + '</p>';
               }
-
             } else {
               if (printUser) {
                 op += '<p class="user">' + authors[n].textContent + '</p>';
@@ -329,25 +479,42 @@
             }
           }
           if (showInteractionLinks) {
-            op += '<p class="interact"><a href="https://twitter.com/intent/' +
-                'tweet?in_reply_to=' + tids[n] +
-                '" class="twitter_reply_icon"' +
-                (targetBlank ? ' target="_blank">' : '>') +
-                'Reply</a><a href="https://twitter.com/intent/retweet?' +
-                'tweet_id=' + tids[n] + '" class="twitter_retweet_icon"' +
-                (targetBlank ? ' target="_blank">' : '>') + 'Retweet</a>' +
-                '<a href="https://twitter.com/intent/favorite?tweet_id=' +
-                tids[n] + '" class="twitter_fav_icon"' +
-                (targetBlank ? ' target="_blank">' : '>') + 'Favorite</a></p>';
+            op +=
+              '<p class="interact"><a href="https://twitter.com/intent/' +
+              'tweet?in_reply_to=' +
+              tids[n] +
+              '" class="twitter_reply_icon"' +
+              (targetBlank ? ' target="_blank">' : '>') +
+              'Reply</a><a href="https://twitter.com/intent/retweet?' +
+              'tweet_id=' +
+              tids[n] +
+              '" class="twitter_retweet_icon"' +
+              (targetBlank ? ' target="_blank">' : '>') +
+              'Retweet</a>' +
+              '<a href="https://twitter.com/intent/favorite?tweet_id=' +
+              tids[n] +
+              '" class="twitter_fav_icon"' +
+              (targetBlank ? ' target="_blank">' : '>') +
+              'Favorite</a></p>';
+          }
+          if (
+            showImages &&
+            images[n] !== undefined &&
+            extractImageUrl(images[n]) !== undefined
+          ) {
+            op +=
+              '<div class="media">' +
+              '<img src="' +
+              extractImageUrl(images[n]) +
+              '" alt="Image from tweet" />' +
+              '</div>';
+          }
+          if (showImages) {
+            arrayTweets.push(op);
+          } else if (!showImages && tweets[n].textContent.length) {
+            arrayTweets.push(op);
           }
 
-          if (showImages && images[n] !== undefined) {
-            op += '<div class="media">' +
-                '<img src="' + extractImageUrl(images[n]) +
-                '" alt="Image from tweet" />' + '</div>';
-          }
-
-          arrayTweets.push(op);
           n++;
         }
       }
@@ -363,6 +530,7 @@
   };
 
   // It must be a global variable because it will be called by JSONP.
+  window.__twttrf = twitterFetcher;
   window.twitterFetcher = twitterFetcher;
   return twitterFetcher;
-}));
+});

@@ -1,6 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <a class="article-item" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"
-       style="border-top-color: #<?php c_print_random_color(); ?>">
+    <a class="article-item" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url()">
 
         <?php if (has_post_thumbnail()) : ?>
             <div class="image">
