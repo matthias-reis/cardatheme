@@ -1,45 +1,45 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Playball');
 
-$color-text: #555;
-$color-text-light: lighten($color-text, 35%);
-$color-text-bright: rgba(255, 255, 255, 70%);
-$color-text-brighter: #fff;
-$color-text-link: #5c9b72;
-$color-text-link-dark: darken(#5c9b72, 20%);
-$color-border: #ccc;
+$color-white: #fff;
+$color-grey: #444;
+$color-green: #5c9b72;
 
-$hue: 135;
+$color-text: $color-grey;
+$color-text-green: $color-green;
+$color-text-weak: lighten($color-grey, 30%);
 
-$color-bg: hsl($hue, 5, 90);
-$color-bg-aside: #c4e1ce;
-$color-bg-aside-light: #f7fbf8;
-$color-bg-aside-dark: #96c6a7;
+$color-text-inverted-strong: $color-white;
+$color-text-inverted: transparentize($color-white, 0.2);
+$color-text-inverted-weak: transparentize($color-white, 0.4);
 
-$color-bg-content: #e4e4e4;
+$color-text-link: $color-green;
+$color-text-link-strong: darken($color-green, 20%);
+$color-border: lighten($color-grey, 50%);
 
-$color-primary: hsl($hue, 4, 40);
-$color-primary-m: hsl($hue, 5, 55);
-$color-primary-l: hsl($hue, 7, 70);
-$color-primary-ll: hsl($hue, 9, 85);
-$color-primary-h: hsl($hue, 40, 80);
+$color-bg-aside: lighten($color-green, 30%);
+$color-bg-aside-dark: lighten($color-green, 15%);
+$color-bg-aside-image: #d8d8d8;
+$color-bg-aside-highlight: lighten($color-grey, 40%);
 
-$color-secondary: #a94f5c;
-$color-secondary-l: #d08b95;
+$color-bg-content-text: $color-white;
+$color-bg-content-list: lighten($color-grey, 65%); //e6e6e6
+$color-bg-content-dark: lighten($color-grey, 10%);
+$color-bg-content-comment: lighten($color-green, 25%);
+$color-bg-content-gallery: $color-grey;
 
-$color-grey: #777;
-
+// deprecated
 $break-s: 640px;
 $break-m: 800px;
 $break-l: 1024px;
 $break-xl: 1280px;
 $width: 1400px;
 
-$font: 'PT Serif', 'Georgia', serif;
-$fontHeadline: 'PT Sans Narrow', 'sans-serif';
+$font: 'PT Sans', 'sans-serif';
+$font-headline: 'PT Sans', 'sans-serif';
+$font-cursive: 'Playball', 'cursive';
 
-$weightLight: 200;
 $weightNormal: 400;
-$weightBold: 600;
+$weightBold: 700;
 
 $size-s: 1rem;
 $size-m: 1.25rem;
@@ -47,7 +47,7 @@ $size-l: 1.5rem;
 $size-xl: 2.0rem;
 $size-xxl: 3.0rem;
 
-@mixin link($c: $color-secondary, $ch: $color-primary) {
+@mixin link($c: $color-text-link, $ch: $color-text-link-strong) {
   color: $c;
   text-decoration: none;
 
@@ -66,15 +66,15 @@ $size-xxl: 3.0rem;
 }
 
 @mixin l {
-  font-weight: $weightLight;
+  font-weight: $weightNormal;
 }
 
 @mixin shadow($depth: 5px, $strength: 1) {
   box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0,  (0.4 * $strength));
 }
 
-@mixin hd($c: $color-text, $ch: $color-secondary) {
-  font-family: $fontHeadline;
+@mixin hd($c: $color-text, $ch: $color-text-link) {
+  font-family: $font-headline;
   @include b;
   color: $c !important;
   line-height: 1.2;
@@ -90,9 +90,9 @@ $size-xxl: 3.0rem;
   }
 }
 
-@mixin hdsmall($c: $color-text, $ch: $color-secondary) {
-  font-family: $fontHeadline;
-  @include l;
+@mixin hdsmall($c: $color-text, $ch: $color-text-link) {
+  font-family: $font-headline;
+  @include b;
   line-height: 1.2;
   color: $c !important;
   a,
@@ -103,4 +103,10 @@ $size-xxl: 3.0rem;
       color: $ch !important;
     }
   }
+}
+
+@mixin hdsize($size) {
+  font-size: $size;
+  margin-top: 1.5 * $size;
+  margin-bottom: 0.5 * $size;
 }

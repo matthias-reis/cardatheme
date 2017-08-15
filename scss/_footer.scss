@@ -1,8 +1,8 @@
 .footer-wrapper {
-  z-index:2;
+  z-index: 2;
   position: relative;
-  background: $color-primary-l;
-  color: rgba($color-text-bright, 30%);
+  background: $color-bg-content-dark;
+  color: rgba($color-text-inverted, 30%);
   margin: 0;
 
   footer {
@@ -12,15 +12,18 @@
   }
 
   h2 {
-    font-family: $fontHeadline;
+    font-family: $font-headline;
     font-size: 1.2em;
-    color: $color-text-bright;
+    color: $color-text-inverted;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 
   section {
     width: 100%;
-    h2, ul, p, select {
+    h2,
+    ul,
+    p,
+    select {
       margin: 5px 15px 0 15px;
     }
     @media (min-width: $break-s) {
@@ -33,7 +36,7 @@
     }
 
     ul {
-      padding:0;
+      padding: 0;
     }
     li {
       list-style: none;
@@ -57,6 +60,6 @@
   }
 
   a {
-    @include link(rgba($color-text-bright, 30%), $color-text-bright);
+    @include link($color-text-inverted, $color-text-inverted-strong);
   }
 }

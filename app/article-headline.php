@@ -1,21 +1,27 @@
-<header class="ribbon ribbon-main headline<?php if (has_post_thumbnail()) : ?> with-thumbnail<?php endif; ?>">
-    <div class="row inner-headline">
-        <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail(); ?>
-        <?php endif; ?>
-        <hgroup>
-            <h4 class="super">
-                <?php if(!is_page()): ?>
-                    <?php echo ucfirst(c_get_type());?> vom <?php the_date();?>
-                <?php endif; ?>
-            </h4>
+<header class="article-headline article-ribbon">
+  <div class="row">
+    <h4>
+      <?php if(!is_page()): ?>
+        <?php echo ucfirst(c_get_type());?> vom <?php the_date();?>
+      <?php endif; ?>
+    </h4>
+    <div class="hdflex">
+      <?php if (has_post_thumbnail()) : ?>
+        <div class="article-thumbnail">
+          <?php the_post_thumbnail('large'); ?>
+        </div>
+      <?php endif; ?>
+      <div class="hd">
+        <h1>
+          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+            <?php the_title(); ?>
+          </a>
+        </h1>
 
-            <h1>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                    <?php the_title(); ?>
-                </a>
-            </h1>
-        </hgroup>
-        <div style="clear:both"></div>
+        <?php if (c_has_subhead()) : ?>
+          <h2><?php c_the_subhead(); ?></h2>
+        <?php endif; ?>
+      </div>
     </div>
+  </div>
 </header>

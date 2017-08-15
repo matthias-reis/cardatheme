@@ -32,8 +32,11 @@ if (is_day()) : ?>
         <h3>Stichwort</h3>
     <?php
     else : ?>
-        <h1>Cardamonchai</h1>
-        <h3>Der Rock'n'Roll vegane Blog von Anne Reis</h3>
+        <div class="hl">
+            <h3>Anne bloggt</h3>
+            <h1>Cardamonchai</h1>
+            <h2>Rock 'n' Roll Vegan</h2>
+        </div>
     <?php endif; ?>
 </section>
 

@@ -1,7 +1,9 @@
-.header {
+.header-wrapper {
   background: #fff;
-  height: 72px;
   border-bottom: 1px solid $color-border;
+}
+.header {
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,14 +16,25 @@
     align-items: center;
     img {
       flex: 0 0 auto;
-      margin-left: 20px;
+      margin-left: 2rem;
+      @media (max-width: $break-xl) {
+        margin-left: 0.5rem;
+      }
     }
     hgroup {
       flex: 0 0 auto;
       background: transparent url(../img/hl.svg) no-repeat;
-      width: 193px;
-      height: 49px;
+      width: 189px;
+      height: 48px;
       margin-left: 40px;
+
+      @media (max-width: $break-xl) {
+        display: none;
+      }
+
+      .home & {
+        display: none;
+      }
 
       h1,
       h2 {
@@ -32,23 +45,78 @@
 }
 
 .search-bar {
-  display: none;
-  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: lighten($color-bg-content-list, 5%);
+  height: 72px;
 
-  &.active {
-    display: block;
-    height: 72px;
+  &.hide {
+    display: none;
+    height: 0;
+  }
+
+  form {
+    & > div {
+      display: flex;
+    }
+    label {
+      display: none;
+    }
+
+    input {
+      display: inline-block;
+      border-radius: 2px;
+      border: 1px solid $color-border;
+
+      &[type=text] {
+        width: 250px;
+        margin: 0 5px;
+        padding: 5px;
+        color: $color-text;
+        font-weight: $weightNormal;
+
+        &:focus {
+          outline: 0;
+          border-color: $color-green;
+        }
+      }
+
+      &[type=submit] {
+        border: 1px solid $color-border;
+        background: #fff;
+        overflow: hidden;
+        padding: 0 1rem;
+        font-family: $font-cursive;
+        font-size: $size-l;
+        &:hover {
+          background-color: $color-green;
+          color: $color-text-inverted-strong;
+          border-radius: 2px;
+        }
+      }
+    }
   }
 }
 
 .header-menu {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  @media (max-width: $break-xl) {
+    margin-right: 0.5rem;
+  }
   h4 {
     display: none;
   }
   & > section {
     flex: 1 1 auto;
 
-    & > ul {
+    @media (max-width: $break-m) {
+      display: none;
+    }
+
+    & > div > ul {
       margin: 0;
       padding: 0;
       flex: 1 1 auto;
@@ -64,15 +132,14 @@
         a {
           line-height: 70px;
           padding: 0 12px;
-          @include link($color-text-light, $color-text);
-          font-family: $fontHeadline;
+          @include link($color-text-weak, $color-text);
+          font-family: $font-headline;
           font-size: $size-m;
-          text-transform: uppercase;
           font-weight: 300;
           display: block;
         }
 
-        .children {
+        .sub-menu {
           display: none;
           position: absolute;
           top: 70px;
@@ -100,11 +167,74 @@
         }
 
         &:hover {
-          .children {
+          .sub-menu {
             display: block;
           }
         }
       }
+    }
+  }
+  .search-icon,
+  .burger-icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    span {
+      display: none;
+    }
+    @include link($color-text-weak, $color-text);
+  }
+
+  .search-icon {
+    margin-left: 3rem;
+    @media (max-width: $break-xl) {
+      margin-left: 1rem;
+    }
+  }
+
+  .burger-icon {
+    display: none;
+    @media (max-width: $break-m) {
+      display: block;
+    }
+  }
+}
+
+.menu-bar {
+  display: none;
+  background: lighten($color-bg-content-list, 5%);
+
+  h4 {
+    display: none;
+  }
+
+  .menu-main-container > ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+      flex: 1 1 auto;
+      width: 50%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      ul {
+        list-style: none;
+        padding-left: 0.8rem;
+
+        li {
+          font-size: $size-s;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $break-m) {
+    &.show {
+      display: block;
     }
   }
 }
@@ -114,7 +244,7 @@
 }
 
 body > main {
-  background: $color-bg;
+  background: $color-bg-content-text;
   position: relative;
   z-index: 2;
 }

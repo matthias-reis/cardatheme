@@ -11,17 +11,17 @@ body {
 
 h1 {
   @include hd;
-  font-size: $size-xxl;
+  @include hdsize($size-xxl);
 }
 
 h2 {
   @include hd;
-  font-size: $size-xl;
+  @include hdsize($size-xl);
 }
 
 h3 {
   @include hdsmall;
-  font-size: $size-l;
+  @include hdsize($size-l);
   &:before {
     border: 0 !important;
   }
@@ -29,17 +29,20 @@ h3 {
 
 h4 {
   @include hdsmall;
-  font-size: $size-m;
+  @include hdsize($size-m);
 }
 
 h5 {
   @include hdsmall;
-  font-size: $size-m;
+  @include hdsize($size-m);
+  @include n;
+  font-style: italic;
 }
 
 h6 {
   @include hdsmall;
-  font-size: $size-m;
+  @include hdsize($size-m);
+  @include n;
 }
 
 p {
@@ -67,52 +70,31 @@ sup {
   width: 16px;
   height: 16px;
   line-height: 16px;
-  background: $color-primary-l;
-  color: $color-primary;
+  background: $color-text-link;
+  color: $color-text-inverted;
   font-size: 12px;
   font-weight: bold;
   text-align: center;
   border-radius: 50%;
 
   &:hover {
-    background: $color-primary;
+    background: $color-text-link-strong;
     color: #fff;
   }
 }
 
 .ribbon {
-  background: $color-bg;
+  background: $color-bg-content-text;
 
+  &.ribbon-list {
+    background: $color-bg-content-list;
+  }
+  &.ribbon-gallery {
+    background: $color-bg-content-gallery;
+  }
   &.ribbon-dark {
-    background: $color-primary;
+    background: $color-bg-content-dark;
   }
-  &.ribbon-secondary {
-    background: $color-secondary;
-  }
-  &.ribbon-main {
-    background: $color-primary;
-  }
-  &.ribbon-medium {
-    background: $color-primary-m;
-  }
-  &.ribbon-light {
-    background: $color-primary-l;
-  }
-  &.ribbon-bright {
-    background: $color-primary-ll;
-  }
-  &.ribbon-grey {
-    background: $color-grey;
-  }
-}
-
-.gallery-content .ribbon {
-  color: $color-text-bright;
-  background: $color-grey;
-}
-
-.gallery-content .ribbon-light {
-  background: $color-primary-ll;
 }
 
 .headline {
@@ -124,7 +106,7 @@ sup {
   }
   .super {
     font-size: $size-m;
-    color: rgba($color-text-bright, 0.5) !important;
+    color: rgba($color-text-inverted, 0.5) !important;
     @include b;
     text-transform: uppercase;
     margin: 0 0 1em 0;
@@ -133,23 +115,8 @@ sup {
   h1 {
     margin: 0;
     @include hd($c: $color-text, $ch: $color-text);
-
-    display: flex;
-    align-items: center;
+    font-family: $font-cursive;
     text-align: center;
-    &:before,
-    &:after {
-      content: ' ';
-      flex: 1 1 auto;
-      height: 1px;
-      background: $color-text-light;
-    }
-    &:before {
-      margin: 0 4px 0 0;
-    }
-    &:after {
-      margin: 0 0 0 4px;
-    }
 
     strong {
       @include b;
@@ -157,7 +124,7 @@ sup {
   }
 
   h3 {
-    @include hdsmall($c: $color-text-light, $ch: $color-text-light);
+    @include hdsmall($c: $color-text-weak, $ch: $color-text-link);
     margin: 0.3em 0 0 0;
   }
 
@@ -173,6 +140,20 @@ sup {
       hgroup {
         text-align: center;
       }
+    }
+  }
+
+  // homepage headline
+  .hl {
+    display: inline-block;
+    background: transparent url(../img/hl.svg) 0 0 no-repeat;
+    background-size: contain;
+    max-width: 378px;
+    width: 95%;
+    height: 96px;
+
+    & > * {
+      display: none;
     }
   }
 }
@@ -275,11 +256,15 @@ sup {
   }
 
   main img {
-    width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    height: auto;
   }
   main .outer-image {
-    float: none !important;
+    float: none;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 @media (max-width: $break-s) {

@@ -1,15 +1,15 @@
-<?php get_template_part('app/article', 'headline'); ?>
+<?php get_template_part('app/article', 'gallery-headline'); ?>
 
-<section class="article-content gallery-content ribbon">
-    <section class="article-gallery ribbon">
-        <div class="row hyphenate">
-            <blockquote>Gallery Right</blockquote>
-            <?php the_content(); ?>
-        </div>
-    </section>
-    <section class="article-comment ribbon ribbon-light">
-        <div class="row">
-            <?php comments_template('/app/article-comments.php'); ?>
-        </div>
-    </section>
+
+<section class="article-text article-ribbon-gallery article-ribbon-gallery-right article-ribbon">
+    <div class="row">
+        <?php the_content(); ?>
+    </div>
 </section>
+
+<section class="article-comment article-ribbon-comment">
+    <div class="row">
+        <?php comments_template('/app/article-comments.php'); ?>
+    </div>
+</section>
+

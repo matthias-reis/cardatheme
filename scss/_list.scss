@@ -1,53 +1,56 @@
 %article {
   a {
     display: flex;
+    position: relative;
     height: 100%;
     flex-direction: column;
-    justify-content: space-between;
-    background: #fff;
+    justify-content: flex-start;
+    background: $color-bg-content-text;
     color: $color-text;
 
     &:hover {
-      color: $color-primary;
+      color: $color-text-link;
       text-decoration: none;
 
       .more {
-        color: $color-secondary;
+        color: $color-text-link-strong;
       }
     }
   }
 
-  img {
+  .image {
     width: 100% !important;
-    height: auto !important;
+    background: transparent 50% 50% no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    img {
+      display: none;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 75%;
+    }
   }
 
   .text {
-    margin: 0.5rem;
+    margin: 1rem 0.5rem 2.5rem 0.5rem;
     text-align: center;
 
     .super {
-      font-size: 0.8em;
-      margin-bottom: 2em;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      font-weight: bold;
-
-      display: flex;
-      align-items: center;
+      width: 100%;
+      border-bottom: 1px solid $color-border;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
       text-align: center;
-      &:before,
-      &:after {
-        content: ' ';
-        flex: 1 1 auto;
-        height: 1px;
-        background: $color-text-light;
-      }
-      &:before {
-        margin: 0 4px 0 0;
-      }
-      &:after {
-        margin: 0 0 0 4px;
-      }
+      justify-content: center;
+
+      color: $color-text-weak !important;
     }
 
     h1 {
@@ -60,9 +63,9 @@
 
     h2 {
       @include l;
-      margin: 0.3em 0 1em 0;
+      margin: 0.5rem 0 0 0;
       font-size: $size-m;
-      color: $color-text-light !important;
+      color: $color-text-weak !important;
     }
 
     .excerpt {
@@ -71,13 +74,19 @@
         color: $color-text !important;
         font-size: $size-s;
       }
+
+      div {
+        margin-top: 2rem;
+      }
     }
     .more {
-      text-align: right;
       @include b;
-      font-family: $fontHeadline;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-family: $font-headline;
       text-transform: uppercase;
-      color: $color-secondary;
+      color: $color-text-link;
       font-size: 0.8em;
       margin: 1em 0 0 0;
     }
@@ -97,16 +106,13 @@
   @media (min-width: $break-m) {
     width: calc(33.3% - 3rem);
   }
-  @media (min-width: $break-xl) {
+  @media (min-width: $break-l) {
     width: calc(25% - 3rem);
   }
 }
 
 %highlight-article {
   @extend %article;
-  @media (min-width: $break-m) {
-    width: calc(50% - 3rem);
-  }
 }
 
 .article-list {
@@ -125,40 +131,45 @@
 
     &:nth-of-type(1) {
       @extend %highlight-article;
+      @media (min-width: $break-m) {
+        width: calc(50% - 3rem);
+      }
+      @media (min-width: $break-xl) {
+        width: calc(33.3% - 3rem);
+      }
     }
     &:nth-of-type(2) {
       @extend %highlight-article;
+      @media (min-width: $break-s) {
+        width: calc(50% - 3rem);
+      }
+      @media (min-width: $break-xl) {
+        width: calc(33.3% - 3rem);
+      }
     }
-    &:nth-of-type(n + 2) {
+    &:nth-of-type(3) {
+      @extend %highlight-article;
+      @media (min-width: $break-s) {
+        width: calc(50% - 3rem);
+      }
+      @media (min-width: $break-m) {
+        width: calc(33.3% - 3rem);
+      }
+      @media (min-width: $break-l) {
+        width: calc(25% - 3rem);
+      }
+      @media (min-width: $break-xl) {
+        width: calc(33.3% - 3rem);
+      }
+    }
+    &:nth-of-type(n + 3) {
       @extend %standard-article;
     }
   }
 }
 
-#article-nav {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-
-  div {
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    max-width: 600px;
-    background: rgba($color-secondary, 0.4);
-    color: $color-text-bright;
-
-    a,
-    a:hover {
-      padding: 10px;
-      color: $color-text-bright;
-      display: block;
-    }
-
-    &:hover {
-      background: rgba($color-secondary, 0.6);
-    }
-  }
+.article-list .type-remote .article-item .image {
+  background-size: contain;
 }
 
 #infscr-loading {
@@ -166,4 +177,8 @@
   bottom: 0;
   width: 100%;
   text-align: center;
+}
+
+.placeholder {
+  visibility: hidden;
 }

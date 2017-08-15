@@ -1,124 +1,274 @@
-.article-content {
-  width: 100%;
+.article-ribbon,
+.article-comment {
+  background: $color-bg-content-text;
+  padding: 2rem 0;
+  .row {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+.article-ribbon-gallery-right {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  margin: 0;
-  padding: 0;
+
+  .row {
+    max-width: auto;
+    width: 30%;
+    flex: 1 1 auto;
+    @media (max-width: $break-m) {
+      width: 100%;
+    }
+  }
+  .article-gallery-images {
+    max-width: auto;
+    width: 60%;
+    flex: 2 1 auto;
+    @media (max-width: $break-m) {
+      width: 100%;
+    }
+  }
+}
+
+.article-gallery .article-ribbon {
+  background: $color-bg-content-gallery;
+}
+
+.article-gallery .article-ribbon {
+  background: $color-bg-content-gallery;
+}
+
+.article-ribbon-comment {
+  background: $color-bg-content-comment;
+}
+
+.article-ribbon-dark {
+  background: $color-bg-content-dark;
+}
+
+.article-headline {
+  .hdflex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @media (max-width: $break-s) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+  .article-thumbnail {
+    flex: 1 1 35%;
+    margin-right: 1rem;
+    @media (max-width: $break-s) {
+      margin-right: 0;
+      max-width: 400px;
+    }
+    img {
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      padding: 0.3rem;
+      border: 1px solid $color-border;
+    }
+  }
+  .hd {
+    flex: 4 1 65%;
+    text-align: left;
+    @media (max-width: $break-s) {
+      text-align: center;
+    }
+  }
+  text-align: center;
+
+  h4 {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color-border;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: $color-text-weak !important;
+  }
+
+  h1 {
+    font-family: $font-cursive;
+    margin: 2rem 0 0.5rem 0;
+  }
+
+  h2 {
+    color: $color-text-weak !important;
+    @include n;
+    margin: 0 0 0.5rem 0;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.article-gallery-headline {
+  background: $color-bg-content-dark;
+  h4,
+  h1,
+  h1 a {
+    color: $color-text-inverted-strong !important;
+  }
+  h2 {
+    color: transparentize($color-text-inverted, .35) !important;
+  }
+}
+
+.article-comment {
+  color: $color-text-inverted;
+
+  .message {
+    font-size: $size-m;
+    color: rgba($color-text, 0.6) !important;
+    padding: 0;
+  }
+
   @media (max-width: $break-l) {
-    display: block;
+    width: 100%;
   }
 
-  .article-text {
-    flex: 3 2 0;
-
-    @media (max-width: $break-l) {
-      width: 100%;
-      flex: 1 1 0;
-    }
+  h2,
+  .tags h3 {
+    @include hd;
+    font-family: $font-cursive;
+    font-size: $size-xl;
+    margin-bottom: 0.5em;
   }
-  .article-comment {
-    flex: 2 1 0;
-    color: $color-text-bright;
 
-    .message {
-      font-size: $size-l;
-      @include b;
-      color: rgba($color-text, 0.5) !important;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      .comment-body {
+        margin-bottom: 0.35em;
+        background: $color-bg-content-list;
+        overflow: hidden;
+        @include l;
+      }
+
+      p {
+        padding: 0.3rem;
+      }
     }
-
-    @media (max-width: $break-l) {
-      width: 100%;
-    }
-
-    h2 {
-      @include hd;
-      margin-bottom: 0.5em;
-      color: $color-text-bright;
-    }
-
     ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        .comment-body {
-          margin-bottom: 0.35em;
-          background: rgba(#fff, 0.4);
-          overflow: hidden;
-          @include l;
-        }
-      }
-      ul {
-        margin-left: 1.2em;
-      }
+      margin-left: 1.2em;
+    }
+  }
+
+  .comment-author {
+    background: $color-bg-content-dark;
+    padding: 0.3rem;
+    & > img {
+      width: auto !important;
     }
 
-    .comment-author {
-      background: $color-secondary-l;
-      & > * {
-        display: inline-block;
-        height: 32px;
-        line-height: 32px;
-        vertical-align: middle;
-        color: $color-text-bright;
-      }
+    & > * {
+      display: inline-block;
+      height: 32px;
+      line-height: 32px;
+      vertical-align: middle;
+      color: $color-text-inverted;
+    }
+    & > .says {
+      display: inline;
+    }
 
-      cite a {
-        @include link($color-text-bright, $color-secondary);
+    cite {
+      display: inline;
+      a {
+        @include link($color-text-inverted, $color-text-inverted-strong);
         font-style: normal;
         @include b;
       }
     }
+  }
 
-    .comment-meta {
-      padding: 0.5em;
-      font-size: 0.8em;
-      text-align: right;
+  .comment-meta {
+    padding: 0.5em;
+    font-size: 0.8em;
+    text-align: right;
 
-      a {
-        @include link($color-text, $color-secondary);
-      }
+    a {
+      @include link($color-text, $color-text-link);
+    }
+  }
+
+  .comment-respond {
+    .comment-reply-title {
+      @include hd;
+      font-family: $font-cursive;
+      font-size: $size-xl;
+      margin-bottom: 0.5em;
     }
 
     p {
-      padding-left: 0.5em;
-      padding-right: 0.5em;
-    }
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      label {
+        width: 10rem;
+        @include b;
+      }
 
-    .reply {
-      padding: 0.5em;
-      text-align: right;
-      @include b;
-      text-transform: uppercase;
+      &.form-submit {
+        padding-left: 10rem;
+      }
     }
-
   }
 
-  .row {
-    max-width: 50em;
-    margin: 0 auto;
-    padding: 2em;
+  .reply {
+    font-family: $font-cursive;
+    font-size: $size-l;
+    padding: 0.5em;
+    text-align: right;
+  }
+
+  .tags {
+    a {
+      display: inline-block;
+      padding: 0.2rem 0.3rem;
+      margin: 0 0.2rem 0.2rem 0;
+      background: $color-bg-content-list;
+      color: $color-text-weak;
+      border-radius: 0.1rem;
+
+      &:hover {
+        color: $color-text-link-strong;
+        background: $color-bg-content-text;
+      }
+    }
   }
 }
 
-.gallery-content {
-  display: block;
-
-  .ribbon:not(.article-comment) {
-    p, li {
-      color: darken($color-text-bright, 15%) !important;
+.article-gallery {
+  .article-ribbon {
+    p,
+    li {
+      color: darken($color-text-inverted, 15%) !important;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      color: $color-text-bright !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color-text-inverted !important;
     }
 
     a {
-      color: lighten($color-secondary-l, 15%);
+      color: lighten($color-text-link, 15%);
       &:hover {
-        color: $color-text-bright !important;
+        color: $color-text-inverted !important;
       }
     }
   }
@@ -128,24 +278,19 @@
   }
 }
 
-.remote-content {
+.article-remote {
   .article-text {
     width: 100%;
   }
-  
-  .row {
-    max-width: 50em;
-  }
-  
+
   .description {
     font-style: italic;
     margin-bottom: 2rem;
     @include l;
   }
-  
+
   .link {
     border: 1px solid $color-border;
-    background: #fff;
     padding: 2rem;
     display: block;
     @include link;
@@ -157,7 +302,7 @@
       max-width: 100%;
       height: auto;
     }
-    
+
     i {
       border: 1px solid transparent;
       padding: .5em;
@@ -168,8 +313,19 @@
       margin-bottom: 1em;
     }
   }
-  
-  .link:hover i{
-    border: 1px solid $color-primary-m;
+
+  .link:hover i {
+    border: 1px solid $color-text-link;
+  }
+
+  .backlink a {
+    display: block;
+    border: 1px solid $color-text-link;
+    padding: .5em;
+    display: block;
+    font-style: normal;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 1em;
   }
 }

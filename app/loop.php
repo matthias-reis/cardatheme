@@ -1,4 +1,4 @@
-<div class="article-list main-col" id="infinite-scroll-container" typeof="sx:carda.Masonry">
+<div class="article-list main-col" id="infinite-scroll-container" typeof="sx:carda.InfiniteScroll">
     <?php if (have_posts()): while (have_posts()) : the_post(); ?>
         <?php get_template_part('app/article', 'list'); ?>
     <?php endwhile; ?>

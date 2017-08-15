@@ -1,9 +1,7 @@
-<header class="article-headline article-gallery-headline article-ribbon">
+<header class="article-headline article-ribbon">
   <div class="row">
     <h4>
-      <?php if(!is_page()): ?>
-        <?php echo ucfirst(c_get_type());?> vom <?php the_date();?>
-      <?php endif; ?>
+      MEME vom <?php the_date();?>
     </h4>
 
     <h1>

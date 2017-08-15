@@ -1,4 +1,5 @@
 .aside-twitter-feed {
+  font-size: $size-s;
   ul {
     padding: 0;
     margin: 0;
@@ -12,7 +13,9 @@
   }
 
   .user {
-    font-family: $fontHeadline;
+    font-family: $font-headline;
+    font-size: $size-s;
+
     a {
       display: block;
       color: $color-text-link;
@@ -20,16 +23,15 @@
       position: relative;
       padding: 4px 0 4px 56px;
       margin-bottom: 4px;
-      font-size: 1rem;
 
       &:hover {
-        color: $color-text-link-dark;
+        color: $color-text-link-strong;
         text-decoration: none;
       }
     }
     img {
-      width: 48px;
-      height: 48px;
+      width: 48px !important;
+      height: 48px !important;
       border-radius: 5px;
       position: absolute;
       border: 1px solid $color-border;
@@ -42,43 +44,42 @@
       white-space: nowrap;
       text-overflow: ellipsis;
     }
+    [data-scribe="element:verified_badge"] {
+      display: none !important;
+    }
     [data-scribe="element:screen_name"] {
-      color: $color-primary-l;
+      color: $color-text;
     }
     a:hover [data-scribe="element:screen_name"] {
-      color: $color-primary-ll;
+      color: $color-text-link;
+      font-size: 0.8rem;
     }
   }
 
   .tweet {
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1rem;
+    font-size: $size-s;
 
+    a {
+      color: $color-text;
+    }
     .tco-hidden {
       display: none;
     }
   }
 
   .timePosted {
-    margin-bottom: 4px;
+    text-align: right;
+    margin: 0.1rem 0 1.25rem;
+    font-size: $size-s;
 
     a {
-      color: $color-primary-l;
+      color: $color-text-link;
     }
   }
 
-  .interact a {
-    display: inline-block;
-    background: $color-primary-l;
-    color: $color-primary-m;
-    padding: 2px 4px;
-    margin-right: 2px;
-    border-radius: 3px;
-
-    &:hover {
-      background: $color-primary;
-      color: $color-primary-l;
-    }
+  .interact {
+    display: none;
   }
 }

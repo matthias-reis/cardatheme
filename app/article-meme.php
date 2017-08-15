@@ -1,4 +1,4 @@
-<?php get_template_part('app/article', 'headline'); ?>
+<?php get_template_part('app/article', 'meme-headline'); ?>
 
 <section class="article-text article-ribbon">
     <div class="row">

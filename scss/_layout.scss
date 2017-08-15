@@ -18,9 +18,13 @@
   display: flex;
   align-items: stretch;
 
+  @media (max-width: $break-l) {
+    flex-flow: column;
+  }
+
   & > .content {
     flex: 1 1 auto;
-    background: $color-bg-content;
+    background: $color-bg-content-list;
   }
 
   & > aside {
@@ -29,8 +33,36 @@
     width: 20%;
     max-width: 320px;
 
+    @media (max-width: $break-l) {
+      max-width: none;
+      width: auto;
+      .aside {
+        display: flex;
+        flex-wrap: wrap;
+
+        .aside-ribbon {
+          flex: 1 1 auto;
+          margin: 0.5rem;
+          border: 1px solid $color-green;
+          padding: 0.3rem;
+          width: 30%;
+        }
+      }
+    }
+    @media (max-width: $break-m) {
+      .aside {
+        .aside-ribbon {
+          width: 40%;
+        }
+      }
+    }
     @media (max-width: $break-s) {
-      display: none;
+      .aside {
+        flex-flow: column nowrap;
+        .aside-ribbon {
+          width: auto;
+        }
+      }
     }
   }
 }

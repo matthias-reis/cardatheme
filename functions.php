@@ -20,13 +20,29 @@ if (function_exists('add_theme_support')) {
   );
   // Enables post and comment RSS feed links to head
   add_theme_support('automatic-feed-links');
-  add_image_size('large', 800, '', true);
-  add_image_size('medium', 640, '', true);
-  add_image_size('small', 320, '', true);
+  add_image_size('full', 960, '', true);
+  add_image_size('large', 520, '', true);
+  add_image_size('medium', 300, '', true);
+  add_image_size('small', 200, '', true);
   add_image_size('title', '', 400, false);
-  set_post_thumbnail_size('', 400, false);
+  set_post_thumbnail_size('', 600, false);
   add_filter( 'jpeg_quality', create_function( '', 'return 70;' ) );
 }
+
+function c_custom_image_sizes($sizes) {
+        
+  $addsizes = array(
+    'full' => 'volle Breite',
+    'large' => 'groß (520px)',
+    'medium' => 'mittel (300px)',
+    'small' => 'klein (200px)'
+  );
+  $newsizes = array_merge($sizes, $addsizes);
+  return $newsizes;
+}
+
+add_filter('image_size_names_choose', 'c_custom_image_sizes');
+
 /*** CUSTOM FUNCTIONS ***/
 add_action('init', 'c_setup');
 function c_setup()
@@ -70,7 +86,7 @@ function c_create_sidebars()
     array(
       'name' => 'Seitenleiste',
       'id' => 'aside_widgets',
-      'before_widget' => '<section>',
+      'before_widget' => '<section class="aside-ribbon aside-widgets">',
       'after_widget' => '</section>',
       'before_title' => '<h3>',
       'after_title' => '</h3>',
@@ -80,7 +96,7 @@ function c_create_sidebars()
     array(
       'name' => 'Zitatbereich',
       'id' => 'cite_widgets',
-      'before_widget' => '<section class="aside-ribbon aside-ribbon-dark aside-cite">',
+      'before_widget' => '<section class="aside-ribbon-highlight aside-cite">',
       'after_widget' => '</section>',
       'before_title' => '<h3>',
       'after_title' => '</h3>',
@@ -203,19 +219,20 @@ function c_get_splitted_content($rawContent = null)
     $rawContent = get_the_content('');
   }
   $matches = array();
-  $hasMatch = preg_match('/^\w*<h2[^>]*>(.+)<\/h2>/s', $rawContent, $matches) === 1;
+  $regex = '/^\w*<h2[^>]*>(.+)<\/h2>/s';
+  $hasMatch = preg_match($regex, $rawContent, $matches) === 1;
   $headline = $hasMatch ? $matches[1] : '';
-  $content = preg_replace('/^<h2.+<\/h2>/s', '', $rawContent);
+  $content = preg_replace($regex, '', $rawContent);
   return array(
     'headline' => $headline,
-    'content' => $rawContent,
+    'content' => $content,
   );
 }
 
 function c_has_subhead()
 {
   $content = c_get_splitted_content();
-  echo $content['headline'] !== '';
+  return $content['headline'] !== '';
 }
 
 function c_the_subhead()
@@ -224,25 +241,27 @@ function c_the_subhead()
   echo $content['headline'];
 }
 
-add_filter('the_content', 'c_content_filter');
+function c_the_content()
+{
+  $content = c_get_splitted_content();
+  echo $content['content'];
+}
+
 function c_content_filter($content)
 {
   $content = c_get_splitted_content($content);
   return $content['content'];
 }
+add_filter('the_content', 'c_content_filter');
 
 function c_flickr_gallery($atts)
 {
   return '</div>
-  <section class="ribbon ribbon-grey gallery-ribbon">
-  <div class="row">
-  <div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '">
-  </div>
-  <div style="clear:both">
-  </div>
-  </div>
+  <section class="article-gallery-images">
+    <div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '"></div>
+    <div style="clear:both"></div>
   </section>
-  <div class="row hyphenate">';
+  <div class="row">';
 }
 
 add_shortcode('myflickr', 'c_flickr_gallery');
@@ -264,17 +283,26 @@ function c_render_infinite_scroll()
 function c_init_infinite_scroll()
 {
   add_theme_support(
-  'infinite-scroll',
-  array(
-    'container' => 'infinite-scroll-container',
-    'footer_widgets' => false,
-    'type' => 'scroll',
-    'wrapper' => false,
-    'render' => 'c_render_infinite_scroll'
-  )
-);
+    'infinite-scroll',
+    array(
+      'container' => 'infinite-scroll-container',
+      'footer_widgets' => false,
+      'type' => 'scroll',
+      'wrapper' => false,
+      'render' => 'c_render_infinite_scroll',
+      'behavior' => 'default'
+    )
+  );
 }
 add_action('after_setup_theme', 'c_init_infinite_scroll');
+
+
+function c_infinite_scroll_options_filter( $options ) {
+  $options['behavior'] = 'test';
+  return $options;
+}
+
+add_filter( 'infinite_scroll_js_options', 'c_infinite_scroll_options_filter' );
 
 function c_enqueue_script() {
   wp_deregister_script('jquery');

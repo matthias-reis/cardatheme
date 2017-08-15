@@ -8,14 +8,15 @@ gulp.task('js', function() {
   gulp
     .src([
       'libs/styx.js',
-      // 'libs/isotope.js',
+      'libs/isotope.js',
       'libs/fancybox/jquery.fancybox.pack.js',
       'libs/twitterfetcher.js',
       'js/event.js',
       // 'js/background.styx.js',
       'js/article.styx.js',
-      // 'js/masonry.styx.js',
+      'js/infiniteScroll.styx.js',
       'js/flickr.styx.js',
+      'js/trigger.styx.js',
       // 'js/sidebar.styx.js',
       'js/facebook.styx.js',
       'js/twitter.styx.js',
