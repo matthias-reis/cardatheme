@@ -1,10 +1,10 @@
 <div class="header-wrapper">
   <header class="header" typeof="sx:carda.Background">
     <a class="header-logo" href="/" title="Anne bloggt cardamonchai ... Homepage">
-      <img src="<?php echo get_template_directory_uri();?>/img/logo.svg" height="64" />
+      <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" height="64" alt="Anne bloggt Cardamonchai Logo" />
       <hgroup>
-          <h1><?php bloginfo('name') ?></h1>
-          <h2><?php bloginfo('description') ?></h2>
+          <h2><?php bloginfo('name') ?></h2>
+          <h3><?php bloginfo('description') ?></h3>
       </hgroup>
     </a>
     <nav class="header-menu">
@@ -19,7 +19,9 @@
           <path fill="currentColor" d="M2 6h28v6h-28zM2 14h28v6h-28zM2 22h28v6h-28z"></path>
         </svg>
       </div>
-      <div class="search-icon <?php if(get_search_query() != '') {echo 'active';}?>"
+      <div class="search-icon <?php if (get_search_query() != '') {
+                                echo 'active';
+                              } ?>"
           typeof="sx:carda.Trigger"
           data-target="$('.search-bar')"
           data-classname="hide">
@@ -30,7 +32,9 @@
       </div>
     </nav>
   </header>
-  <section class="search-bar <?php if (get_search_query() == '') {echo 'hide';} ?> row">
+  <section class="search-bar <?php if (get_search_query() == '') {
+                                echo 'hide';
+                              } ?> row">
     <?php get_search_form(true); ?>
   </section>
   <section class="menu-bar row">

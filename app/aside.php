@@ -1,7 +1,7 @@
 <div class="aside">
   <h2>Ebenfalls bei cardamonchai.com</h2>
   <section class="aside-ribbon aside-ribbon-image aside-visual">
-    <img class="aside-visual-image" src="<?php echo get_template_directory_uri() ?>/img/visual.jpg"/>
+    <img class="aside-visual-image" alt="Anne bloggt Cardamonchai" src="<?php echo get_template_directory_uri() ?>/img/visual.jpg"/>
     <p class="links">
       <a href="/cardamonchai-blick-hinter-die-kulissen/">Autorin</a>
       <a href="/andere-blogs/">Publikationen</a>

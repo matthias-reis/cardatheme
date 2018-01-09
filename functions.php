@@ -138,9 +138,13 @@ function c_is_type($type)
   global $post;
   // get post by post id
   $post = & get_post($post->ID);
-  foreach (get_the_terms($post->ID, 'type') as $term) {
-    if ($term->slug == $type) {
-      return true;
+  
+  $terms = get_the_terms($post->ID, 'type');
+  if(is_array($terms)) {
+    foreach ($terms as $term) {
+      if ($term->slug == $type) {
+        return true;
+      }
     }
   }
   return false;

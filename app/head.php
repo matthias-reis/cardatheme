@@ -18,6 +18,7 @@
 
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="google-site-verification" content="5QfgSmDjmWKGtsXLfeirHMiVgXSp99T7jdMpnnvILQ0" />
+    <meta name="google-site-verification" content="0bzAuCnTXlrcFeB_nSHw0T4MWdVmHSvvynzkRgZYRpg" />
     <?php get_template_part('app/css')?>
 
     <?php wp_head(); ?>
