@@ -34,8 +34,8 @@ gulp.task('css', function() {
       sass({
         outputStyle: 'compressed',
         includePaths: [
-          'bower_components/foundation/scss',
-          'bower_components/foundation/compass-sass-mixins/lib/compass'
+          'node_modules/scss',
+          'node_modules/compass-sass-mixins/lib/compass'
         ]
       }).on('error', sass.logError)
     )

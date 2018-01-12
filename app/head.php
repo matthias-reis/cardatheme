@@ -22,4 +22,5 @@
     <?php get_template_part('app/css')?>
 
     <?php wp_head(); ?>
+    
 </head>

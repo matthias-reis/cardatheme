@@ -43,6 +43,7 @@
     <p class="links">
       <a href="/impressum/">Impressum</a>
       <a href="/datenschutz/">Datenschutz</a>
+      <a href="/werbung/">Transparenz</a>
     </p>
     
   </section>
