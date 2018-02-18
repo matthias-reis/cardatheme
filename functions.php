@@ -345,3 +345,13 @@ function c_post_type_remote() {
 );
 }
 add_action('init', 'c_post_type_remote');
+
+function addImageToRss($content) {
+  global $post;
+  if ( has_post_thumbnail( $post->ID ) ){
+    $content = '<div>' . get_the_post_thumbnail( $post->ID, 'large', array( 'style' => 'margin-bottom: 15px;' ) ) . '</div>' . $content;
+  }
+  return $content;
+}
+add_filter('the_excerpt_rss', 'addImageToRss');
+add_filter('the_content_feed', 'addImageToRss');
