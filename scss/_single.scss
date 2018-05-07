@@ -118,7 +118,7 @@
     color: $color-text-inverted-strong !important;
   }
   h2 {
-    color: transparentize($color-text-inverted, 0.35) !important;
+    color: $color-text-inverted-strong !important;
   }
 }
 
@@ -269,10 +269,13 @@
     h4,
     h5,
     h6 {
-      color: $color-text-inverted !important;
+      color: $color-text-inverted-strong !important;
 
       a {
-        color: $color-text-inverted !important;
+        color: $color-text-inverted-strong !important;
+        &:hover {
+          color: $color-text-inverted-strong !important;
+        }
       }
     }
   }
@@ -331,5 +334,50 @@
     border-radius: 5px;
     text-align: center;
     margin-top: 1em;
+  }
+}
+
+#mc_embed_signup.inline-newsletter {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  background: #5c9b72;
+  max-width: 360px;
+  form {
+    padding: 0;
+  }
+
+  #mc_embed_signup_scroll {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    svg {
+      color: rgba(255, 255, 255, 0.7);
+      width: 20%;
+      margin: 0 auto;
+    }
+    h3 {
+      color: #fff !important;
+      border-color: #fff;
+    }
+    p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+    label {
+      color: #fff;
+    }
+    input[type='email'] {
+      box-sizing: border-box;
+      width: 100%;
+      box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    input[type='submit'] {
+      box-sizing: border-box;
+      background: #96c6a7;
+      font-family: $font-cursive;
+      font-size: $size-l;
+      color: #fff;
+      width: 100%;
+    }
   }
 }

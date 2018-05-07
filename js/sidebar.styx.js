@@ -15,11 +15,6 @@ sx.build({
                 sectionEls.eq(2).wrap('<section/>').append(sectionEls.eq(3));
                 this.sectionEl.data('layouted', true);
             }
-            jQuery('body').on('contextmenu', function(ev) {
-                if(jQuery(ev.target).is('img')) {
-                    ev.preventDefault();
-                }
-            });
         },
 
 

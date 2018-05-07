@@ -15,19 +15,24 @@
   .user {
     font-family: $font-headline;
     font-size: $size-s;
+    display: flex;
 
-    a {
+    & > a {
+      flex: 0 0 auto;
       display: block;
       color: $color-text-link;
       height: 42px;
-      position: relative;
       padding: 4px 0 4px 56px;
       margin-bottom: 4px;
+      position: relative;
 
       &:hover {
         color: $color-text-link-strong;
         text-decoration: none;
       }
+    }
+    & > div {
+      flex: 1 1 auto;
     }
     img {
       width: 48px !important;
@@ -44,13 +49,13 @@
       white-space: nowrap;
       text-overflow: ellipsis;
     }
-    [data-scribe="element:verified_badge"] {
+    [data-scribe='element:verified_badge'] {
       display: none !important;
     }
-    [data-scribe="element:screen_name"] {
+    [data-scribe='element:screen_name'] {
       color: $color-text;
     }
-    a:hover [data-scribe="element:screen_name"] {
+    a:hover [data-scribe='element:screen_name'] {
       color: $color-text-link;
       font-size: 0.8rem;
     }
