@@ -11,19 +11,21 @@ gulp.task('js', function() {
       'libs/isotope.js',
       'libs/fancybox/jquery.fancybox.pack.js',
       'libs/twitterfetcher.js',
-      'js/event.js',
+      'libs/glry.js',
       // 'js/background.styx.js',
       'js/article.styx.js',
+      'js/cookie.styx.js',
+      'js/event.js',
+      'js/facebook.styx.js',
       'js/infiniteScroll.styx.js',
       'js/flickr.styx.js',
       'js/trigger.styx.js',
       // 'js/sidebar.styx.js',
-      'js/facebook.styx.js',
       'js/twitter.styx.js',
-      'js/bootstrap.js'
+      'js/bootstrap.js',
     ])
     .pipe(concat('cardatheme.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('./assets'));
 });
 
@@ -35,8 +37,8 @@ gulp.task('css', function() {
         outputStyle: 'compressed',
         includePaths: [
           'node_modules/scss',
-          'node_modules/compass-sass-mixins/lib/compass'
-        ]
+          'node_modules/compass-sass-mixins/lib/compass',
+        ],
       }).on('error', sass.logError)
     )
     .pipe(gulp.dest('./assets'));

@@ -249,3 +249,31 @@ body > main {
   position: relative;
   z-index: 2;
 }
+
+.cookie {
+  display: none;
+  background: #96c6a7;
+
+  text-align: center;
+  padding: 0.2rem;
+
+  p {
+    font-size: 0.8rem;
+    margin: 0.25rem auto;
+    color: #fff !important;
+    a {
+      color: #fff !important;
+      text-decoration: underline;
+    }
+  }
+
+  button {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: #cddfd4;
+    border: 0;
+    font-size: 1rem;
+    font-family: $font-cursive;
+    color: #96c6a7;
+  }
+}

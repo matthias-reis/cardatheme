@@ -144,15 +144,7 @@
         color: rgba(255, 255, 255, 0.7) !important;
         font-size: 0.9rem;
       }
-      label {
-        color: #fff;
-      }
-      input[type='email'] {
-        box-sizing: border-box;
-        width: 100%;
-        box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.2);
-      }
-      input[type='submit'] {
+      .button {
         background: #96c6a7;
         font-family: $font-cursive;
         font-size: $size-l;

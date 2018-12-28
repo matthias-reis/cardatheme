@@ -42,4 +42,17 @@
       <?php dynamic_sidebar('category_nav'); ?>
     <?php endif; ?>
   </section>
+  <div class="cookie" typeof="sx:carda.Cookie">
+    <p>
+      Um meine Webseite für Dich optimal zu gestalten, 
+      sie fortlaufend verbessern zu können, sowie ihre Reichweite nachzuverfolgen, 
+      verwende ich <strong>Cookies</strong>. Durch die weitere Nutzung der Webseite stimmst 
+      Du der Verwendung von Cookies zu.
+    </p>
+    <p>
+      Weitere Infos zu Cookies erhältst Du in meiner 
+      <a href="/datenschutz">Datenschutzerklärung</a>.
+    </p>
+    <button>Schließen und fortfahren</button>
+  </div>
 </div>

@@ -3,7 +3,7 @@
     <div class="hdflex">
         <?php if (has_post_thumbnail()) : ?>
           <div class="article-thumbnail">
-            <?php the_post_thumbnail('large'); ?>
+            <?php the_post_thumbnail('large', ['sizes' => '400px']); ?>
           </div>
         <?php endif; ?>
         <div class="hd">

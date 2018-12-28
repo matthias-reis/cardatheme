@@ -31,12 +31,7 @@
             Dir gefällt, was ich schreibe und möchtest ab jetzt nichts mehr verpassen?
             Hier kannst Du Dich zu meinem Newsletter anmelden.
           </p>
-          <label for="mce-EMAIL">Jetzt anmelden:</label>
-          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Adresse" required>
-          <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <input type="text" name="b_56cabb4dfeee2ca03948f964f_3f01062ef5" tabindex="-1" value="" />
-          </div>
-          <input type="submit" value="Abonnieren" name="subscribe" id="mc-embedded-subscribe" class="button" />
+          <a  target="_blank" class="button" href="http://eepurl.com/dhmx7z" >Jetzt zur Anmeldung</a>
         </div>
       </form>
     </div>
@@ -52,10 +47,12 @@
       </li>
       <li><a class="pinterest" target="_blank" href="http://pinterest.com/annereko/boards/">Pinterest</a></li>
       <li><a class="bloglovin" target="_blank" href="http://www.bloglovin.com/blog/2889954/cardamonchai">Bloglovin</a></li>
-      <!-- <li><a class="flickr" target="_blank" href="http://www.flickr.com/photos/99929697@N07/">Flickr</a></li>
+      <!--
+      <li><a class="flickr" target="_blank" href="http://www.flickr.com/photos/99929697@N07/">Flickr</a></li>
       <li><a class="lastfm" target="_blank" href="http://www.lastfm.de/user/cardamon82">last.fm</a></li>
       <li><a class="tumblr" target="_blank" href="http://cardamonchai.tumblr.com/">Tumblr</a></li>
-      <li><a class="google" target="_blank" href="https://plus.google.com/u/0/+AnneReiscardamonchai">Google+</a></li> -->
+      <li><a class="google" target="_blank" href="https://plus.google.com/u/0/+AnneReiscardamonchai">Google+</a></li>
+      -->
     </ul>
   </section>
 
@@ -69,13 +66,14 @@
     <?php dynamic_sidebar('aside_widgets'); ?>
   <?php endif; ?>
 
+  <!--
   <section class="aside-ribbon aside-ribbon-bright aside-twitter-feed">
     <h3>Tweets</h3>
     <div class="feed" typeof="sx:carda.Twitter">
       Die aktuellen Twitternachrichten werden geladen ...
     </div>
   </section>
-
+  -->
   <section class="aside-ribbon">
     <p class="links">
       <a href="/impressum/">Impressum</a>

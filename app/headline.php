@@ -20,8 +20,8 @@ if (is_day()) : ?>
         <h3>des Jahres <?php echo get_the_time('Y'); ?></h3>
     <?php
     elseif (get_post_type() === 'remote') : ?>
-        <h1>Anne in anderen Blogs</h1>
-        <h3>Arbeiten für Zeitschriften und vegane Newsportale</h3>
+        <h1>Publikationen</h1>
+        <h3>Arbeiten für Zeitschriften und Newsportale</h3>
     <?php
     elseif (is_category()) : ?>
         <h1>&laquo;<?php echo single_cat_title(); ?>&raquo;</h1>

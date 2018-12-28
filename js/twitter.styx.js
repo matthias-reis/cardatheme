@@ -5,16 +5,16 @@ sx.build({
 
   m: {
     loaded: true,
-    init: function () {
+    init: function() {
       this.el.prop('id', 'twitterfetcher');
       twitterFetcher.fetch({
-        "id": '690931036302249984',
-        "domId": 'twitterfetcher',
-        "maxTweets": 6,
-        "enableLinks": true,
-        "lang": 'de',
-        "showPermalinks": true
+        id: '690931036302249984',
+        domId: 'twitterfetcher',
+        maxTweets: 6,
+        enableLinks: true,
+        lang: 'de',
+        showPermalinks: true,
       });
-    }
-  }
+    },
+  },
 });

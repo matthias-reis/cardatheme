@@ -15,7 +15,7 @@
 
   .row {
     max-width: auto;
-    width: 30%;
+    width: 45%;
     flex: 1 1 auto;
     @media (max-width: $break-m) {
       width: 100%;
@@ -23,10 +23,14 @@
   }
   .article-gallery-images {
     max-width: auto;
-    width: 60%;
-    flex: 2 1 auto;
+    width: 45%;
+    flex: 1 1 auto;
     @media (max-width: $break-m) {
       width: 100%;
+    }
+
+    .glry-container {
+      justify-content: flex-start;
     }
   }
 }
@@ -363,15 +367,8 @@
       color: rgba(255, 255, 255, 0.7);
       font-size: 0.9rem;
     }
-    label {
-      color: #fff;
-    }
-    input[type='email'] {
-      box-sizing: border-box;
-      width: 100%;
-      box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.2);
-    }
-    input[type='submit'] {
+
+    .button {
       box-sizing: border-box;
       background: #96c6a7;
       font-family: $font-cursive;

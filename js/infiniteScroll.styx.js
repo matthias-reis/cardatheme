@@ -2,7 +2,6 @@ sx.build({
   name: 'InfiniteScroll',
   nsp: 'carda',
   parent: sx.Plugin,
-
   m: {
     count: 0,
     init: function() {
@@ -10,6 +9,9 @@ sx.build({
 
       self.relayout();
       jQuery('body').on('articles-loaded', function(ev, data) {
+        self.relayout();
+      });
+      jQuery('body').on('post-load', function (ev, data) {
         self.relayout();
       });
     },
