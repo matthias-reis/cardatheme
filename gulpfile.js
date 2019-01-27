@@ -9,8 +9,8 @@ gulp.task('js', function() {
     .src([
       'libs/styx.js',
       'libs/isotope.js',
-      'libs/fancybox/jquery.fancybox.pack.js',
-      'libs/twitterfetcher.js',
+      // 'libs/fancybox/jquery.fancybox.pack.js',
+      // 'libs/twitterfetcher.js',
       'libs/glry.js',
       // 'js/background.styx.js',
       'js/article.styx.js',
@@ -18,10 +18,10 @@ gulp.task('js', function() {
       'js/event.js',
       'js/facebook.styx.js',
       'js/infiniteScroll.styx.js',
-      'js/flickr.styx.js',
+      // 'js/flickr.styx.js',
       'js/trigger.styx.js',
       // 'js/sidebar.styx.js',
-      'js/twitter.styx.js',
+      // 'js/twitter.styx.js',
       'js/bootstrap.js',
     ])
     .pipe(concat('cardatheme.js'))
