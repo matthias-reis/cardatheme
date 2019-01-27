@@ -29,7 +29,7 @@
       height: 60px;
       margin-left: 8px;
 
-      @media (max-width: $break-xl) {
+      @media (max-width: $break-l) {
         display: none;
       }
 
@@ -76,6 +76,7 @@
         margin: 0 5px;
         padding: 5px;
         color: $color-text;
+        font-size: $size-m;
         font-weight: $weightNormal;
 
         &:focus {
@@ -209,14 +210,20 @@
     display: none;
   }
 
-  .menu-main-container > ul {
+  .menu-buecher-movies-container > ul {
     display: flex;
     flex-flow: row wrap;
     list-style: none;
     margin: 0;
     padding: 0;
 
+    & > li:first-child {
+      order: 10;
+    }
+
     & > li {
+      font-family: $font-decorative;
+      font-size: $amatic-l;
       flex: 1 1 auto;
       width: 50%;
       padding: 0.5rem;
@@ -226,7 +233,7 @@
         padding-left: 0.8rem;
 
         li {
-          font-size: $size-s;
+          font-size: $amatic-m;
         }
       }
     }

@@ -1,6 +1,6 @@
 
 <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="article-in-list list-grid-item" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <a class="article-item" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url()">
         <div class="meta">
             <div class="publishing-date">
@@ -27,8 +27,6 @@
             <div class="excerpt">
                 <?php the_excerpt() ?>
             </div>
-
-            <div class="more">mehr</div>
         </div>
     </a>
 </article>
