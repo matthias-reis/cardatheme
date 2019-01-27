@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Playball');
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,700|Amatic+SC');
 
 $color-white: #fff;
 $color-grey: #444;
@@ -22,7 +22,9 @@ $color-bg-aside-image: #d8d8d8;
 $color-bg-aside-highlight: lighten($color-grey, 40%);
 
 $color-bg-content-text: $color-white;
-$color-bg-content-list: lighten($color-grey, 65%); //e6e6e6
+// $color-bg-content-list: lighten($color-grey, 65%); //e6e6e6
+$color-bg-content-list: $color-white;
+$color-bg-content-listitem: lighten($color-grey, 70%); //e6e6e6
 $color-bg-content-dark: lighten($color-grey, 10%);
 $color-bg-content-comment: lighten($color-green, 25%);
 $color-bg-content-gallery: $color-grey;
@@ -34,18 +36,23 @@ $break-l: 1024px;
 $break-xl: 1280px;
 $width: 1400px;
 
-$font: 'PT Sans', 'sans-serif';
-$font-headline: 'PT Sans', 'sans-serif';
+$font: 'Zilla Slab', 'sans-serif';
+$font-headline: 'Zilla Slab', 'sans-serif';
 $font-cursive: 'Playball', 'cursive';
+$font-decorative: 'Amatic SC', 'cursive';
 
 $weightNormal: 400;
 $weightBold: 700;
 
 $size-s: 1rem;
 $size-m: 1.25rem;
+$amatic-m: 1.4rem;
 $size-l: 1.5rem;
-$size-xl: 2.0rem;
-$size-xxl: 3.0rem;
+$amatic-l: 1.75rem;
+$size-xl: 2rem;
+$amatic-xl: 2.5rem;
+$size-xxl: 3rem;
+$amatic-xxl: 4rem;
 
 @mixin link($c: $color-text-link, $ch: $color-text-link-strong) {
   color: $c;
@@ -70,7 +77,24 @@ $size-xxl: 3.0rem;
 }
 
 @mixin shadow($depth: 5px, $strength: 1) {
-  box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0,  (0.4 * $strength));
+  box-shadow: 0 ($depth * 0.5) ($depth * 2) rgba(0, 0, 0, (0.4 * $strength));
+}
+
+@mixin hdDecorative($c: $color-text, $ch: $color-text-link) {
+  font-family: $font-decorative;
+  @include b;
+  color: $c !important;
+  line-height: 1.2;
+
+  a,
+  span {
+    color: $c !important;
+
+    &:hover {
+      color: $ch !important;
+      text-decoration: none;
+    }
+  }
 }
 
 @mixin hd($c: $color-text, $ch: $color-text-link) {

@@ -7,14 +7,52 @@
     justify-content: flex-start;
     background: $color-bg-content-text;
     color: $color-text;
+    box-shadow: 0 5px 25px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 12px 0 0 0;
 
     &:hover {
+      background: $color-bg-content-listitem;
+      box-shadow: 0 5px 25px -3px rgba(0, 0, 0, 0.2);
       color: $color-text-link;
       text-decoration: none;
 
       .more {
         color: $color-text-link-strong;
       }
+    }
+  }
+
+  .meta {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+
+    .publishing-date {
+      border: 1px solid $color-border;
+      border-radius: 8px;
+      margin: 6px 0 0 6px;
+      background: #fff;
+      height: 38px;
+      width: 28px;
+      position: relative;
+
+      span {
+        line-height: 12px;
+        font-size: 13px;
+        display: block;
+        text-align: center;
+
+        &:nth-child(2) {
+          font-weight: bold;
+        }
+      }
+    }
+    .type {
+      line-height: 36px;
+      font-family: $font-decorative;
+      font-size: 24px;
+      margin-right: 6px;
     }
   }
 
@@ -37,34 +75,20 @@
 
   .text {
     margin: 1rem 0.5rem 2.5rem 0.5rem;
-    text-align: center;
-
-    .super {
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      width: 100%;
-      border-bottom: 1px solid $color-border;
-      padding-bottom: 0.3rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-      justify-content: center;
-
-      color: $color-text-weak !important;
-    }
+    text-align: left;
 
     h1 {
-      margin: 0;
-      font-size: $size-l;
+      margin: 24px 16px 0 16px;
+      font-size: $amatic-xl;
       line-height: 1;
       text-transform: uppercase;
       @include b;
     }
 
     h2 {
+      margin: 4px 16px 0 16px;
       @include l;
-      margin: 0.5rem 0 0 0;
-      font-size: $size-m;
+      font-size: $amatic-l;
       color: $color-text-weak !important;
     }
 
@@ -76,18 +100,16 @@
       }
 
       div {
-        margin-top: 2rem;
+        margin: 24px 16px 0 16px;
       }
     }
     .more {
-      @include b;
       position: absolute;
       bottom: 10px;
       right: 10px;
-      font-family: $font-headline;
-      text-transform: uppercase;
-      color: $color-text-link;
-      font-size: 0.8em;
+      font-family: $font-decorative;
+      color: $color-text;
+      font-size: 18px;
       margin: 1em 0 0 0;
     }
   }

@@ -10,13 +10,13 @@ body {
 }
 
 h1 {
-  @include hd;
-  @include hdsize($size-xxl);
+  @include hdDecorative;
+  @include hdsize($amatic-xxl);
 }
 
 h2 {
-  @include hd;
-  @include hdsize($size-xl);
+  @include hdDecorative;
+  @include hdsize($amatic-xl);
 }
 
 h3 {
@@ -115,16 +115,17 @@ sup {
   h1 {
     margin: 0;
     @include hd($c: $color-text, $ch: $color-text);
-    font-family: $font-cursive;
+    font-family: $font-decorative;
     text-align: center;
-
+    
     strong {
       @include b;
     }
   }
-
+  
   h3 {
     @include hdsmall($c: $color-text-weak, $ch: $color-text-link);
+    font-family: $font-decorative;
     margin: 0.3em 0 0 0;
   }
 
@@ -146,11 +147,11 @@ sup {
   // homepage headline
   .hl {
     display: inline-block;
-    background: transparent url(../img/hl.svg) 0 0 no-repeat;
+    background: transparent url(../img/schriftzug.svg) 0 0 no-repeat;
     background-size: contain;
-    max-width: 378px;
+    max-width: 536px;
     width: 95%;
-    height: 96px;
+    height: 140px;
 
     & > * {
       display: none;

@@ -43,7 +43,8 @@
   }
 
   h3 {
-    font-family: $font-cursive;
+    font-family: $font-decorative;
+    font-size: $amatic-l;
     color: $color-text-green !important;
     text-align: center;
     margin-top: 1.5rem;
@@ -146,8 +147,8 @@
       }
       .button {
         background: #96c6a7;
-        font-family: $font-cursive;
-        font-size: $size-l;
+        font-family: $font-decorative;
+        font-size: $amatic-l;
         color: #fff;
         width: 100%;
       }
@@ -200,8 +201,8 @@
         background: #fff;
         overflow: hidden;
         padding: 0 1rem;
-        font-family: $font-cursive;
-        font-size: $size-l;
+        font-family: $font-decorative;
+        font-size: $amatic-l;
         &:hover {
           background-color: $color-green;
           color: $color-text-inverted-strong;

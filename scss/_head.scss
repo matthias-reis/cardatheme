@@ -1,6 +1,5 @@
 .header-wrapper {
   background: #fff;
-  border-bottom: 1px solid $color-border;
 }
 .header {
   height: 72px;
@@ -9,6 +8,7 @@
   justify-content: space-between;
   position: relative;
   z-index: 10;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
 
   & > a {
     flex: 0 0 auto;
@@ -23,10 +23,11 @@
     }
     hgroup {
       flex: 0 0 auto;
-      background: transparent url(../img/hl.svg) no-repeat;
-      width: 189px;
-      height: 48px;
-      margin-left: 40px;
+      background: transparent url(../img/schriftzug.svg) no-repeat;
+      background-size: cover;
+      width: 230px;
+      height: 60px;
+      margin-left: 8px;
 
       @media (max-width: $break-xl) {
         display: none;
@@ -88,8 +89,8 @@
         background: #fff;
         overflow: hidden;
         padding: 0 1rem;
-        font-family: $font-cursive;
-        font-size: $size-l;
+        font-family: $font-decorative;
+        font-size: $amatic-l;
         &:hover {
           background-color: $color-green;
           color: $color-text-inverted-strong;
@@ -134,8 +135,8 @@
           line-height: 70px;
           padding: 0 12px;
           @include link($color-text-weak, $color-text);
-          font-family: $font-headline;
-          font-size: $size-m;
+          font-family: $font-decorative;
+          font-size: $amatic-l;
           font-weight: 300;
           display: block;
         }
@@ -145,11 +146,10 @@
           position: absolute;
           top: 70px;
           right: 0;
-          border: 1px solid $color-border;
           border-top: 0;
           background: #fff;
           padding: 10px;
-          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 
           li {
             white-space: nowrap;
@@ -160,9 +160,8 @@
           a {
             line-height: 36px;
             padding: 0 4px;
-            font-size: $size-s;
+            font-size: $amatic-m;
             text-transform: none;
-            font-weight: 300;
             text-align: right;
           }
         }
@@ -272,8 +271,8 @@ body > main {
     margin: 0 auto;
     background: #cddfd4;
     border: 0;
-    font-size: 1rem;
-    font-family: $font-cursive;
+    font-size: 1.25rem;
+    font-family: $font-decorative;
     color: #96c6a7;
   }
 }

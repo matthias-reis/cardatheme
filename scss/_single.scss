@@ -97,7 +97,7 @@
   }
 
   h1 {
-    font-family: $font-cursive;
+    font-family: $font-decorative;
     margin: 2rem 0 0.5rem 0;
   }
 
@@ -142,8 +142,8 @@
   h2,
   .tags h3 {
     @include hd;
-    font-family: $font-cursive;
-    font-size: $size-xl;
+    font-family: $font-decorative;
+    font-size: $amatic-xl;
     margin-bottom: 0.5em;
   }
 
@@ -209,8 +209,8 @@
   .comment-respond {
     .comment-reply-title {
       @include hd;
-      font-family: $font-cursive;
-      font-size: $size-xl;
+      font-family: $font-decorative;
+      font-size: $amatic-xl;
       margin-bottom: 0.5em;
     }
 
@@ -230,8 +230,8 @@
   }
 
   .reply {
-    font-family: $font-cursive;
-    font-size: $size-l;
+    font-family: $font-decorative;
+    font-size: $amatic-l;
     padding: 0.5em;
     text-align: right;
   }
@@ -371,8 +371,8 @@
     .button {
       box-sizing: border-box;
       background: #96c6a7;
-      font-family: $font-cursive;
-      font-size: $size-l;
+      font-family: $font-decorative;
+      font-size: $amatic-l;
       color: #fff;
       width: 100%;
     }

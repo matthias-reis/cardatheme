@@ -261,12 +261,21 @@ function c_content_filter($content)
 }
 add_filter('the_content', 'c_content_filter');
 
+// function c_flickr_gallery($atts)
+// {
+//   return '</div>
+//   <section class="article-gallery-images">
+//     <div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '"></div>
+//     <div style="clear:both"></div>
+//   </section>
+//   <div class="row">';
+// }
+
 function c_flickr_gallery($atts)
 {
   return '</div>
-  <section class="article-gallery-images">
-    <div class="image-gallery" typeof="sx:smartr.FlickrGallery" data-tag="' . $atts['tag'] . '"></div>
-    <div style="clear:both"></div>
+  <section class="article-gallery-images glry-section ' . $atts['class'] . '">
+    <div class="glry-container" data-glry="flickr/' . $atts['tag'] . '"></div>
   </section>
   <div class="row">';
 }
