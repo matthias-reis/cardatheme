@@ -13,7 +13,6 @@ sx.build({
     },
 
     init: function() {
-      console.log(document.cookie.indexOf('consent='));
       if (document.cookie.indexOf('consent=') === -1) {
         this.el.show();
         this.setCookie();
