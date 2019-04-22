@@ -19,7 +19,7 @@
     </a>
 
     <div class="backlink">
-      <a href="http://cardamonchai.aithir.de/andere-blogs">Zurück zur Übersicht</a>
+      <a href="http://cardamonchai.com/andere-blogs">Zurück zur Übersicht</a>
     </div>
 
   </div>

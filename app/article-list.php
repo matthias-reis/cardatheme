@@ -25,7 +25,16 @@
             </h1>
 
             <div class="excerpt">
-                <?php the_excerpt() ?>
+            <?php
+                $custom = get_post_custom();
+                $url = $custom['url'][0];
+                $desc = $custom['desc'][0];
+                if ($desc) {
+                    echo "<div>" . strip_tags($desc) . "</div>";
+                } else {
+                    the_excerpt();
+                }
+                ?>
             </div>
         </div>
     </a>

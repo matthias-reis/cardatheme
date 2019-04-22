@@ -362,7 +362,7 @@ add_action( 'wp_enqueue_scripts', 'c_enqueue_script' );
 function c_post_type_remote() {
   register_post_type( 'remote',
   array(
-    'label'             => 'Andere Blogs',
+    'label'             => 'Publikationen',
     'labels' => array(
       'add_new' => 'Neuer Link',
       'add_new_item' => 'Neuer Link',

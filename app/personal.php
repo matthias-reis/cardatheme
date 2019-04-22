@@ -1,7 +1,7 @@
 <div class="main-col personal-bar">
   <div class='list-grid'>
     <div class='list-grid-item personal-visual'>
-      <img alt="Anne bloggt Cardamonchai" src="<?php echo get_template_directory_uri() ?>/img/visual.jpg"/>
+      <img alt="Anne bloggt Cardamonchai" src="<?php echo get_template_directory_uri() ?>/img/visual.jpg?1"/>
     </div>
     <div class='list-grid-item personal-about'>
       <h3>Über mich</h3>
