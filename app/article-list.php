@@ -1,5 +1,7 @@
 
-<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );?>
+<?php 
+    $url = get_the_post_thumbnail_url($post->ID, 'large');
+?>
 <article class="article-in-list list-grid-item" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <a class="article-item" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url()">
         <div class="meta">
@@ -13,8 +15,8 @@
             </div>
         </div>
         <?php if (has_post_thumbnail()) : ?>
-            <div class="image" style="background-image: url(<?php echo $url; ?>)">
-                <?php the_post_thumbnail('medium'); ?>
+            <div class="image" style="background-image: url(<?php echo $url ?>)">
+                <?php the_post_thumbnail('large', ['sizes' => '400px']); ?>
             </div>
         <?php endif; ?>
 
