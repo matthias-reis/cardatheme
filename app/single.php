@@ -12,6 +12,10 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class('article-gallery'); ?>>
       <?php get_template_part('app/article', 'gallery'); ?>
     </article>
+  <?php elseif (c_is_type('galeriemitbild')): ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('article-gallery'); ?>>
+      <?php get_template_part('app/article', 'gallerywithimage'); ?>
+    </article>
   <?php elseif (c_is_type('galerierechts')): ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class('article-gallery'); ?>>
       <?php get_template_part('app/article', 'galleryright'); ?>

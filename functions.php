@@ -163,6 +163,7 @@ function c_get_type()
     foreach ($terms as $term) {
       $ret = $term->slug;
       if($ret === 'galerierechts') $ret = 'Galerie';
+      if($ret === 'galeriemitbild') $ret = 'Galerie';
       return $ret;
     }
   } else {
