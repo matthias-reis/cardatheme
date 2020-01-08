@@ -117,12 +117,12 @@ sup {
     @include hd($c: $color-text, $ch: $color-text);
     font-family: $font-decorative;
     text-align: center;
-    
+
     strong {
       @include b;
     }
   }
-  
+
   h3 {
     @include hdsmall($c: $color-text-weak, $ch: $color-text-link);
     font-family: $font-decorative;

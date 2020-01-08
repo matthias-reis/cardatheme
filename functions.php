@@ -295,6 +295,15 @@ function c_glry($atts)
 add_shortcode('glry', 'c_glry');
 
 
+
+function c_grey($atts, $content)
+{
+  return '</div><section class="ribbon shortcode-grey"><div class="row">' . $content . '</div></section><div class="row">';
+}
+
+add_shortcode('grey', 'c_grey');
+
+
 function c_newsletter()
 {
   return '
