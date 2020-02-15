@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,700|Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300|Raleway:400,400i,700');
 
 $color-white: #fff;
 $color-grey: #444;
@@ -38,23 +38,23 @@ $break-l: 1024px;
 $break-xl: 1280px;
 $width: 1400px;
 
-$font: 'Zilla Slab', 'sans-serif';
-$font-headline: 'Zilla Slab', 'sans-serif';
+$font: 'Raleway', 'sans-serif';
+$font-headline: 'Raleway', 'sans-serif';
 $font-cursive: 'Playball', 'cursive';
-$font-decorative: 'Amatic SC', 'cursive';
+$font-decorative: 'Josefin sans', 'cursive';
 
 $weightNormal: 400;
 $weightBold: 700;
 
 $size-s: 1rem;
 $size-m: 1.25rem;
-$amatic-m: 1.4rem;
+$amatic-m: 1.2rem;
 $size-l: 1.5rem;
-$amatic-l: 1.75rem;
+$amatic-l: 1.4rem;
 $size-xl: 2rem;
-$amatic-xl: 2.5rem;
+$amatic-xl: 2rem;
 $size-xxl: 3rem;
-$amatic-xxl: 4rem;
+$amatic-xxl: 2.5rem;
 
 @mixin link($c: $color-text-link, $ch: $color-text-link-strong) {
   color: $c;

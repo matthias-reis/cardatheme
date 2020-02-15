@@ -11,11 +11,15 @@ body {
 
 h1 {
   @include hdDecorative;
+  letter-spacing: -0.025em;
+  word-spacing: -0.1em;
   @include hdsize($amatic-xxl);
 }
 
 h2 {
   @include hdDecorative;
+  letter-spacing: -0.025em;
+  word-spacing: -0.1em;
   @include hdsize($amatic-xl);
 }
 
@@ -147,9 +151,9 @@ sup {
   // homepage headline
   .hl {
     display: inline-block;
-    background: transparent url(../img/schriftzug.svg) 0 0 no-repeat;
+    background: transparent url(../img/schriftzug.png) 0 0 no-repeat;
     background-size: contain;
-    max-width: 536px;
+    max-width: 544px;
     width: 95%;
     height: 140px;
 

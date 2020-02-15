@@ -23,9 +23,9 @@
     }
     hgroup {
       flex: 0 0 auto;
-      background: transparent url(../img/schriftzug.svg) no-repeat;
+      background: transparent url(../img/logo.png) no-repeat;
       background-size: cover;
-      width: 230px;
+      width: 194px;
       height: 60px;
       margin-left: 8px;
 
@@ -138,6 +138,7 @@
           @include link($color-text-weak, $color-text);
           font-family: $font-decorative;
           font-size: $amatic-l;
+          letter-spacing: -0.025em;
           font-weight: 300;
           display: block;
         }
@@ -223,6 +224,7 @@
 
     & > li {
       font-family: $font-decorative;
+      letter-spacing: -0.025em;
       font-size: $amatic-l;
       flex: 1 1 auto;
       width: 50%;
@@ -280,6 +282,7 @@ body > main {
     border: 0;
     font-size: 1.25rem;
     font-family: $font-decorative;
+    letter-spacing: -0.025em;
     color: #96c6a7;
   }
 }

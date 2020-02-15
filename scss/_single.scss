@@ -143,6 +143,8 @@
   .tags h3 {
     @include hd;
     font-family: $font-decorative;
+    letter-spacing: -0.025em;
+    word-spacing: -0.1em;
     font-size: $amatic-xl;
     margin-bottom: 0.5em;
   }
@@ -239,11 +241,12 @@
   .tags {
     a {
       display: inline-block;
-      padding: 0.2rem 0.3rem;
-      margin: 0 0.2rem 0.2rem 0;
+      padding: 0.2rem 0.4rem;
+      margin: 0 0.4rem 0.4rem 0;
       background: $color-bg-content-list;
       color: $color-text-weak;
-      border-radius: 0.1rem;
+      font-size: $size-s;
+      border-radius: 0.3rem;
 
       &:hover {
         color: $color-text-link-strong;
@@ -345,7 +348,9 @@
   margin: 1rem 0;
   padding: 1.5rem;
   background: #5c9b72;
-  max-width: 360px;
+  max-width: 560px;
+  box-sizing: border-box;
+
   form {
     padding: 0;
   }
@@ -372,6 +377,7 @@
       box-sizing: border-box;
       background: #96c6a7;
       font-family: $font-decorative;
+      letter-spacing: -0.025em;
       font-size: $amatic-l;
       color: #fff;
       width: 100%;

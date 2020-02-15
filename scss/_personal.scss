@@ -2,6 +2,11 @@
   background: $color-highlight;
   padding: 40px 0;
 
+  p,
+  #mc_embed_signup_scroll {
+    font-size: $size-s;
+  }
+
   .list-grid {
     padding-top: 0;
     padding-bottom: 0;
@@ -111,8 +116,10 @@
 
     .button {
       margin-top: 2rem !important;
+      padding: 4px 0 !important;
       background: $color-text-green !important;
       font-family: $font-decorative;
+      letter-spacing: -0.025em !important;
       font-size: $amatic-l !important;
       color: #fff;
       width: 100%;
@@ -130,6 +137,7 @@
   color: $color-text-inverted;
   a {
     font-family: $font-decorative;
+    letter-spacing: -0.025em;
     font-size: $amatic-l !important;
     display: inline-block;
     margin: 0 12px;
