@@ -1,41 +1,19 @@
-<?php if (comments_open()) : ?>
-  <div class="comments">
-    <?php comment_form(); ?>
-    
-    <h2>Kommentare</h2>
+<?php if (wp_get_current_user()->ID > 0): ?>
+<div id="disqus_thread"></div>
+<script>
 
-    <p class="message"><?php comments_number(
-      'Derzeit ist noch kein Kommentar vorhanden',
-      'Ein Kommentar ist bereits vorhanden',
-      '% Kommentare zu diesem Thema'
-    ) ?></p>
-    <?php if (post_password_required()) : ?>
-      <p class="message">Dieser Beitrag ist passwortgeschützt. Bitte gib es ein, 
-        wenn Du Kommentare lesen oder verfassen möchtest.</p>
-      <?php else: ?>
-        <?php if (have_comments()) : ?>
+var disqus_config = function () {
+    this.page.url = '<?php echo get_permalink(); ?>';
+    this.page.identifier = '<?php echo get_permalink(); ?>';
+    this.page.title = '<?php the_title(); ?>';
+};
 
-          <ul>
-            <?php wp_list_comments(); // Custom callback in functions.php ?>
-          </ul>
-
-        <?php elseif (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
-          <p class="message">Die Kommentare wurden geschlossen.</p>
-        <?php endif; ?>
-
-      <?php endif; ?>
-    </div>
-    <div class="tags">
-      <section>
-        <h3>Erschienen in</h3>
-        <p><?php the_category(' '); ?></p>
-      </section>
-
-      <section>
-        <h3>Getaggt mit</h3>
-        <p><?php the_tags('', ' ', ''); ?></p>
-      </section>
-
-    </div>
-</div>
+(function(d) {
+  var s = d.createElement('script');
+  s.src = 'https://cardamonchai.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.body).appendChild(s);
+})(document);
+</script>
+<noscript>Bitte aktiviere Javascript, um die <a href="https://disqus.com/?ref_noscript">Disqus-Kommentare</a> sehen zu können.</noscript>
 <?php endif; ?>
