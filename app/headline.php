@@ -24,7 +24,10 @@ if (is_day()) : ?>
         <h3>Arbeiten für Zeitschriften und Newsportale</h3>
     <?php
     elseif (is_category()) : ?>
-        <h1>&laquo;<?php echo single_cat_title(); ?>&raquo;</h1>
+        <h1>&laquo;<?php 
+            $paging = get_query_var('paged') > 0 ? (' (' . get_query_var('paged') . ')') : '';
+            echo single_cat_title() . $paging;
+        ?>&raquo;</h1>
         <h3>Kategorie</h3>
     <?php
     elseif (is_tag()) : ?>

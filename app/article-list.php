@@ -22,9 +22,9 @@
 
 
         <div class="text">
-            <h1>
+            <h2>
                 <?php the_title(); ?>
-            </h1>
+            </h2>
 
             <div class="excerpt">
             <?php
@@ -34,7 +34,7 @@
                 if ($desc) {
                     echo "<div>" . strip_tags($desc) . "</div>";
                 } else {
-                    the_excerpt();
+                    echo str_replace('h2', 'h3', get_the_excerpt());
                 }
                 ?>
             </div>
