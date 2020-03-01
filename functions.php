@@ -320,7 +320,13 @@ function c_newsletter()
   </div>';
 }
 
-add_shortcode('newsletter', 'c_newsletter');
+function c_newsletterplacebo()
+{
+  return '';
+}
+
+add_shortcode('newsletter', 'c_newsletter_placebo');
+add_shortcode('shownewsletter', 'c_newsletter');
 
 function c_comment($comment, $args, $depth)
 {
