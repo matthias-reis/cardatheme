@@ -23,15 +23,14 @@
 
   <section class="aside-ribbon aside-newsletter">
     <h3>Newsletter</h3>
-    <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
     <div id="mc_embed_signup">
-      <form action="https://cardamonchai.us17.list-manage.com/subscribe/post?u=56cabb4dfeee2ca03948f964f&amp;id=3f01062ef5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div id="mc_embed_signup_scroll">
           <p>
             Dir gefällt, was ich schreibe und möchtest ab jetzt nichts mehr verpassen?
             Hier kannst Du Dich zu meinem Newsletter anmelden.
           </p>
-          <a  target="_blank" class="button" href="http://eepurl.com/dhmx7z" >Jetzt zur Anmeldung</a>
+          <a  target="_blank" class="button" href="https://mailchi.mp/94bdbb6fded3/cardamonchai" >Jetzt zur Anmeldung</a>
         </div>
       </form>
     </div>

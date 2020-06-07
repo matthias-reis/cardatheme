@@ -1,6 +1,6 @@
 
 <?php 
-    $url = get_the_post_thumbnail_url($post->ID, 'large');
+    $url = get_the_post_thumbnail_url($post->ID, 'list');
 ?>
 <article class="article-in-list list-grid-item" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <a class="article-item" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url()">
