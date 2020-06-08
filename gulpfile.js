@@ -4,14 +4,15 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   concat = require('gulp-concat');
 
-gulp.task('js', function() {
+gulp.task('js', function () {
   gulp
     .src([
       'libs/styx.js',
-      'libs/isotope.js',
+      // 'libs/isotope.js',
       // 'libs/fancybox/jquery.fancybox.pack.js',
       // 'libs/twitterfetcher.js',
       'libs/glry.js',
+      'ts/lib/index.js',
       // 'js/background.styx.js',
       'js/article.styx.js',
       'js/cookie.styx.js',
@@ -29,7 +30,7 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./assets'));
 });
 
-gulp.task('css', function() {
+gulp.task('css', function () {
   gulp
     .src('./scss/cardatheme.scss')
     .pipe(
@@ -44,7 +45,7 @@ gulp.task('css', function() {
     .pipe(gulp.dest('./assets'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
   gulp.watch('scss/**/*.scss', ['css']);
   gulp.watch('js/**/*.js', ['js']);
 });

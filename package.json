@@ -4,7 +4,8 @@
   "description": "Theme for cardamonchai.com",
   "main": "index.js",
   "scripts": {
-    "up": "gulp && rsync -avr . ops@cardamonchai.com:/var/www/cardamon/wp-content/themes/cardatheme --exclude=.git --exclude=.history --exclude=_old --exclude=scss --exclude=node_modules"
+    "bundle": "cd ts && yarn build && cd ..",
+    "up": "yarn bundle && gulp && rsync -avr . ops@cardamonchai.com:/var/www/cardamon/wp-content/themes/cardatheme --exclude=.git --exclude=.history --exclude=_old --exclude=scss --exclude=node_modules"
   },
   "dependencies": {
     "@babel/core": "^7.1.6",

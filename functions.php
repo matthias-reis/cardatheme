@@ -417,3 +417,7 @@ function addImageToRss($content) {
 add_filter('the_excerpt_rss', 'addImageToRss');
 add_filter('the_content_feed', 'addImageToRss');
 add_filter( 'jetpack_photon_reject_https', '__return_true' );
+
+function c_is_internal() {
+  return (wp_get_current_user()->ID > 0);
+}
