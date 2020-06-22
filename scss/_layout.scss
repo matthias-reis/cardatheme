@@ -19,3 +19,9 @@
   padding: 20px;
   margin: 8px 0;
 }
+
+.invisible a,
+.invisible a:hover {
+  color: #fff;
+  cursor: default;
+}

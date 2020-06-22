@@ -31,7 +31,7 @@
         </article>
     <?php endif; ?>
 </div>
-<nav id="article-nav">
+<nav id="article-nav" class="invisible">
     <div>
         <?php posts_nav_link('', 'Neuere Beiträge laden', 'Weitere Beiträge laden'); ?>
     </div>
